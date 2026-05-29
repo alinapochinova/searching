@@ -10,7 +10,7 @@
 #pragma once
 #include <vector>
 #include <string>
-#include "flight.hpp"
+#include "Flight.hpp"
 
 using namespace std;
 

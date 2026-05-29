@@ -3,7 +3,7 @@
  * @brief Реализация методов класса Flight.
  */
 
-#include "flight.hpp"
+#include "Flight.hpp"
 #include <sstream>
 
 using namespace std;
