@@ -25,7 +25,6 @@ public:
     /**
      * @brief Конструктор.
      * @param table_size Размер таблицы (количество корзин).
-     *                   Рекомендуется выбирать простое число.
      */
     explicit HashTable(size_t table_size = 200003);
 

@@ -62,7 +62,7 @@ public:
      * @param key Номер рейса для поиска.
      * @return Вектор объектов Flight (может быть пустым, если ключ не найден).
      */
-    vector<Flight> find(const string& key) const;
+    vector<Flight> find(const string& key) const; 
 
     /** @brief Очистка дерева (удаление всех узлов). */
     void clear();
@@ -71,7 +71,7 @@ private:
     BSTNode* root;                  ///< Корень дерева
 
     /** @brief Рекурсивная вставка. */
-    void insert(BSTNode*& node, const Flight& f);
+    void insert(BSTNode*& node, const Flight& f); 
 
     /** @brief Рекурсивный поиск узла по ключу. */
     BSTNode* findNode(BSTNode* node, const string& key) const;

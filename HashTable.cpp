@@ -11,7 +11,7 @@ HashTable::HashTable(size_t table_size)
 HashTable::~HashTable() {}
 
 size_t HashTable::hash(const string& key) const {
-    const size_t p = 131;          // простое число
+    const size_t p = 131;         
     size_t h = 0;
     for (char c : key) {
         h = (h * p + static_cast<size_t>(c)) % tableSize;

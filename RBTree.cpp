@@ -5,13 +5,13 @@
 
 #include "RBTree.hpp"
 
-// ----- RBNode -----
+// RBNode 
 RBNode::RBNode(const string& k, const Flight& f)
     : key(k), color(RED), left(nullptr), right(nullptr), parent(nullptr) {
     values.push_back(f);
 }
 
-// ----- RBTree -----
+// RBTree 
 RBTree::RBTree() : root(nullptr) {}
 
 RBTree::~RBTree() {
@@ -21,13 +21,6 @@ RBTree::~RBTree() {
 /**
  * @brief Левый поворот вокруг узла x.
  * @param x Узел, вокруг которого выполняется поворот.
- * 
- * @details Преобразование:
- *          x                y
- *           \              / \
- *            y     →      x   c
- *           / \            \
- *          a   c            a
  */
 void RBTree::rotateLeft(RBNode* x) {
     RBNode* y = x->right;
@@ -56,13 +49,6 @@ void RBTree::rotateLeft(RBNode* x) {
 /**
  * @brief Правый поворот вокруг узла x.
  * @param x Узел, вокруг которого выполняется поворот.
- * 
- * @details Преобразование:
- *            x          y
- *           /          / \
- *          y     →    a   x
- *         / \            /
- *        a   b          b
  */
 void RBTree::rotateRight(RBNode* x) {
     RBNode* y = x->left;
@@ -98,7 +84,7 @@ void RBTree::rotateRight(RBNode* x) {
  */
 void RBTree::fixInsert(RBNode* z) {
     while (z->parent && z->parent->color == RED) {
-        // Случай: родитель z — левый потомок деда
+        // Случай 1: родитель z — левый потомок деда
         if (z->parent == z->parent->parent->left) {
             RBNode* y = z->parent->parent->right; // дядя
             if (y && y->color == RED) {
@@ -110,7 +96,7 @@ void RBTree::fixInsert(RBNode* z) {
             } else {
                 // Случай 2: дядя чёрный (или nullptr)
                 if (z == z->parent->right) {
-                    // дополнительный левый поворот
+                    // левый поворот
                     z = z->parent;
                     rotateLeft(z);
                 }
@@ -143,9 +129,9 @@ void RBTree::fixInsert(RBNode* z) {
 
 void RBTree::insert(const Flight& f) {
     const string& key = f.getKey();
-    RBNode* z = new RBNode(key, f);
-    RBNode* y = nullptr;
-    RBNode* x = root;
+    RBNode* z = new RBNode(key, f); //
+    RBNode* y = nullptr; // будет родителем для z
+    RBNode* x = root; // текущий узел при спуске
 
     // Поиск места для вставки (как в обычном BST)
     while (x != nullptr) {
