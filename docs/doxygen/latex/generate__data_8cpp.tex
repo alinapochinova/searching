@@ -1,0 +1,236 @@
+\doxysection{generate\+\_\+data.\+cpp File Reference}
+\hypertarget{generate__data_8cpp}{}\label{generate__data_8cpp}\index{generate\_data.cpp@{generate\_data.cpp}}
+
+
+Генератор тестовых данных для лабораторной работы №2 (поиск данных).  
+
+
+{\ttfamily \+\#include $<$iostream$>$}\newline
+{\ttfamily \+\#include $<$fstream$>$}\newline
+{\ttfamily \+\#include $<$string$>$}\newline
+{\ttfamily \+\#include $<$vector$>$}\newline
+{\ttfamily \+\#include $<$random$>$}\newline
+{\ttfamily \+\#include $<$iomanip$>$}\newline
+{\ttfamily \+\#include $<$sstream$>$}\newline
+{\ttfamily \+\#include $<$sys/\+stat.\+h$>$}\newline
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \doxymbox{\hyperlink{struct_flight_record}{Flight\+Record}}
+\begin{DoxyCompactList}\small\item\em Вспомогательная структура для временного хранения записи. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+std::\+mt19937 \doxymbox{\hyperlink{generate__data_8cpp_a35f3d1bc29e7913e322b2b8e12890991}{gen}} (\doxymbox{\hyperlink{generate__data_8cpp_a16b7b793014fb1068fe38f07a76678b5}{RANDOM\+\_\+\+SEED}})
+\begin{DoxyCompactList}\small\item\em Глобальный генератор случайных чисел (Mersenne Twister). \end{DoxyCompactList}\item 
+std::\+string \doxymbox{\hyperlink{generate__data_8cpp_a7c5524a335f6f0fbcebe4196b621bcfb}{random\+Date}} ()
+\begin{DoxyCompactList}\small\item\em Генерация случайной даты прилёта. \end{DoxyCompactList}\item 
+std::\+string \doxymbox{\hyperlink{generate__data_8cpp_aed04c081d072e1de65bce2a20bedecd4}{random\+Time}} ()
+\begin{DoxyCompactList}\small\item\em Генерация случайного времени прилёта. \end{DoxyCompactList}\item 
+std::\+string \doxymbox{\hyperlink{generate__data_8cpp_a8a433c62dce0cb80015ad8991f86a989}{random\+Airline}} ()
+\begin{DoxyCompactList}\small\item\em Генерация случайного названия авиакомпании. \end{DoxyCompactList}\item 
+int \doxymbox{\hyperlink{generate__data_8cpp_a7da5f6667e51b9e3827c70a82e6732f5}{random\+Passengers}} ()
+\begin{DoxyCompactList}\small\item\em Генерация случайного числа пассажиров. \end{DoxyCompactList}\item 
+std::\+string \doxymbox{\hyperlink{generate__data_8cpp_aea378a33cb9b86888071d558f69218eb}{random\+Flight\+Number}} ()
+\begin{DoxyCompactList}\small\item\em Генерация номера рейса из ограниченного множества. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{generate__data_8cpp_af128d2a7a42387d1db2fbae4b3101c03}{save\+To\+CSV}} (const std::\+vector$<$ \doxymbox{\hyperlink{struct_flight_record}{Flight\+Record}} $>$ \&flights, const std::\+string \&filename)
+\begin{DoxyCompactList}\small\item\em Сохранение вектора записей в CSV-\/файл. \end{DoxyCompactList}\item 
+int \doxymbox{\hyperlink{generate__data_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}{main}} ()
+\begin{DoxyCompactList}\small\item\em Главная функция генератора данных. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+const int \doxymbox{\hyperlink{generate__data_8cpp_a7c93081330d14f0dc4b0dfea0d0fc164}{UNIQUE\+\_\+\+FLIGHT\+\_\+\+NUMBERS}} = 2000
+\begin{DoxyCompactList}\small\item\em Количество уникальных номеров рейсов. \end{DoxyCompactList}\item 
+const unsigned int \doxymbox{\hyperlink{generate__data_8cpp_a16b7b793014fb1068fe38f07a76678b5}{RANDOM\+\_\+\+SEED}} = 42
+\begin{DoxyCompactList}\small\item\em Фиксированный seed для генератора (воспроизводимость). \end{DoxyCompactList}\item 
+const std::\+vector$<$ std::\+string $>$ \doxymbox{\hyperlink{generate__data_8cpp_a1154618312531e9c3e43c1098cce3ed5}{AIRLINES}}
+\begin{DoxyCompactList}\small\item\em Список авиакомпаний для случайного выбора. \end{DoxyCompactList}\item 
+const std::\+vector$<$ std::\+string $>$ \doxymbox{\hyperlink{generate__data_8cpp_ab29f6c157d547d22a5efb59ab04dfc45}{PREFIXES}} = \{"{}SU"{}, "{}S7"{}, "{}FV"{}, "{}DP"{}, "{}U6"{}, "{}UT"{}, "{}N4"{}, "{}WZ"{}\}
+\begin{DoxyCompactList}\small\item\em Префиксы для номеров рейсов. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Генератор тестовых данных для лабораторной работы №2 (поиск данных). 
+
+Создаёт CSV-\/файлы с информацией об авиарейсах. Номера рейсов (ключи поиска) генерируются из ограниченного набора, что обеспечивает многократные повторения для тестирования поиска всех вхождений.\hypertarget{generate__data_8cpp_usage}{}\doxysubsection{\texorpdfstring{Использование}{Использование}}\label{generate__data_8cpp_usage}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{./generate\_data}
+
+\end{DoxyCode}
+\hypertarget{generate__data_8cpp_output}{}\doxysubsection{\texorpdfstring{Выходные данные}{Выходные данные}}\label{generate__data_8cpp_output}
+Файлы сохраняются в папку data/\+ с именами flights\+\_\+\{size\}.csv, где size – количество записей.
+
+\begin{DoxySeeAlso}{See also}
+Flight (класс из основной программы) 
+
+main\+\_\+benchmark.\+cpp 
+\end{DoxySeeAlso}
+
+
+\label{generate__data_8cpp_doc-func-members}
+\Hypertarget{generate__data_8cpp_doc-func-members}
+\doxysubsection{Function Documentation}
+\Hypertarget{generate__data_8cpp_a35f3d1bc29e7913e322b2b8e12890991}\index{generate\_data.cpp@{generate\_data.cpp}!gen@{gen}}
+\index{gen@{gen}!generate\_data.cpp@{generate\_data.cpp}}
+\doxysubsubsection{\texorpdfstring{gen()}{gen()}}
+{\footnotesize\ttfamily \label{generate__data_8cpp_a35f3d1bc29e7913e322b2b8e12890991} 
+std::\+mt19937 gen (\begin{DoxyParamCaption}\item[{\doxymbox{\hyperlink{generate__data_8cpp_a16b7b793014fb1068fe38f07a76678b5}{RANDOM\+\_\+\+SEED}}}]{}{}\end{DoxyParamCaption})}
+
+
+
+Глобальный генератор случайных чисел (Mersenne Twister). 
+
+Инициализируется фиксированным seed для воспроизводимости. \Hypertarget{generate__data_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}\index{generate\_data.cpp@{generate\_data.cpp}!main@{main}}
+\index{main@{main}!generate\_data.cpp@{generate\_data.cpp}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily \label{generate__data_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4} 
+int main (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Главная функция генератора данных. 
+
+\begin{DoxyReturn}{Returns}
+0 при успешном завершении.
+\end{DoxyReturn}
+Последовательно генерирует файлы для следующих размеров:\+ 100, 500, 1000, 5000, 10000, 20000, 30000, 50000, 75000, 100000, 200000, 300000, 500000, 750000, 1000000. \begin{DoxyPostcond}{Postcondition}
+В папке data/\+ создаются файлы flights\+\_\+\{size\}.csv. 
+\end{DoxyPostcond}
+\Hypertarget{generate__data_8cpp_a8a433c62dce0cb80015ad8991f86a989}\index{generate\_data.cpp@{generate\_data.cpp}!randomAirline@{randomAirline}}
+\index{randomAirline@{randomAirline}!generate\_data.cpp@{generate\_data.cpp}}
+\doxysubsubsection{\texorpdfstring{randomAirline()}{randomAirline()}}
+{\footnotesize\ttfamily \label{generate__data_8cpp_a8a433c62dce0cb80015ad8991f86a989} 
+std::\+string random\+Airline (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Генерация случайного названия авиакомпании. 
+
+\begin{DoxyReturn}{Returns}
+Одна из строк в списке AIRLINES. 
+\end{DoxyReturn}
+\Hypertarget{generate__data_8cpp_a7c5524a335f6f0fbcebe4196b621bcfb}\index{generate\_data.cpp@{generate\_data.cpp}!randomDate@{randomDate}}
+\index{randomDate@{randomDate}!generate\_data.cpp@{generate\_data.cpp}}
+\doxysubsubsection{\texorpdfstring{randomDate()}{randomDate()}}
+{\footnotesize\ttfamily \label{generate__data_8cpp_a7c5524a335f6f0fbcebe4196b621bcfb} 
+std::\+string random\+Date (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Генерация случайной даты прилёта. 
+
+\begin{DoxyReturn}{Returns}
+Строка в формате YYYY-\/\+MM-\/\+DD.
+\end{DoxyReturn}
+Диапазон:\+ 2024-\/01-\/01 до 2025-\/12-\/28. \Hypertarget{generate__data_8cpp_aea378a33cb9b86888071d558f69218eb}\index{generate\_data.cpp@{generate\_data.cpp}!randomFlightNumber@{randomFlightNumber}}
+\index{randomFlightNumber@{randomFlightNumber}!generate\_data.cpp@{generate\_data.cpp}}
+\doxysubsubsection{\texorpdfstring{randomFlightNumber()}{randomFlightNumber()}}
+{\footnotesize\ttfamily \label{generate__data_8cpp_aea378a33cb9b86888071d558f69218eb} 
+std::\+string random\+Flight\+Number (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Генерация номера рейса из ограниченного множества. 
+
+\begin{DoxyReturn}{Returns}
+Строка вида "{}\+SU1234"{}, где число от 1 до UNIQUE\+\_\+\+FLIGHT\+\_\+\+NUMBERS.
+\end{DoxyReturn}
+Номер рейса формируется как случайный префикс + число. Такая схема гарантирует, что количество различных ключей не превышает UNIQUE\+\_\+\+FLIGHT\+\_\+\+NUMBERS \texorpdfstring{$\ast$}{*} PREFIXES.\+size(), что создаёт множество дубликатов в больших массивах. \Hypertarget{generate__data_8cpp_a7da5f6667e51b9e3827c70a82e6732f5}\index{generate\_data.cpp@{generate\_data.cpp}!randomPassengers@{randomPassengers}}
+\index{randomPassengers@{randomPassengers}!generate\_data.cpp@{generate\_data.cpp}}
+\doxysubsubsection{\texorpdfstring{randomPassengers()}{randomPassengers()}}
+{\footnotesize\ttfamily \label{generate__data_8cpp_a7da5f6667e51b9e3827c70a82e6732f5} 
+int random\+Passengers (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Генерация случайного числа пассажиров. 
+
+\begin{DoxyReturn}{Returns}
+Число от 0 до 300. 
+\end{DoxyReturn}
+\Hypertarget{generate__data_8cpp_aed04c081d072e1de65bce2a20bedecd4}\index{generate\_data.cpp@{generate\_data.cpp}!randomTime@{randomTime}}
+\index{randomTime@{randomTime}!generate\_data.cpp@{generate\_data.cpp}}
+\doxysubsubsection{\texorpdfstring{randomTime()}{randomTime()}}
+{\footnotesize\ttfamily \label{generate__data_8cpp_aed04c081d072e1de65bce2a20bedecd4} 
+std::\+string random\+Time (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Генерация случайного времени прилёта. 
+
+\begin{DoxyReturn}{Returns}
+Строка в формате HH:\+\+MM:\+SS.
+\end{DoxyReturn}
+Диапазон:\+ 00:\+00:\+00 до 23:\+59:\+59. \Hypertarget{generate__data_8cpp_af128d2a7a42387d1db2fbae4b3101c03}\index{generate\_data.cpp@{generate\_data.cpp}!saveToCSV@{saveToCSV}}
+\index{saveToCSV@{saveToCSV}!generate\_data.cpp@{generate\_data.cpp}}
+\doxysubsubsection{\texorpdfstring{saveToCSV()}{saveToCSV()}}
+{\footnotesize\ttfamily \label{generate__data_8cpp_af128d2a7a42387d1db2fbae4b3101c03} 
+void save\+To\+CSV (\begin{DoxyParamCaption}\item[{const std::\+vector$<$ \doxymbox{\hyperlink{struct_flight_record}{Flight\+Record}} $>$ \&}]{flights}{, }\item[{const std::\+string \&}]{filename}{}\end{DoxyParamCaption})}
+
+
+
+Сохранение вектора записей в CSV-\/файл. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em flights} & Вектор структур \doxylink{struct_flight_record}{Flight\+Record}. \\
+\hline
+{\em filename} & Имя выходного файла.\\
+\hline
+\end{DoxyParams}
+Заголовок файла соответствует ожиданиям класса Flight из основной программы. 
+
+\label{generate__data_8cpp_doc-var-members}
+\Hypertarget{generate__data_8cpp_doc-var-members}
+\doxysubsection{Variable Documentation}
+\Hypertarget{generate__data_8cpp_a1154618312531e9c3e43c1098cce3ed5}\index{generate\_data.cpp@{generate\_data.cpp}!AIRLINES@{AIRLINES}}
+\index{AIRLINES@{AIRLINES}!generate\_data.cpp@{generate\_data.cpp}}
+\doxysubsubsection{\texorpdfstring{AIRLINES}{AIRLINES}}
+{\footnotesize\ttfamily \label{generate__data_8cpp_a1154618312531e9c3e43c1098cce3ed5} 
+const std::\+vector$<$std::\+string$>$ AIRLINES}
+
+{\bfseries Initial value:\+}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ =\ \{}
+\DoxyCodeLine{\ \ \ \ \textcolor{stringliteral}{"{}Aeroflot"{}},\ \textcolor{stringliteral}{"{}S7\ Airlines"{}},\ \textcolor{stringliteral}{"{}Rossiya"{}},\ \textcolor{stringliteral}{"{}Pobeda"{}},}
+\DoxyCodeLine{\ \ \ \ \textcolor{stringliteral}{"{}Ural\ Airlines"{}},\ \textcolor{stringliteral}{"{}Utair"{}},\ \textcolor{stringliteral}{"{}Nordwind"{}},\ \textcolor{stringliteral}{"{}Red\ Wings"{}}}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+
+
+Список авиакомпаний для случайного выбора. 
+
+\Hypertarget{generate__data_8cpp_ab29f6c157d547d22a5efb59ab04dfc45}\index{generate\_data.cpp@{generate\_data.cpp}!PREFIXES@{PREFIXES}}
+\index{PREFIXES@{PREFIXES}!generate\_data.cpp@{generate\_data.cpp}}
+\doxysubsubsection{\texorpdfstring{PREFIXES}{PREFIXES}}
+{\footnotesize\ttfamily \label{generate__data_8cpp_ab29f6c157d547d22a5efb59ab04dfc45} 
+const std::\+vector$<$std::\+string$>$ PREFIXES = \{"{}SU"{}, "{}S7"{}, "{}FV"{}, "{}DP"{}, "{}U6"{}, "{}UT"{}, "{}N4"{}, "{}WZ"{}\}}
+
+
+
+Префиксы для номеров рейсов. 
+
+\Hypertarget{generate__data_8cpp_a16b7b793014fb1068fe38f07a76678b5}\index{generate\_data.cpp@{generate\_data.cpp}!RANDOM\_SEED@{RANDOM\_SEED}}
+\index{RANDOM\_SEED@{RANDOM\_SEED}!generate\_data.cpp@{generate\_data.cpp}}
+\doxysubsubsection{\texorpdfstring{RANDOM\_SEED}{RANDOM\_SEED}}
+{\footnotesize\ttfamily \label{generate__data_8cpp_a16b7b793014fb1068fe38f07a76678b5} 
+const unsigned int RANDOM\+\_\+\+SEED = 42}
+
+
+
+Фиксированный seed для генератора (воспроизводимость). 
+
+\Hypertarget{generate__data_8cpp_a7c93081330d14f0dc4b0dfea0d0fc164}\index{generate\_data.cpp@{generate\_data.cpp}!UNIQUE\_FLIGHT\_NUMBERS@{UNIQUE\_FLIGHT\_NUMBERS}}
+\index{UNIQUE\_FLIGHT\_NUMBERS@{UNIQUE\_FLIGHT\_NUMBERS}!generate\_data.cpp@{generate\_data.cpp}}
+\doxysubsubsection{\texorpdfstring{UNIQUE\_FLIGHT\_NUMBERS}{UNIQUE\_FLIGHT\_NUMBERS}}
+{\footnotesize\ttfamily \label{generate__data_8cpp_a7c93081330d14f0dc4b0dfea0d0fc164} 
+const int UNIQUE\+\_\+\+FLIGHT\+\_\+\+NUMBERS = 2000}
+
+
+
+Количество уникальных номеров рейсов. 
+
+Чем меньше это число, тем больше дубликатов в массиве. При размере N каждый ключ в среднем встретится N /\+ UNIQUE\+\_\+\+COUNT раз. 

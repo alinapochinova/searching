@@ -1,0 +1,85 @@
+\@ifundefined {etoctocstyle}{\let \etoc@startlocaltoc \@gobble \let \etoc@settocdepth \@gobble \let \etoc@depthtag \@gobble \let \etoc@setlocaltop \@gobble }{}
+\babel@toc {russian}{}\relax 
+\contentsline {chapter}{\numberline {1}Directory Hierarchy}{1}{chapter.1}%
+\contentsline {section}{\numberline {1.1}Directories}{1}{section.1.1}%
+\contentsline {chapter}{\numberline {2}Class Index}{3}{chapter.2}%
+\contentsline {section}{\numberline {2.1}Class List}{3}{section.2.1}%
+\contentsline {chapter}{\numberline {3}File Index}{5}{chapter.3}%
+\contentsline {section}{\numberline {3.1}File List}{5}{section.3.1}%
+\contentsline {chapter}{\numberline {4}Directory Documentation}{7}{chapter.4}%
+\contentsline {section}{\numberline {4.1}my\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}env/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}lib/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}python3.14/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}site-\/packages/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}numpy/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}core Directory Reference}{7}{section.4.1}%
+\contentsline {section}{\numberline {4.2}my\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}env/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}lib/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}python3.14/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}site-\/packages/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}numpy/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}core/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}tests/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}data Directory Reference}{7}{section.4.2}%
+\contentsline {section}{\numberline {4.3}my\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}env/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}lib Directory Reference}{7}{section.4.3}%
+\contentsline {section}{\numberline {4.4}my\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}env Directory Reference}{7}{section.4.4}%
+\contentsline {section}{\numberline {4.5}my\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}env/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}lib/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}python3.14/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}site-\/packages/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}numpy Directory Reference}{7}{section.4.5}%
+\contentsline {section}{\numberline {4.6}my\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}env/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}lib/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}python3.14 Directory Reference}{8}{section.4.6}%
+\contentsline {section}{\numberline {4.7}my\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}env/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}lib/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}python3.14/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}site-\/packages Directory Reference}{8}{section.4.7}%
+\contentsline {section}{\numberline {4.8}my\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}env/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}lib/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}python3.14/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}site-\/packages/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}numpy/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}core/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}tests Directory Reference}{8}{section.4.8}%
+\contentsline {chapter}{\numberline {5}Class Documentation}{9}{chapter.5}%
+\contentsline {section}{\numberline {5.1}Flight\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Record Struct Reference}{9}{section.5.1}%
+\contentsline {subsection}{\numberline {5.1.1}Detailed Description}{9}{subsection.5.1.1}%
+\contentsline {subsection}{\numberline {5.1.2}Member Data Documentation}{9}{subsection.5.1.2}%
+\contentsline {subsubsection}{\numberline {5.1.2.1}airline}{9}{subsubsection.5.1.2.1}%
+\contentsline {subsubsection}{\numberline {5.1.2.2}arrivalDate}{10}{subsubsection.5.1.2.2}%
+\contentsline {subsubsection}{\numberline {5.1.2.3}arrivalTime}{10}{subsubsection.5.1.2.3}%
+\contentsline {subsubsection}{\numberline {5.1.2.4}flightNumber}{10}{subsubsection.5.1.2.4}%
+\contentsline {subsubsection}{\numberline {5.1.2.5}passengers}{10}{subsubsection.5.1.2.5}%
+\contentsline {section}{\numberline {5.2}ufunc Struct Reference}{10}{section.5.2}%
+\contentsline {subsection}{\numberline {5.2.1}Member Data Documentation}{10}{subsection.5.2.1}%
+\contentsline {subsubsection}{\numberline {5.2.1.1}f32func}{10}{subsubsection.5.2.1.1}%
+\contentsline {subsubsection}{\numberline {5.2.1.2}f32ulp}{11}{subsubsection.5.2.1.2}%
+\contentsline {subsubsection}{\numberline {5.2.1.3}f64func}{11}{subsubsection.5.2.1.3}%
+\contentsline {subsubsection}{\numberline {5.2.1.4}f64ulp}{11}{subsubsection.5.2.1.4}%
+\contentsline {subsubsection}{\numberline {5.2.1.5}name}{11}{subsubsection.5.2.1.5}%
+\contentsline {chapter}{\numberline {6}File Documentation}{13}{chapter.6}%
+\contentsline {section}{\numberline {6.1}BSTree.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}cpp File Reference}{13}{section.6.1}%
+\contentsline {subsection}{\numberline {6.1.1}Detailed Description}{13}{subsection.6.1.1}%
+\contentsline {section}{\numberline {6.2}Flight.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}cpp File Reference}{13}{section.6.2}%
+\contentsline {subsection}{\numberline {6.2.1}Detailed Description}{13}{subsection.6.2.1}%
+\contentsline {subsection}{\numberline {6.2.2}Function Documentation}{14}{subsection.6.2.2}%
+\contentsline {subsubsection}{\numberline {6.2.2.1}operator$<$$<$()}{14}{subsubsection.6.2.2.1}%
+\contentsline {subsubsection}{\numberline {6.2.2.2}operator$>$$>$()}{14}{subsubsection.6.2.2.2}%
+\contentsline {section}{\numberline {6.3}generate\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}data.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}cpp File Reference}{14}{section.6.3}%
+\contentsline {subsection}{\numberline {6.3.1}Detailed Description}{15}{subsection.6.3.1}%
+\contentsline {subsection}{\numberline {6.3.2}Использование}{15}{subsection.6.3.2}%
+\contentsline {subsection}{\numberline {6.3.3}Выходные данные}{15}{subsection.6.3.3}%
+\contentsline {subsection}{\numberline {6.3.4}Function Documentation}{15}{subsection.6.3.4}%
+\contentsline {subsubsection}{\numberline {6.3.4.1}gen()}{15}{subsubsection.6.3.4.1}%
+\contentsline {subsubsection}{\numberline {6.3.4.2}main()}{16}{subsubsection.6.3.4.2}%
+\contentsline {subsubsection}{\numberline {6.3.4.3}randomAirline()}{16}{subsubsection.6.3.4.3}%
+\contentsline {subsubsection}{\numberline {6.3.4.4}randomDate()}{16}{subsubsection.6.3.4.4}%
+\contentsline {subsubsection}{\numberline {6.3.4.5}randomFlightNumber()}{16}{subsubsection.6.3.4.5}%
+\contentsline {subsubsection}{\numberline {6.3.4.6}randomPassengers()}{17}{subsubsection.6.3.4.6}%
+\contentsline {subsubsection}{\numberline {6.3.4.7}randomTime()}{17}{subsubsection.6.3.4.7}%
+\contentsline {subsubsection}{\numberline {6.3.4.8}saveToCSV()}{17}{subsubsection.6.3.4.8}%
+\contentsline {subsection}{\numberline {6.3.5}Variable Documentation}{17}{subsection.6.3.5}%
+\contentsline {subsubsection}{\numberline {6.3.5.1}AIRLINES}{17}{subsubsection.6.3.5.1}%
+\contentsline {subsubsection}{\numberline {6.3.5.2}PREFIXES}{18}{subsubsection.6.3.5.2}%
+\contentsline {subsubsection}{\numberline {6.3.5.3}RANDOM\_SEED}{18}{subsubsection.6.3.5.3}%
+\contentsline {subsubsection}{\numberline {6.3.5.4}UNIQUE\_FLIGHT\_NUMBERS}{18}{subsubsection.6.3.5.4}%
+\contentsline {section}{\numberline {6.4}Hash\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Table.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}cpp File Reference}{18}{section.6.4}%
+\contentsline {subsection}{\numberline {6.4.1}Detailed Description}{18}{subsection.6.4.1}%
+\contentsline {section}{\numberline {6.5}main.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}cpp File Reference}{18}{section.6.5}%
+\contentsline {subsection}{\numberline {6.5.1}Detailed Description}{19}{subsection.6.5.1}%
+\contentsline {subsection}{\numberline {6.5.2}Function Documentation}{19}{subsection.6.5.2}%
+\contentsline {subsubsection}{\numberline {6.5.2.1}getUniqueKeys()}{19}{subsubsection.6.5.2.1}%
+\contentsline {subsubsection}{\numberline {6.5.2.2}linearSearch()}{20}{subsubsection.6.5.2.2}%
+\contentsline {subsubsection}{\numberline {6.5.2.3}loadFromCSV()}{20}{subsubsection.6.5.2.3}%
+\contentsline {subsubsection}{\numberline {6.5.2.4}main()}{20}{subsubsection.6.5.2.4}%
+\contentsline {section}{\numberline {6.6}my\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}env/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}lib/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}python3.14/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}site-\/packages/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}numpy/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}core/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}tests/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}data/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}generate\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}umath\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}validation\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}data.cpp File Reference}{20}{section.6.6}%
+\contentsline {subsection}{\numberline {6.6.1}Macro Definition Documentation}{21}{subsection.6.6.1}%
+\contentsline {subsubsection}{\numberline {6.6.1.1}INF}{21}{subsubsection.6.6.1.1}%
+\contentsline {subsubsection}{\numberline {6.6.1.2}MAXFLT}{21}{subsubsection.6.6.1.2}%
+\contentsline {subsubsection}{\numberline {6.6.1.3}MINDEN}{21}{subsubsection.6.6.1.3}%
+\contentsline {subsubsection}{\numberline {6.6.1.4}MINFLT}{21}{subsubsection.6.6.1.4}%
+\contentsline {subsubsection}{\numberline {6.6.1.5}qNAN}{21}{subsubsection.6.6.1.5}%
+\contentsline {subsubsection}{\numberline {6.6.1.6}sNAN}{22}{subsubsection.6.6.1.6}%
+\contentsline {subsection}{\numberline {6.6.2}Function Documentation}{22}{subsection.6.6.2}%
+\contentsline {subsubsection}{\numberline {6.6.2.1}append\_random\_array()}{22}{subsubsection.6.6.2.1}%
+\contentsline {subsubsection}{\numberline {6.6.2.2}computeTrueVal()}{22}{subsubsection.6.6.2.2}%
+\contentsline {subsubsection}{\numberline {6.6.2.3}generate\_input\_vector()}{22}{subsubsection.6.6.2.3}%
+\contentsline {subsubsection}{\numberline {6.6.2.4}main()}{22}{subsubsection.6.6.2.4}%
+\contentsline {subsubsection}{\numberline {6.6.2.5}RandomFloat()}{22}{subsubsection.6.6.2.5}%
+\contentsline {section}{\numberline {6.7}RBTree.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}cpp File Reference}{22}{section.6.7}%
+\contentsline {subsection}{\numberline {6.7.1}Detailed Description}{22}{subsection.6.7.1}%
+\contentsline {chapter}{{\cyrillictext \CYRP \cyrr \cyre \cyrd \cyrm \cyre \cyrt \cyrn \cyrery \cyrishrt \ \cyru \cyrk \cyra \cyrz \cyra \cyrt \cyre \cyrl \cyrsftsn }}{23}{section*.19}%
