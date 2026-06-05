@@ -78,7 +78,6 @@ vector<string> getUniqueKeys(const vector<Flight>& data, size_t count) {
 }
 
 int main() {
-    // Размеры массивов (должны соответствовать сгенерированным файлам)
     vector<size_t> sizes = {
         100, 500, 1000, 5000, 10000, 20000, 30000, 50000,
         75000, 100000, 200000, 300000, 500000, 750000, 1000000
@@ -100,7 +99,7 @@ int main() {
     for (size_t n : sizes) {
         cout << "Обработка n = " << n << "..." << endl;
 
-        // 1. Загрузка данных
+        // Загрузка данных
         string filename = "data/flights_" + to_string(n) + ".csv";
         vector<Flight> data = loadFromCSV(filename);
         if (data.empty()) {
@@ -108,14 +107,14 @@ int main() {
             continue;
         }
 
-        // 2. Выбор ключей для поиска (10 уникальных)
+        // Выбор ключей для поиска
         vector<string> keys = getUniqueKeys(data, 10);
         if (keys.empty()) {
             cerr << "Предупреждение: не удалось получить ключи для n = " << n << endl;
             continue;
         }
 
-        // 3. Построение структур поиска
+        // Построение структур поиска
 
         // BST
         BSTree bst;
@@ -125,7 +124,7 @@ int main() {
         RBTree rbt;
         for (const auto& f : data) rbt.insert(f);
 
-        // HashTable (фиксированный размер)
+        // HashTable 
         HashTable ht(HASH_TABLE_SIZE);
         for (const auto& f : data) ht.insert(f);
         size_t collisions = ht.getCollisions();
@@ -134,8 +133,8 @@ int main() {
         multimap<string, Flight> mmap;
         for (const auto& f : data) mmap.insert({f.getKey(), f});
 
-        // 4. Замеры времени (каждый замер выполняется один раз для всех ключей,
-        //    затем делим на количество ключей, чтобы получить среднее время одного поиска)
+        // Замеры времени (каждый замер выполняется один раз для всех ключей,
+        // затем делим на количество ключей, чтобы получить среднее время одного поиска)
 
         // Линейный поиск
         auto start = high_resolution_clock::now();
@@ -178,7 +177,7 @@ int main() {
         end = high_resolution_clock::now();
         double mmap_time = duration_cast<microseconds>(end - start).count() / (double)keys.size();
 
-        // 5. Запись в CSV
+        // Запись в CSV
         csv << n << ","
             << linear_time << ","
             << bst_time << ","
