@@ -1,0 +1,234 @@
+\doxysection{benchmark\+\_\+hash\+\_\+functions.\+cpp File Reference}
+\hypertarget{benchmark__hash__functions_8cpp}{}\label{benchmark__hash__functions_8cpp}\index{benchmark\_hash\_functions.cpp@{benchmark\_hash\_functions.cpp}}
+
+
+Сравнение различных хэш-\/функций для строк.  
+
+
+{\ttfamily \+\#include $<$iostream$>$}\newline
+{\ttfamily \+\#include $<$vector$>$}\newline
+{\ttfamily \+\#include $<$string$>$}\newline
+{\ttfamily \+\#include $<$chrono$>$}\newline
+{\ttfamily \+\#include $<$fstream$>$}\newline
+{\ttfamily \+\#include $<$random$>$}\newline
+{\ttfamily \+\#include $<$set$>$}\newline
+{\ttfamily \+\#include $<$functional$>$}\newline
+{\ttfamily \+\#include $<$iomanip$>$}\newline
+{\ttfamily \+\#include "{}Flight.\+hpp"{}}\newline
+{\ttfamily \+\#include "{}Hash\+Table.\+hpp"{}}\newline
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \doxymbox{\hyperlink{struct_hash_function_wrapper}{Hash\+Function\+Wrapper}}
+\item 
+class \doxymbox{\hyperlink{class_hash_table_with_hash}{Hash\+Table\+With\+Hash$<$ Hash\+Func $>$}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+size\+\_\+t \doxymbox{\hyperlink{benchmark__hash__functions_8cpp_a05d071f00d8ad0d9e8c45272c864055b}{poly\+Hash}} (const string \&key, size\+\_\+t mod)
+\begin{DoxyCompactList}\small\item\em Полиномиальная хэш-\/функция (используется в \doxylink{class_hash_table}{Hash\+Table} по умолчанию). \end{DoxyCompactList}\item 
+size\+\_\+t \doxymbox{\hyperlink{benchmark__hash__functions_8cpp_a5b316638b78a48c3874d618e9b49f0d6}{rs\+Hash}} (const string \&key, size\+\_\+t mod)
+\begin{DoxyCompactList}\small\item\em RS хэш-\/функция (из книги Роберта Седжвика). \end{DoxyCompactList}\item 
+size\+\_\+t \doxymbox{\hyperlink{benchmark__hash__functions_8cpp_ad0f2805ef6a399c5fda2de851cb50a49}{js\+Hash}} (const string \&key, size\+\_\+t mod)
+\begin{DoxyCompactList}\small\item\em JS хэш-\/функция (Justin Sobel). \end{DoxyCompactList}\item 
+size\+\_\+t \doxymbox{\hyperlink{benchmark__hash__functions_8cpp_aa0e31a24a9b13d5a135a1861487841d4}{djb\+Hash}} (const string \&key, size\+\_\+t mod)
+\begin{DoxyCompactList}\small\item\em DJB хэш-\/функция (Daniel J. Bernstein). \end{DoxyCompactList}\item 
+vector$<$ \doxymbox{\hyperlink{struct_hash_function_wrapper}{Hash\+Function\+Wrapper}} $>$ \doxymbox{\hyperlink{benchmark__hash__functions_8cpp_a3634a2d64cf7fa8a3ab9787b45109c9c}{get\+Hash\+Functions}} ()
+\item 
+vector$<$ \doxymbox{\hyperlink{class_flight}{Flight}} $>$ \doxymbox{\hyperlink{benchmark__hash__functions_8cpp_a45fc668e03d9223e948f24464b5b192b}{generate\+Flights}} (size\+\_\+t total\+Size, size\+\_\+t unique\+Keys\+Count)
+\item 
+vector$<$ string $>$ \doxymbox{\hyperlink{benchmark__hash__functions_8cpp_a900dbb9a07656b919fdd5798a6810eee}{get\+Test\+Keys}} (size\+\_\+t unique\+Keys\+Count)
+\item 
+int \doxymbox{\hyperlink{benchmark__hash__functions_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}{main}} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+const size\+\_\+t \doxymbox{\hyperlink{benchmark__hash__functions_8cpp_af811406e18ec4e926237f56e56a2cd62}{TOTAL\+\_\+\+SIZE}} = 500000
+\begin{DoxyCompactList}\small\item\em Фиксированный размер массива \end{DoxyCompactList}\item 
+const size\+\_\+t \doxymbox{\hyperlink{benchmark__hash__functions_8cpp_a01bcaf758162ee0a7e814074e6f0052d}{UNIQUE\+\_\+\+KEYS\+\_\+\+COUNT}} = 2000
+\begin{DoxyCompactList}\small\item\em Количество уникальных ключей \end{DoxyCompactList}\item 
+const size\+\_\+t \doxymbox{\hyperlink{benchmark__hash__functions_8cpp_ae1817b37c2b8968ecd33e018572dda38}{HASH\+\_\+\+TABLE\+\_\+\+SIZE}} = 200003
+\begin{DoxyCompactList}\small\item\em Фиксированный размер таблицы \end{DoxyCompactList}\item 
+const int \doxymbox{\hyperlink{benchmark__hash__functions_8cpp_a9c7c3c829362215e710837166d1ad491}{NUM\+\_\+\+SEARCHES}} = 100
+\begin{DoxyCompactList}\small\item\em Количество поисков для замера \end{DoxyCompactList}\item 
+const unsigned int \doxymbox{\hyperlink{benchmark__hash__functions_8cpp_a16b7b793014fb1068fe38f07a76678b5}{RANDOM\+\_\+\+SEED}} = 42
+\begin{DoxyCompactList}\small\item\em Фиксированный seed для воспроизводимости \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Сравнение различных хэш-\/функций для строк. 
+
+Сравниваются 4 хэш-\/функции:\+ POLY (наша текущая), RS, JS, DJB. ROT13 исключён из-\/за аномально высокого количества коллизий (\texorpdfstring{$\sim$}{\string~}15000), что делает его непригодным для хэш-\/таблиц.
+
+\begin{DoxyAuthor}{Author}
+Починова Алина 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+2026 
+\end{DoxyDate}
+
+
+\label{benchmark__hash__functions_8cpp_doc-func-members}
+\Hypertarget{benchmark__hash__functions_8cpp_doc-func-members}
+\doxysubsection{Function Documentation}
+\Hypertarget{benchmark__hash__functions_8cpp_aa0e31a24a9b13d5a135a1861487841d4}\index{benchmark\_hash\_functions.cpp@{benchmark\_hash\_functions.cpp}!djbHash@{djbHash}}
+\index{djbHash@{djbHash}!benchmark\_hash\_functions.cpp@{benchmark\_hash\_functions.cpp}}
+\doxysubsubsection{\texorpdfstring{djbHash()}{djbHash()}}
+{\footnotesize\ttfamily \label{benchmark__hash__functions_8cpp_aa0e31a24a9b13d5a135a1861487841d4} 
+size\+\_\+t djb\+Hash (\begin{DoxyParamCaption}\item[{const string \&}]{key}{, }\item[{size\+\_\+t}]{mod}{}\end{DoxyParamCaption})}
+
+
+
+DJB хэш-\/функция (Daniel J. Bernstein). 
+
+
+\begin{DoxyParams}{Parameters}
+{\em key} & Входная строка. \\
+\hline
+{\em mod} & Размер таблицы. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Хэш-\/код в диапазоне \+[0, mod-\/1]\+. 
+\end{DoxyReturn}
+\Hypertarget{benchmark__hash__functions_8cpp_a45fc668e03d9223e948f24464b5b192b}\index{benchmark\_hash\_functions.cpp@{benchmark\_hash\_functions.cpp}!generateFlights@{generateFlights}}
+\index{generateFlights@{generateFlights}!benchmark\_hash\_functions.cpp@{benchmark\_hash\_functions.cpp}}
+\doxysubsubsection{\texorpdfstring{generateFlights()}{generateFlights()}}
+{\footnotesize\ttfamily \label{benchmark__hash__functions_8cpp_a45fc668e03d9223e948f24464b5b192b} 
+vector$<$ \doxymbox{\hyperlink{class_flight}{Flight}} $>$ generate\+Flights (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{total\+Size}{, }\item[{size\+\_\+t}]{unique\+Keys\+Count}{}\end{DoxyParamCaption})}
+
+\Hypertarget{benchmark__hash__functions_8cpp_a3634a2d64cf7fa8a3ab9787b45109c9c}\index{benchmark\_hash\_functions.cpp@{benchmark\_hash\_functions.cpp}!getHashFunctions@{getHashFunctions}}
+\index{getHashFunctions@{getHashFunctions}!benchmark\_hash\_functions.cpp@{benchmark\_hash\_functions.cpp}}
+\doxysubsubsection{\texorpdfstring{getHashFunctions()}{getHashFunctions()}}
+{\footnotesize\ttfamily \label{benchmark__hash__functions_8cpp_a3634a2d64cf7fa8a3ab9787b45109c9c} 
+vector$<$ \doxymbox{\hyperlink{struct_hash_function_wrapper}{Hash\+Function\+Wrapper}} $>$ get\+Hash\+Functions (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{benchmark__hash__functions_8cpp_a900dbb9a07656b919fdd5798a6810eee}\index{benchmark\_hash\_functions.cpp@{benchmark\_hash\_functions.cpp}!getTestKeys@{getTestKeys}}
+\index{getTestKeys@{getTestKeys}!benchmark\_hash\_functions.cpp@{benchmark\_hash\_functions.cpp}}
+\doxysubsubsection{\texorpdfstring{getTestKeys()}{getTestKeys()}}
+{\footnotesize\ttfamily \label{benchmark__hash__functions_8cpp_a900dbb9a07656b919fdd5798a6810eee} 
+vector$<$ string $>$ get\+Test\+Keys (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{unique\+Keys\+Count}{}\end{DoxyParamCaption})}
+
+\Hypertarget{benchmark__hash__functions_8cpp_ad0f2805ef6a399c5fda2de851cb50a49}\index{benchmark\_hash\_functions.cpp@{benchmark\_hash\_functions.cpp}!jsHash@{jsHash}}
+\index{jsHash@{jsHash}!benchmark\_hash\_functions.cpp@{benchmark\_hash\_functions.cpp}}
+\doxysubsubsection{\texorpdfstring{jsHash()}{jsHash()}}
+{\footnotesize\ttfamily \label{benchmark__hash__functions_8cpp_ad0f2805ef6a399c5fda2de851cb50a49} 
+size\+\_\+t js\+Hash (\begin{DoxyParamCaption}\item[{const string \&}]{key}{, }\item[{size\+\_\+t}]{mod}{}\end{DoxyParamCaption})}
+
+
+
+JS хэш-\/функция (Justin Sobel). 
+
+
+\begin{DoxyParams}{Parameters}
+{\em key} & Входная строка. \\
+\hline
+{\em mod} & Размер таблицы. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Хэш-\/код в диапазоне \+[0, mod-\/1]\+. 
+\end{DoxyReturn}
+\Hypertarget{benchmark__hash__functions_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}\index{benchmark\_hash\_functions.cpp@{benchmark\_hash\_functions.cpp}!main@{main}}
+\index{main@{main}!benchmark\_hash\_functions.cpp@{benchmark\_hash\_functions.cpp}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily \label{benchmark__hash__functions_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4} 
+int main (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{benchmark__hash__functions_8cpp_a05d071f00d8ad0d9e8c45272c864055b}\index{benchmark\_hash\_functions.cpp@{benchmark\_hash\_functions.cpp}!polyHash@{polyHash}}
+\index{polyHash@{polyHash}!benchmark\_hash\_functions.cpp@{benchmark\_hash\_functions.cpp}}
+\doxysubsubsection{\texorpdfstring{polyHash()}{polyHash()}}
+{\footnotesize\ttfamily \label{benchmark__hash__functions_8cpp_a05d071f00d8ad0d9e8c45272c864055b} 
+size\+\_\+t poly\+Hash (\begin{DoxyParamCaption}\item[{const string \&}]{key}{, }\item[{size\+\_\+t}]{mod}{}\end{DoxyParamCaption})}
+
+
+
+Полиномиальная хэш-\/функция (используется в \doxylink{class_hash_table}{Hash\+Table} по умолчанию). 
+
+
+\begin{DoxyParams}{Parameters}
+{\em key} & Входная строка. \\
+\hline
+{\em mod} & Размер таблицы. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Хэш-\/код в диапазоне \+[0, mod-\/1]\+. 
+\end{DoxyReturn}
+\Hypertarget{benchmark__hash__functions_8cpp_a5b316638b78a48c3874d618e9b49f0d6}\index{benchmark\_hash\_functions.cpp@{benchmark\_hash\_functions.cpp}!rsHash@{rsHash}}
+\index{rsHash@{rsHash}!benchmark\_hash\_functions.cpp@{benchmark\_hash\_functions.cpp}}
+\doxysubsubsection{\texorpdfstring{rsHash()}{rsHash()}}
+{\footnotesize\ttfamily \label{benchmark__hash__functions_8cpp_a5b316638b78a48c3874d618e9b49f0d6} 
+size\+\_\+t rs\+Hash (\begin{DoxyParamCaption}\item[{const string \&}]{key}{, }\item[{size\+\_\+t}]{mod}{}\end{DoxyParamCaption})}
+
+
+
+RS хэш-\/функция (из книги Роберта Седжвика). 
+
+
+\begin{DoxyParams}{Parameters}
+{\em key} & Входная строка. \\
+\hline
+{\em mod} & Размер таблицы. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Хэш-\/код в диапазоне \+[0, mod-\/1]\+. 
+\end{DoxyReturn}
+
+
+\label{benchmark__hash__functions_8cpp_doc-var-members}
+\Hypertarget{benchmark__hash__functions_8cpp_doc-var-members}
+\doxysubsection{Variable Documentation}
+\Hypertarget{benchmark__hash__functions_8cpp_ae1817b37c2b8968ecd33e018572dda38}\index{benchmark\_hash\_functions.cpp@{benchmark\_hash\_functions.cpp}!HASH\_TABLE\_SIZE@{HASH\_TABLE\_SIZE}}
+\index{HASH\_TABLE\_SIZE@{HASH\_TABLE\_SIZE}!benchmark\_hash\_functions.cpp@{benchmark\_hash\_functions.cpp}}
+\doxysubsubsection{\texorpdfstring{HASH\_TABLE\_SIZE}{HASH\_TABLE\_SIZE}}
+{\footnotesize\ttfamily \label{benchmark__hash__functions_8cpp_ae1817b37c2b8968ecd33e018572dda38} 
+const size\+\_\+t HASH\+\_\+\+TABLE\+\_\+\+SIZE = 200003}
+
+
+
+Фиксированный размер таблицы 
+
+\Hypertarget{benchmark__hash__functions_8cpp_a9c7c3c829362215e710837166d1ad491}\index{benchmark\_hash\_functions.cpp@{benchmark\_hash\_functions.cpp}!NUM\_SEARCHES@{NUM\_SEARCHES}}
+\index{NUM\_SEARCHES@{NUM\_SEARCHES}!benchmark\_hash\_functions.cpp@{benchmark\_hash\_functions.cpp}}
+\doxysubsubsection{\texorpdfstring{NUM\_SEARCHES}{NUM\_SEARCHES}}
+{\footnotesize\ttfamily \label{benchmark__hash__functions_8cpp_a9c7c3c829362215e710837166d1ad491} 
+const int NUM\+\_\+\+SEARCHES = 100}
+
+
+
+Количество поисков для замера 
+
+\Hypertarget{benchmark__hash__functions_8cpp_a16b7b793014fb1068fe38f07a76678b5}\index{benchmark\_hash\_functions.cpp@{benchmark\_hash\_functions.cpp}!RANDOM\_SEED@{RANDOM\_SEED}}
+\index{RANDOM\_SEED@{RANDOM\_SEED}!benchmark\_hash\_functions.cpp@{benchmark\_hash\_functions.cpp}}
+\doxysubsubsection{\texorpdfstring{RANDOM\_SEED}{RANDOM\_SEED}}
+{\footnotesize\ttfamily \label{benchmark__hash__functions_8cpp_a16b7b793014fb1068fe38f07a76678b5} 
+const unsigned int RANDOM\+\_\+\+SEED = 42}
+
+
+
+Фиксированный seed для воспроизводимости 
+
+\Hypertarget{benchmark__hash__functions_8cpp_af811406e18ec4e926237f56e56a2cd62}\index{benchmark\_hash\_functions.cpp@{benchmark\_hash\_functions.cpp}!TOTAL\_SIZE@{TOTAL\_SIZE}}
+\index{TOTAL\_SIZE@{TOTAL\_SIZE}!benchmark\_hash\_functions.cpp@{benchmark\_hash\_functions.cpp}}
+\doxysubsubsection{\texorpdfstring{TOTAL\_SIZE}{TOTAL\_SIZE}}
+{\footnotesize\ttfamily \label{benchmark__hash__functions_8cpp_af811406e18ec4e926237f56e56a2cd62} 
+const size\+\_\+t TOTAL\+\_\+\+SIZE = 500000}
+
+
+
+Фиксированный размер массива 
+
+\Hypertarget{benchmark__hash__functions_8cpp_a01bcaf758162ee0a7e814074e6f0052d}\index{benchmark\_hash\_functions.cpp@{benchmark\_hash\_functions.cpp}!UNIQUE\_KEYS\_COUNT@{UNIQUE\_KEYS\_COUNT}}
+\index{UNIQUE\_KEYS\_COUNT@{UNIQUE\_KEYS\_COUNT}!benchmark\_hash\_functions.cpp@{benchmark\_hash\_functions.cpp}}
+\doxysubsubsection{\texorpdfstring{UNIQUE\_KEYS\_COUNT}{UNIQUE\_KEYS\_COUNT}}
+{\footnotesize\ttfamily \label{benchmark__hash__functions_8cpp_a01bcaf758162ee0a7e814074e6f0052d} 
+const size\+\_\+t UNIQUE\+\_\+\+KEYS\+\_\+\+COUNT = 2000}
+
+
+
+Количество уникальных ключей 
+

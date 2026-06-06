@@ -8,6 +8,11 @@
 
 using namespace std;
 
+// Конструктор с параметрами
+Flight::Flight(const string& fn, const string& al,
+               const string& date, const string& time, int pass)
+    : flightNumber(fn), airline(al), arrivalDate(date), arrivalTime(time), passengers(pass) {}
+
 istream& operator>>(istream& is, Flight& f) {
     string line;
     if (!getline(is, line)) return is;

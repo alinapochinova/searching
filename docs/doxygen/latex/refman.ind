@@ -1,188 +1,427 @@
 \begin{theindex}
 
+  \item {\texorpdfstring{$\sim$}{\string~}BSTree}
+    \subitem {BSTree}, \hyperpage{16}
+  \item {\texorpdfstring{$\sim$}{\string~}HashTable}
+    \subitem {HashTable}, \hyperpage{24}
+  \item {\texorpdfstring{$\sim$}{\string~}RBTree}
+    \subitem {RBTree}, \hyperpage{31}
+
+  \indexspace
+
   \item {airline}
-    \subitem {FlightRecord}, \hyperpage{9}
+    \subitem {Flight}, \hyperpage{20}
+    \subitem {FlightRecord}, \hyperpage{22}
   \item {AIRLINES}
-    \subitem {generate\_data.cpp}, \hyperpage{17}
-  \item {append\_random\_array}
-    \subitem {generate\_umath\_validation\_data.cpp}, \hyperpage{22}
+    \subitem {generate\_data.cpp}, \hyperpage{54}
+  \item {analyzeDistribution}
+    \subitem {hash\_heatmap.cpp}, \hyperpage{56}
   \item {arrivalDate}
-    \subitem {FlightRecord}, \hyperpage{9}
+    \subitem {Flight}, \hyperpage{20}
+    \subitem {FlightRecord}, \hyperpage{22}
   \item {arrivalTime}
-    \subitem {FlightRecord}, \hyperpage{10}
+    \subitem {Flight}, \hyperpage{21}
+    \subitem {FlightRecord}, \hyperpage{22}
+  \item {avgLoad}
+    \subitem {DistributionStats}, \hyperpage{18}
 
   \indexspace
 
-  \item {BSTree.cpp}, \hyperpage{13}
+  \item {benchmark\_hash\_functions.cpp}, \hyperpage{35}
+    \subitem {djbHash}, \hyperpage{36}
+    \subitem {generateFlights}, \hyperpage{36}
+    \subitem {getHashFunctions}, \hyperpage{37}
+    \subitem {getTestKeys}, \hyperpage{37}
+    \subitem {HASH\_TABLE\_SIZE}, \hyperpage{38}
+    \subitem {jsHash}, \hyperpage{37}
+    \subitem {main}, \hyperpage{37}
+    \subitem {NUM\_SEARCHES}, \hyperpage{38}
+    \subitem {polyHash}, \hyperpage{37}
+    \subitem {RANDOM\_SEED}, \hyperpage{38}
+    \subitem {rsHash}, \hyperpage{38}
+    \subitem {TOTAL\_SIZE}, \hyperpage{39}
+    \subitem {UNIQUE\_KEYS\_COUNT}, \hyperpage{39}
+  \item {benchmark\_hash\_size.cpp}, \hyperpage{39}
+    \subitem {generateFlights}, \hyperpage{41}
+    \subitem {generateTableSizes}, \hyperpage{41}
+    \subitem {getTestKeys}, \hyperpage{41}
+    \subitem {isPrime}, \hyperpage{41}
+    \subitem {main}, \hyperpage{42}
+    \subitem {measureSearchTime}, \hyperpage{42}
+    \subitem {NUM\_SEARCHES}, \hyperpage{43}
+    \subitem {RANDOM\_SEED}, \hyperpage{43}
+    \subitem {TOTAL\_SIZE}, \hyperpage{43}
+    \subitem {UNIQUE\_KEYS\_COUNT}, \hyperpage{43}
+  \item {benchmark\_unique\_keys.cpp}, \hyperpage{44}
+    \subitem {generateFlights}, \hyperpage{46}
+    \subitem {HASH\_TABLE\_SIZE}, \hyperpage{47}
+    \subitem {main}, \hyperpage{46}
+    \subitem {measureSearchTime}, \hyperpage{46}
+    \subitem {NUM\_SEARCHES}, \hyperpage{47}
+    \subitem {RANDOM\_SEED}, \hyperpage{47}
+    \subitem {selectTestKeys}, \hyperpage{47}
+    \subitem {TOTAL\_SIZE}, \hyperpage{47}
+  \item {BLACK}
+    \subitem {RBTree.hpp}, \hyperpage{61}
+  \item {BSTNode}, \hyperpage{13}
+    \subitem {BSTNode}, \hyperpage{14}
+    \subitem {key}, \hyperpage{14}
+    \subitem {left}, \hyperpage{14}
+    \subitem {right}, \hyperpage{14}
+    \subitem {values}, \hyperpage{14}
+  \item {BSTree}, \hyperpage{15}
+    \subitem {\texorpdfstring{$\sim$}{\string~}BSTree}, \hyperpage{16}
+    \subitem {BSTree}, \hyperpage{16}
+    \subitem {clear}, \hyperpage{16}
+    \subitem {find}, \hyperpage{16}
+    \subitem {findNode}, \hyperpage{16}
+    \subitem {insert}, \hyperpage{17}
+    \subitem {root}, \hyperpage{17}
+  \item {BSTree.cpp}, \hyperpage{48}
+  \item {BSTree.hpp}, \hyperpage{48}
+  \item {buckets}
+    \subitem {HashTable}, \hyperpage{26}
+    \subitem {HashTableWithHash$<$ HashFunc $>$}, \hyperpage{27}
 
   \indexspace
 
-  \item {computeTrueVal}
-    \subitem {generate\_umath\_validation\_data.cpp}, \hyperpage{22}
+  \item {clear}
+    \subitem {BSTree}, \hyperpage{16}
+    \subitem {HashTable}, \hyperpage{24}
+    \subitem {RBTree}, \hyperpage{31}
+  \item {collisions}
+    \subitem {DistributionStats}, \hyperpage{18}
+    \subitem {HashTable}, \hyperpage{26}
+    \subitem {HashTableWithHash$<$ HashFunc $>$}, \hyperpage{27}
+  \item {Color}
+    \subitem {RBTree.hpp}, \hyperpage{61}
+  \item {color}
+    \subitem {RBNode}, \hyperpage{29}
 
   \indexspace
 
-  \item {f32func}
-    \subitem {ufunc}, \hyperpage{10}
-  \item {f32ulp}
-    \subitem {ufunc}, \hyperpage{10}
-  \item {f64func}
-    \subitem {ufunc}, \hyperpage{11}
-  \item {f64ulp}
-    \subitem {ufunc}, \hyperpage{11}
-  \item {Flight.cpp}, \hyperpage{13}
-    \subitem {operator$<$$<$}, \hyperpage{14}
-    \subitem {operator$>$$>$}, \hyperpage{14}
+  \item {description}
+    \subitem {HashFunctionWrapper}, \hyperpage{23}
+  \item {DistributionStats}, \hyperpage{18}
+    \subitem {avgLoad}, \hyperpage{18}
+    \subitem {collisions}, \hyperpage{18}
+    \subitem {loadDistribution}, \hyperpage{18}
+    \subitem {loadFactor}, \hyperpage{18}
+    \subitem {maxLoad}, \hyperpage{18}
+    \subitem {nonEmptyBuckets}, \hyperpage{18}
+    \subitem {totalBuckets}, \hyperpage{18}
+  \item {djbHash}
+    \subitem {benchmark\_hash\_functions.cpp}, \hyperpage{36}
+
+  \indexspace
+
+  \item {find}
+    \subitem {BSTree}, \hyperpage{16}
+    \subitem {HashTable}, \hyperpage{24}
+    \subitem {HashTableWithHash$<$ HashFunc $>$}, \hyperpage{27}
+    \subitem {RBTree}, \hyperpage{31}
+  \item {findNode}
+    \subitem {BSTree}, \hyperpage{16}
+    \subitem {RBTree}, \hyperpage{31}
+  \item {fixInsert}
+    \subitem {RBTree}, \hyperpage{32}
+  \item {Flight}, \hyperpage{19}
+    \subitem {airline}, \hyperpage{20}
+    \subitem {arrivalDate}, \hyperpage{20}
+    \subitem {arrivalTime}, \hyperpage{21}
+    \subitem {Flight}, \hyperpage{19}
+    \subitem {flightNumber}, \hyperpage{21}
+    \subitem {getKey}, \hyperpage{20}
+    \subitem {operator$<$$<$}, \hyperpage{20}
+    \subitem {operator$>$$>$}, \hyperpage{20}
+    \subitem {passengers}, \hyperpage{21}
+  \item {Flight.cpp}, \hyperpage{49}
+    \subitem {operator$<$$<$}, \hyperpage{49}
+    \subitem {operator$>$$>$}, \hyperpage{49}
+  \item {Flight.hpp}, \hyperpage{50}
   \item {flightNumber}
-    \subitem {FlightRecord}, \hyperpage{10}
-  \item {FlightRecord}, \hyperpage{9}
-    \subitem {airline}, \hyperpage{9}
-    \subitem {arrivalDate}, \hyperpage{9}
-    \subitem {arrivalTime}, \hyperpage{10}
-    \subitem {flightNumber}, \hyperpage{10}
-    \subitem {passengers}, \hyperpage{10}
+    \subitem {Flight}, \hyperpage{21}
+    \subitem {FlightRecord}, \hyperpage{22}
+  \item {FlightRecord}, \hyperpage{21}
+    \subitem {airline}, \hyperpage{22}
+    \subitem {arrivalDate}, \hyperpage{22}
+    \subitem {arrivalTime}, \hyperpage{22}
+    \subitem {flightNumber}, \hyperpage{22}
+    \subitem {passengers}, \hyperpage{22}
+  \item {func}
+    \subitem {HashFunctionWrapper}, \hyperpage{23}
 
   \indexspace
 
   \item {gen}
-    \subitem {generate\_data.cpp}, \hyperpage{15}
-  \item {generate\_data.cpp}, \hyperpage{14}
-    \subitem {AIRLINES}, \hyperpage{17}
-    \subitem {gen}, \hyperpage{15}
-    \subitem {main}, \hyperpage{15}
-    \subitem {PREFIXES}, \hyperpage{17}
-    \subitem {RANDOM\_SEED}, \hyperpage{18}
-    \subitem {randomAirline}, \hyperpage{16}
-    \subitem {randomDate}, \hyperpage{16}
-    \subitem {randomFlightNumber}, \hyperpage{16}
-    \subitem {randomPassengers}, \hyperpage{16}
-    \subitem {randomTime}, \hyperpage{17}
-    \subitem {saveToCSV}, \hyperpage{17}
-    \subitem {UNIQUE\_FLIGHT\_NUMBERS}, \hyperpage{18}
-  \item {generate\_input\_vector}
-    \subitem {generate\_umath\_validation\_data.cpp}, \hyperpage{22}
-  \item {generate\_umath\_validation\_data.cpp}
-    \subitem {append\_random\_array}, \hyperpage{22}
-    \subitem {computeTrueVal}, \hyperpage{22}
-    \subitem {generate\_input\_vector}, \hyperpage{22}
-    \subitem {INF}, \hyperpage{21}
-    \subitem {main}, \hyperpage{22}
-    \subitem {MAXFLT}, \hyperpage{21}
-    \subitem {MINDEN}, \hyperpage{21}
-    \subitem {MINFLT}, \hyperpage{21}
-    \subitem {qNAN}, \hyperpage{21}
-    \subitem {RandomFloat}, \hyperpage{22}
-    \subitem {sNAN}, \hyperpage{21}
+    \subitem {generate\_data.cpp}, \hyperpage{52}
+  \item {generate\_data.cpp}, \hyperpage{51}
+    \subitem {AIRLINES}, \hyperpage{54}
+    \subitem {gen}, \hyperpage{52}
+    \subitem {main}, \hyperpage{52}
+    \subitem {PREFIXES}, \hyperpage{54}
+    \subitem {RANDOM\_SEED}, \hyperpage{54}
+    \subitem {randomAirline}, \hyperpage{52}
+    \subitem {randomDate}, \hyperpage{53}
+    \subitem {randomFlightNumber}, \hyperpage{53}
+    \subitem {randomPassengers}, \hyperpage{53}
+    \subitem {randomTime}, \hyperpage{53}
+    \subitem {saveToCSV}, \hyperpage{54}
+    \subitem {UNIQUE\_FLIGHT\_NUMBERS}, \hyperpage{54}
+  \item {generateFlights}
+    \subitem {benchmark\_hash\_functions.cpp}, \hyperpage{36}
+    \subitem {benchmark\_hash\_size.cpp}, \hyperpage{41}
+    \subitem {benchmark\_unique\_keys.cpp}, \hyperpage{46}
+    \subitem {hash\_heatmap.cpp}, \hyperpage{56}
+  \item {generateTableSizes}
+    \subitem {benchmark\_hash\_size.cpp}, \hyperpage{41}
+  \item {getBucketSizes}
+    \subitem {HashTable}, \hyperpage{25}
+  \item {getCollisions}
+    \subitem {HashTable}, \hyperpage{25}
+    \subitem {HashTableWithHash$<$ HashFunc $>$}, \hyperpage{27}
+  \item {getHashFunctions}
+    \subitem {benchmark\_hash\_functions.cpp}, \hyperpage{37}
+  \item {getKey}
+    \subitem {Flight}, \hyperpage{20}
+  \item {getTestKeys}
+    \subitem {benchmark\_hash\_functions.cpp}, \hyperpage{37}
+    \subitem {benchmark\_hash\_size.cpp}, \hyperpage{41}
   \item {getUniqueKeys}
-    \subitem {main.cpp}, \hyperpage{19}
+    \subitem {main.cpp}, \hyperpage{59}
 
   \indexspace
 
-  \item {HashTable.cpp}, \hyperpage{18}
+  \item {hash}
+    \subitem {HashTable}, \hyperpage{25}
+  \item {hash\_heatmap.cpp}, \hyperpage{55}
+    \subitem {analyzeDistribution}, \hyperpage{56}
+    \subitem {generateFlights}, \hyperpage{56}
+    \subitem {HASH\_TABLE\_SIZE}, \hyperpage{56}
+    \subitem {main}, \hyperpage{56}
+    \subitem {RANDOM\_SEED}, \hyperpage{56}
+    \subitem {saveBucketLoadCSV}, \hyperpage{56}
+    \subitem {saveTextReport}, \hyperpage{56}
+    \subitem {TOTAL\_SIZE}, \hyperpage{57}
+    \subitem {UNIQUE\_KEYS\_COUNT}, \hyperpage{57}
+  \item {HASH\_TABLE\_SIZE}
+    \subitem {benchmark\_hash\_functions.cpp}, \hyperpage{38}
+    \subitem {benchmark\_unique\_keys.cpp}, \hyperpage{47}
+    \subitem {hash\_heatmap.cpp}, \hyperpage{56}
+  \item {hashFunc}
+    \subitem {HashTableWithHash$<$ HashFunc $>$}, \hyperpage{27}
+  \item {HashFunctionWrapper}, \hyperpage{22}
+    \subitem {description}, \hyperpage{23}
+    \subitem {func}, \hyperpage{23}
+    \subitem {name}, \hyperpage{23}
+  \item {HashTable}, \hyperpage{23}
+    \subitem {\texorpdfstring{$\sim$}{\string~}HashTable}, 
+		\hyperpage{24}
+    \subitem {buckets}, \hyperpage{26}
+    \subitem {clear}, \hyperpage{24}
+    \subitem {collisions}, \hyperpage{26}
+    \subitem {find}, \hyperpage{24}
+    \subitem {getBucketSizes}, \hyperpage{25}
+    \subitem {getCollisions}, \hyperpage{25}
+    \subitem {hash}, \hyperpage{25}
+    \subitem {HashTable}, \hyperpage{24}
+    \subitem {insert}, \hyperpage{25}
+    \subitem {tableSize}, \hyperpage{26}
+  \item {HashTable.cpp}, \hyperpage{57}
+  \item {HashTable.hpp}, \hyperpage{57}
+  \item {HashTableWithHash}
+    \subitem {HashTableWithHash$<$ HashFunc $>$}, \hyperpage{27}
+  \item {HashTableWithHash$<$ HashFunc $>$}, \hyperpage{26}
+    \subitem {buckets}, \hyperpage{27}
+    \subitem {collisions}, \hyperpage{27}
+    \subitem {find}, \hyperpage{27}
+    \subitem {getCollisions}, \hyperpage{27}
+    \subitem {hashFunc}, \hyperpage{27}
+    \subitem {HashTableWithHash}, \hyperpage{27}
+    \subitem {insert}, \hyperpage{27}
+    \subitem {tableSize}, \hyperpage{28}
 
   \indexspace
 
-  \item {INF}
-    \subitem {generate\_umath\_validation\_data.cpp}, \hyperpage{21}
+  \item {insert}
+    \subitem {BSTree}, \hyperpage{17}
+    \subitem {HashTable}, \hyperpage{25}
+    \subitem {HashTableWithHash$<$ HashFunc $>$}, \hyperpage{27}
+    \subitem {RBTree}, \hyperpage{32}
+  \item {isPrime}
+    \subitem {benchmark\_hash\_size.cpp}, \hyperpage{41}
 
   \indexspace
 
+  \item {jsHash}
+    \subitem {benchmark\_hash\_functions.cpp}, \hyperpage{37}
+
+  \indexspace
+
+  \item {key}
+    \subitem {BSTNode}, \hyperpage{14}
+    \subitem {RBNode}, \hyperpage{29}
+
+  \indexspace
+
+  \item {left}
+    \subitem {BSTNode}, \hyperpage{14}
+    \subitem {RBNode}, \hyperpage{29}
   \item {linearSearch}
-    \subitem {main.cpp}, \hyperpage{19}
+    \subitem {main.cpp}, \hyperpage{59}
+  \item {loadDistribution}
+    \subitem {DistributionStats}, \hyperpage{18}
+  \item {loadFactor}
+    \subitem {DistributionStats}, \hyperpage{18}
   \item {loadFromCSV}
-    \subitem {main.cpp}, \hyperpage{20}
+    \subitem {main.cpp}, \hyperpage{60}
 
   \indexspace
 
   \item {main}
-    \subitem {generate\_data.cpp}, \hyperpage{15}
-    \subitem {generate\_umath\_validation\_data.cpp}, \hyperpage{22}
-    \subitem {main.cpp}, \hyperpage{20}
-  \item {main.cpp}, \hyperpage{18}
-    \subitem {getUniqueKeys}, \hyperpage{19}
-    \subitem {linearSearch}, \hyperpage{19}
-    \subitem {loadFromCSV}, \hyperpage{20}
-    \subitem {main}, \hyperpage{20}
-  \item {MAXFLT}
-    \subitem {generate\_umath\_validation\_data.cpp}, \hyperpage{21}
-  \item {MINDEN}
-    \subitem {generate\_umath\_validation\_data.cpp}, \hyperpage{21}
-  \item {MINFLT}
-    \subitem {generate\_umath\_validation\_data.cpp}, \hyperpage{21}
-  \item {my\_env Directory Reference}, \hyperpage{7}
-  \item {my\_env/lib Directory Reference}, \hyperpage{7}
-  \item {my\_env/lib/python3.14 Directory Reference}, \hyperpage{8}
-  \item {my\_env/lib/python3.14/site-\/packages Directory Reference}, 
-		\hyperpage{8}
-  \item {my\_env/lib/python3.14/site-\/packages/numpy Directory Reference}, 
-		\hyperpage{7}
-  \item {my\_env/lib/python3.14/site-\/packages/numpy/\_core Directory Reference}, 
-		\hyperpage{7}
-  \item {my\_env/lib/python3.14/site-\/packages/numpy/\_core/tests Directory Reference}, 
-		\hyperpage{8}
-  \item {my\_env/lib/python3.14/site-\/packages/numpy/\_core/tests/data Directory Reference}, 
-		\hyperpage{7}
-  \item {my\_env/lib/python3.14/site-\/packages/numpy/\_core/tests/data/generate\_umath\_validation\_data.cpp}, 
-		\hyperpage{20}
+    \subitem {benchmark\_hash\_functions.cpp}, \hyperpage{37}
+    \subitem {benchmark\_hash\_size.cpp}, \hyperpage{42}
+    \subitem {benchmark\_unique\_keys.cpp}, \hyperpage{46}
+    \subitem {generate\_data.cpp}, \hyperpage{52}
+    \subitem {hash\_heatmap.cpp}, \hyperpage{56}
+    \subitem {main.cpp}, \hyperpage{60}
+  \item {main.cpp}, \hyperpage{58}
+    \subitem {getUniqueKeys}, \hyperpage{59}
+    \subitem {linearSearch}, \hyperpage{59}
+    \subitem {loadFromCSV}, \hyperpage{60}
+    \subitem {main}, \hyperpage{60}
+  \item {maxLoad}
+    \subitem {DistributionStats}, \hyperpage{18}
+  \item {measureSearchTime}
+    \subitem {benchmark\_hash\_size.cpp}, \hyperpage{42}
+    \subitem {benchmark\_unique\_keys.cpp}, \hyperpage{46}
 
   \indexspace
 
   \item {name}
-    \subitem {ufunc}, \hyperpage{11}
+    \subitem {HashFunctionWrapper}, \hyperpage{23}
+  \item {nonEmptyBuckets}
+    \subitem {DistributionStats}, \hyperpage{18}
+  \item {NUM\_SEARCHES}
+    \subitem {benchmark\_hash\_functions.cpp}, \hyperpage{38}
+    \subitem {benchmark\_hash\_size.cpp}, \hyperpage{43}
+    \subitem {benchmark\_unique\_keys.cpp}, \hyperpage{47}
 
   \indexspace
 
   \item {operator$<$$<$}
-    \subitem {Flight.cpp}, \hyperpage{14}
+    \subitem {Flight}, \hyperpage{20}
+    \subitem {Flight.cpp}, \hyperpage{49}
   \item {operator$>$$>$}
-    \subitem {Flight.cpp}, \hyperpage{14}
+    \subitem {Flight}, \hyperpage{20}
+    \subitem {Flight.cpp}, \hyperpage{49}
 
   \indexspace
 
+  \item {parent}
+    \subitem {RBNode}, \hyperpage{29}
   \item {passengers}
-    \subitem {FlightRecord}, \hyperpage{10}
+    \subitem {Flight}, \hyperpage{21}
+    \subitem {FlightRecord}, \hyperpage{22}
+  \item {polyHash}
+    \subitem {benchmark\_hash\_functions.cpp}, \hyperpage{37}
   \item {PREFIXES}
-    \subitem {generate\_data.cpp}, \hyperpage{17}
-
-  \indexspace
-
-  \item {qNAN}
-    \subitem {generate\_umath\_validation\_data.cpp}, \hyperpage{21}
+    \subitem {generate\_data.cpp}, \hyperpage{54}
 
   \indexspace
 
   \item {RANDOM\_SEED}
-    \subitem {generate\_data.cpp}, \hyperpage{18}
+    \subitem {benchmark\_hash\_functions.cpp}, \hyperpage{38}
+    \subitem {benchmark\_hash\_size.cpp}, \hyperpage{43}
+    \subitem {benchmark\_unique\_keys.cpp}, \hyperpage{47}
+    \subitem {generate\_data.cpp}, \hyperpage{54}
+    \subitem {hash\_heatmap.cpp}, \hyperpage{56}
   \item {randomAirline}
-    \subitem {generate\_data.cpp}, \hyperpage{16}
+    \subitem {generate\_data.cpp}, \hyperpage{52}
   \item {randomDate}
-    \subitem {generate\_data.cpp}, \hyperpage{16}
+    \subitem {generate\_data.cpp}, \hyperpage{53}
   \item {randomFlightNumber}
-    \subitem {generate\_data.cpp}, \hyperpage{16}
-  \item {RandomFloat}
-    \subitem {generate\_umath\_validation\_data.cpp}, \hyperpage{22}
+    \subitem {generate\_data.cpp}, \hyperpage{53}
   \item {randomPassengers}
-    \subitem {generate\_data.cpp}, \hyperpage{16}
+    \subitem {generate\_data.cpp}, \hyperpage{53}
   \item {randomTime}
-    \subitem {generate\_data.cpp}, \hyperpage{17}
-  \item {RBTree.cpp}, \hyperpage{22}
+    \subitem {generate\_data.cpp}, \hyperpage{53}
+  \item {RBNode}, \hyperpage{28}
+    \subitem {color}, \hyperpage{29}
+    \subitem {key}, \hyperpage{29}
+    \subitem {left}, \hyperpage{29}
+    \subitem {parent}, \hyperpage{29}
+    \subitem {RBNode}, \hyperpage{29}
+    \subitem {right}, \hyperpage{29}
+    \subitem {values}, \hyperpage{29}
+  \item {RBTree}, \hyperpage{30}
+    \subitem {\texorpdfstring{$\sim$}{\string~}RBTree}, \hyperpage{31}
+    \subitem {clear}, \hyperpage{31}
+    \subitem {find}, \hyperpage{31}
+    \subitem {findNode}, \hyperpage{31}
+    \subitem {fixInsert}, \hyperpage{32}
+    \subitem {insert}, \hyperpage{32}
+    \subitem {RBTree}, \hyperpage{31}
+    \subitem {root}, \hyperpage{33}
+    \subitem {rotateLeft}, \hyperpage{32}
+    \subitem {rotateRight}, \hyperpage{33}
+  \item {RBTree.cpp}, \hyperpage{60}
+  \item {RBTree.hpp}, \hyperpage{60}
+    \subitem {BLACK}, \hyperpage{61}
+    \subitem {Color}, \hyperpage{61}
+    \subitem {RED}, \hyperpage{61}
+  \item {RED}
+    \subitem {RBTree.hpp}, \hyperpage{61}
+  \item {right}
+    \subitem {BSTNode}, \hyperpage{14}
+    \subitem {RBNode}, \hyperpage{29}
+  \item {root}
+    \subitem {BSTree}, \hyperpage{17}
+    \subitem {RBTree}, \hyperpage{33}
+  \item {rotateLeft}
+    \subitem {RBTree}, \hyperpage{32}
+  \item {rotateRight}
+    \subitem {RBTree}, \hyperpage{33}
+  \item {rsHash}
+    \subitem {benchmark\_hash\_functions.cpp}, \hyperpage{38}
 
   \indexspace
 
+  \item {saveBucketLoadCSV}
+    \subitem {hash\_heatmap.cpp}, \hyperpage{56}
+  \item {saveTextReport}
+    \subitem {hash\_heatmap.cpp}, \hyperpage{56}
   \item {saveToCSV}
-    \subitem {generate\_data.cpp}, \hyperpage{17}
-  \item {sNAN}
-    \subitem {generate\_umath\_validation\_data.cpp}, \hyperpage{21}
+    \subitem {generate\_data.cpp}, \hyperpage{54}
+  \item {selectTestKeys}
+    \subitem {benchmark\_unique\_keys.cpp}, \hyperpage{47}
 
   \indexspace
 
-  \item {ufunc}, \hyperpage{10}
-    \subitem {f32func}, \hyperpage{10}
-    \subitem {f32ulp}, \hyperpage{10}
-    \subitem {f64func}, \hyperpage{11}
-    \subitem {f64ulp}, \hyperpage{11}
-    \subitem {name}, \hyperpage{11}
+  \item {tableSize}
+    \subitem {HashTable}, \hyperpage{26}
+    \subitem {HashTableWithHash$<$ HashFunc $>$}, \hyperpage{28}
+  \item {TOTAL\_SIZE}
+    \subitem {benchmark\_hash\_functions.cpp}, \hyperpage{39}
+    \subitem {benchmark\_hash\_size.cpp}, \hyperpage{43}
+    \subitem {benchmark\_unique\_keys.cpp}, \hyperpage{47}
+    \subitem {hash\_heatmap.cpp}, \hyperpage{57}
+  \item {totalBuckets}
+    \subitem {DistributionStats}, \hyperpage{18}
+
+  \indexspace
+
   \item {UNIQUE\_FLIGHT\_NUMBERS}
-    \subitem {generate\_data.cpp}, \hyperpage{18}
+    \subitem {generate\_data.cpp}, \hyperpage{54}
+  \item {UNIQUE\_KEYS\_COUNT}
+    \subitem {benchmark\_hash\_functions.cpp}, \hyperpage{39}
+    \subitem {benchmark\_hash\_size.cpp}, \hyperpage{43}
+    \subitem {hash\_heatmap.cpp}, \hyperpage{57}
+
+  \indexspace
+
+  \item {values}
+    \subitem {BSTNode}, \hyperpage{14}
+    \subitem {RBNode}, \hyperpage{29}
 
 \end{theindex}

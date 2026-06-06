@@ -1,0 +1,27 @@
+HASH TABLE HEATMAP REPORT
+
+Experiment parameters:
+  Array size: 500000
+  Unique keys: 2000
+  Table size: 200003
+  Load factor: 0.0100
+
+Distribution statistics:
+  Total buckets: 200003
+  Empty buckets: 184478
+  Non-empty buckets: 15525
+  Max load per bucket: 3
+  Average load (non-empty): 1.03
+  Collisions: 475
+
+Load distribution histogram:
+
+     1 element(s):    15063 buckets
+     2 element(s):      449 buckets
+     3 element(s):       13 buckets
+
+  Empty buckets: 184478
+
+Quality assessment:
+  Table utilization: 7.76%
+  Grade: GOOD

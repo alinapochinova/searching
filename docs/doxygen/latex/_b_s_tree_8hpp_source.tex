@@ -1,0 +1,44 @@
+\doxysection{BSTree.\+hpp}
+\hypertarget{_b_s_tree_8hpp_source}{}\label{_b_s_tree_8hpp_source}\doxymbox{\hyperlink{_b_s_tree_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ "{}\doxymbox{\hyperlink{_flight_8hpp}{Flight.hpp}}"{}}}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00015\ \textcolor{keyword}{using\ namespace\ }std;}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00021\ \textcolor{keyword}{struct\ }\doxymbox{\hyperlink{struct_b_s_t_node_a363c26b2b65dc65c4c2ddffb7a75f40d}{BSTNode}}\ \{}
+\DoxyCodeLine{00022\ \ \ \ \ \textcolor{keywordtype}{string}\ \doxymbox{\hyperlink{struct_b_s_t_node_ac16c8913b82e94f77c51dfbf77774bd3}{key}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00023\ \ \ \ \ vector<Flight>\ \doxymbox{\hyperlink{struct_b_s_t_node_a4eb9ac49012e42077c9a0ed02c4c50e9}{values}};\ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00024\ \ \ \ \ \doxymbox{\hyperlink{struct_b_s_t_node_a363c26b2b65dc65c4c2ddffb7a75f40d}{BSTNode}}*\ \doxymbox{\hyperlink{struct_b_s_t_node_ad3749f519572d82177ea184efe84beb2}{left}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00025\ \ \ \ \ \doxymbox{\hyperlink{struct_b_s_t_node_a363c26b2b65dc65c4c2ddffb7a75f40d}{BSTNode}}*\ \doxymbox{\hyperlink{struct_b_s_t_node_a864a3c35fef3f0ea7bc9b2fd04c985ed}{right}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00032\ \ \ \ \ \doxymbox{\hyperlink{struct_b_s_t_node_a363c26b2b65dc65c4c2ddffb7a75f40d}{BSTNode}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\&\ k,\ \textcolor{keyword}{const}\ \doxymbox{\hyperlink{class_flight}{Flight}}\&\ f);}
+\DoxyCodeLine{00033\ \};}
+\DoxyCodeLine{00034\ }
+\DoxyCodeLine{00044\ \textcolor{keyword}{class\ }\doxymbox{\hyperlink{class_b_s_tree_a453f06c8a102516d7306d53c62b6b9bc}{BSTree}}\ \{}
+\DoxyCodeLine{00045\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00047\ \ \ \ \ \doxymbox{\hyperlink{class_b_s_tree_a453f06c8a102516d7306d53c62b6b9bc}{BSTree}}();}
+\DoxyCodeLine{00048\ }
+\DoxyCodeLine{00050\ \ \ \ \ \doxymbox{\hyperlink{class_b_s_tree_a61dd6f59635ca4b40ab97c6a0f939bca}{\string~BSTree}}();}
+\DoxyCodeLine{00051\ }
+\DoxyCodeLine{00058\ \ \ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{class_b_s_tree_a05c3fb28f4c8a5cbb8e8e0e690fbb428}{insert}}(\textcolor{keyword}{const}\ \doxymbox{\hyperlink{class_flight}{Flight}}\&\ f);}
+\DoxyCodeLine{00059\ }
+\DoxyCodeLine{00065\ \ \ \ \ vector<Flight>\ \doxymbox{\hyperlink{class_b_s_tree_ae949974344548e303d09c13aad69c17e}{find}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\&\ key)\ \textcolor{keyword}{const};\ }
+\DoxyCodeLine{00066\ }
+\DoxyCodeLine{00068\ \ \ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{class_b_s_tree_ad0919806c4c9897579ae0af91c09f012}{clear}}();}
+\DoxyCodeLine{00069\ }
+\DoxyCodeLine{00070\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00071\ \ \ \ \ \doxymbox{\hyperlink{struct_b_s_t_node}{BSTNode}}*\ \doxymbox{\hyperlink{class_b_s_tree_ab3f6eed5195814ff98d1c5d536abcceb}{root}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00072\ }
+\DoxyCodeLine{00074\ \ \ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{class_b_s_tree_a05c3fb28f4c8a5cbb8e8e0e690fbb428}{insert}}(\doxymbox{\hyperlink{struct_b_s_t_node}{BSTNode}}*\&\ node,\ \textcolor{keyword}{const}\ \doxymbox{\hyperlink{class_flight}{Flight}}\&\ f);\ }
+\DoxyCodeLine{00075\ }
+\DoxyCodeLine{00077\ \ \ \ \ \doxymbox{\hyperlink{struct_b_s_t_node}{BSTNode}}*\ \doxymbox{\hyperlink{class_b_s_tree_a158b76ff605fbbca8ab4021a1f2fa66e}{findNode}}(\doxymbox{\hyperlink{struct_b_s_t_node}{BSTNode}}*\ node,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\&\ key)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00078\ }
+\DoxyCodeLine{00080\ \ \ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{class_b_s_tree_ad0919806c4c9897579ae0af91c09f012}{clear}}(\doxymbox{\hyperlink{struct_b_s_t_node}{BSTNode}}*\ node);}
+\DoxyCodeLine{00081\ \};}
+
+\end{DoxyCode}

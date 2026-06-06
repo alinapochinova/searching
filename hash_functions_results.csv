@@ -1,0 +1,5 @@
+hash_function,collisions,search_time_us,description
+POLY,475,0.75,"Полиномиальная h = (h*131 + c) % mod"
+RS,651,0.62,"RS (Седжвик): два простых числа a,b"
+JS,698,0.57,"JS (Sobel): сдвиги и XOR"
+DJB,800,0.64,"DJB (Bernstein): h = h*33 + c"

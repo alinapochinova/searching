@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['computetrueval_0',['computeTrueVal',['../generate__umath__validation__data_8cpp.html#ac566ae6a84e755f57f49aee0a4643907',1,'generate_umath_validation_data.cpp']]]
+  ['bstnode_0',['BSTNode',['../struct_b_s_t_node.html#a363c26b2b65dc65c4c2ddffb7a75f40d',1,'BSTNode']]],
+  ['bstree_1',['BSTree',['../class_b_s_tree.html#a453f06c8a102516d7306d53c62b6b9bc',1,'BSTree']]]
 ];

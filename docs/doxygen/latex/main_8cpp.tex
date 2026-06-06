@@ -20,11 +20,11 @@
 \doxysubsubsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
-vector$<$ Flight $>$ \doxymbox{\hyperlink{main_8cpp_a84d88c5c6eb74d898078690799687b6e}{load\+From\+CSV}} (const string \&filename)
+vector$<$ \doxymbox{\hyperlink{class_flight}{Flight}} $>$ \doxymbox{\hyperlink{main_8cpp_a84d88c5c6eb74d898078690799687b6e}{load\+From\+CSV}} (const string \&filename)
 \begin{DoxyCompactList}\small\item\em Загрузка данных из CSV-\/файла. \end{DoxyCompactList}\item 
-vector$<$ Flight $>$ \doxymbox{\hyperlink{main_8cpp_a44a854c08432010162ef56ac1a9932ec}{linear\+Search}} (const vector$<$ Flight $>$ \&data, const string \&key)
+vector$<$ \doxymbox{\hyperlink{class_flight}{Flight}} $>$ \doxymbox{\hyperlink{main_8cpp_a44a854c08432010162ef56ac1a9932ec}{linear\+Search}} (const vector$<$ \doxymbox{\hyperlink{class_flight}{Flight}} $>$ \&data, const string \&key)
 \begin{DoxyCompactList}\small\item\em Линейный поиск всех вхождений ключа в массиве. \end{DoxyCompactList}\item 
-vector$<$ string $>$ \doxymbox{\hyperlink{main_8cpp_afa5bb5ee527bc3dc575eebb1578be8f7}{get\+Unique\+Keys}} (const vector$<$ Flight $>$ \&data, size\+\_\+t count)
+vector$<$ string $>$ \doxymbox{\hyperlink{main_8cpp_afa5bb5ee527bc3dc575eebb1578be8f7}{get\+Unique\+Keys}} (const vector$<$ \doxymbox{\hyperlink{class_flight}{Flight}} $>$ \&data, size\+\_\+t count)
 \begin{DoxyCompactList}\small\item\em Получение первых N уникальных ключей из массива. \end{DoxyCompactList}\item 
 int \doxymbox{\hyperlink{main_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}{main}} ()
 \end{DoxyCompactItemize}
@@ -36,7 +36,7 @@ int \doxymbox{\hyperlink{main_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}{main}} ()
 Загружает данные об авиарейсах из CSV-\/файлов разного размера, строит структуры поиска (BST, красно-\/чёрное дерево, хэш-\/таблица, std::\+multimap) и замеряет время выполнения 10 поисковых запросов. Результаты сохраняются в CSV-\/файл для последующего построения графиков.
 
 \begin{DoxySeeAlso}{See also}
-Flight, BSTree, RBTree, Hash\+Table 
+\doxylink{class_flight}{Flight}, \doxylink{class_b_s_tree}{BSTree}, \doxylink{class_r_b_tree}{RBTree}, \doxylink{class_hash_table}{Hash\+Table} 
 \end{DoxySeeAlso}
 
 
@@ -47,7 +47,7 @@ Flight, BSTree, RBTree, Hash\+Table
 \index{getUniqueKeys@{getUniqueKeys}!main.cpp@{main.cpp}}
 \doxysubsubsection{\texorpdfstring{getUniqueKeys()}{getUniqueKeys()}}
 {\footnotesize\ttfamily \label{main_8cpp_afa5bb5ee527bc3dc575eebb1578be8f7} 
-vector$<$ string $>$ get\+Unique\+Keys (\begin{DoxyParamCaption}\item[{const vector$<$ Flight $>$ \&}]{data}{, }\item[{size\+\_\+t}]{count}{}\end{DoxyParamCaption})}
+vector$<$ string $>$ get\+Unique\+Keys (\begin{DoxyParamCaption}\item[{const vector$<$ \doxymbox{\hyperlink{class_flight}{Flight}} $>$ \&}]{data}{, }\item[{size\+\_\+t}]{count}{}\end{DoxyParamCaption})}
 
 
 
@@ -67,7 +67,7 @@ vector$<$ string $>$ get\+Unique\+Keys (\begin{DoxyParamCaption}\item[{const vec
 \index{linearSearch@{linearSearch}!main.cpp@{main.cpp}}
 \doxysubsubsection{\texorpdfstring{linearSearch()}{linearSearch()}}
 {\footnotesize\ttfamily \label{main_8cpp_a44a854c08432010162ef56ac1a9932ec} 
-vector$<$ Flight $>$ linear\+Search (\begin{DoxyParamCaption}\item[{const vector$<$ Flight $>$ \&}]{data}{, }\item[{const string \&}]{key}{}\end{DoxyParamCaption})}
+vector$<$ \doxymbox{\hyperlink{class_flight}{Flight}} $>$ linear\+Search (\begin{DoxyParamCaption}\item[{const vector$<$ \doxymbox{\hyperlink{class_flight}{Flight}} $>$ \&}]{data}{, }\item[{const string \&}]{key}{}\end{DoxyParamCaption})}
 
 
 
@@ -87,7 +87,7 @@ vector$<$ Flight $>$ linear\+Search (\begin{DoxyParamCaption}\item[{const vector
 \index{loadFromCSV@{loadFromCSV}!main.cpp@{main.cpp}}
 \doxysubsubsection{\texorpdfstring{loadFromCSV()}{loadFromCSV()}}
 {\footnotesize\ttfamily \label{main_8cpp_a84d88c5c6eb74d898078690799687b6e} 
-vector$<$ Flight $>$ load\+From\+CSV (\begin{DoxyParamCaption}\item[{const string \&}]{filename}{}\end{DoxyParamCaption})}
+vector$<$ \doxymbox{\hyperlink{class_flight}{Flight}} $>$ load\+From\+CSV (\begin{DoxyParamCaption}\item[{const string \&}]{filename}{}\end{DoxyParamCaption})}
 
 
 
@@ -99,7 +99,7 @@ vector$<$ Flight $>$ load\+From\+CSV (\begin{DoxyParamCaption}\item[{const strin
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
-Вектор объектов Flight. 
+Вектор объектов \doxylink{class_flight}{Flight}. 
 \end{DoxyReturn}
 \Hypertarget{main_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}\index{main.cpp@{main.cpp}!main@{main}}
 \index{main@{main}!main.cpp@{main.cpp}}

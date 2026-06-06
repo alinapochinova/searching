@@ -1,0 +1,103 @@
+\doxysection{BSTNode Struct Reference}
+\hypertarget{struct_b_s_t_node}{}\label{struct_b_s_t_node}\index{BSTNode@{BSTNode}}
+
+
+Узел бинарного дерева поиска.  
+
+
+
+
+{\ttfamily \+\#include $<$BSTree.\+hpp$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\doxymbox{\hyperlink{struct_b_s_t_node_a363c26b2b65dc65c4c2ddffb7a75f40d}{BSTNode}} (const string \&k, const \doxymbox{\hyperlink{class_flight}{Flight}} \&f)
+\begin{DoxyCompactList}\small\item\em Конструктор узла. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+string \doxymbox{\hyperlink{struct_b_s_t_node_ac16c8913b82e94f77c51dfbf77774bd3}{key}}
+\begin{DoxyCompactList}\small\item\em Ключ (номер рейса). \end{DoxyCompactList}\item 
+vector$<$ \doxymbox{\hyperlink{class_flight}{Flight}} $>$ \doxymbox{\hyperlink{struct_b_s_t_node_a4eb9ac49012e42077c9a0ed02c4c50e9}{values}}
+\begin{DoxyCompactList}\small\item\em Все рейсы с этим ключом \end{DoxyCompactList}\item 
+\doxymbox{\hyperlink{struct_b_s_t_node}{BSTNode}} \texorpdfstring{$\ast$}{*} \doxymbox{\hyperlink{struct_b_s_t_node_ad3749f519572d82177ea184efe84beb2}{left}}
+\begin{DoxyCompactList}\small\item\em Указатель на левое поддерево \end{DoxyCompactList}\item 
+\doxymbox{\hyperlink{struct_b_s_t_node}{BSTNode}} \texorpdfstring{$\ast$}{*} \doxymbox{\hyperlink{struct_b_s_t_node_a864a3c35fef3f0ea7bc9b2fd04c985ed}{right}}
+\begin{DoxyCompactList}\small\item\em Указатель на правое поддерево \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Узел бинарного дерева поиска. 
+
+\label{struct_b_s_t_node_doc-constructors}
+\Hypertarget{struct_b_s_t_node_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{struct_b_s_t_node_a363c26b2b65dc65c4c2ddffb7a75f40d}\index{BSTNode@{BSTNode}!BSTNode@{BSTNode}}
+\index{BSTNode@{BSTNode}!BSTNode@{BSTNode}}
+\doxysubsubsection{\texorpdfstring{BSTNode()}{BSTNode()}}
+{\footnotesize\ttfamily \label{struct_b_s_t_node_a363c26b2b65dc65c4c2ddffb7a75f40d} 
+BSTNode::\+\+BSTNode (\begin{DoxyParamCaption}\item[{const string \&}]{k}{, }\item[{const \doxymbox{\hyperlink{class_flight}{Flight}} \&}]{f}{}\end{DoxyParamCaption})}
+
+
+
+Конструктор узла. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em k} & Ключ. \\
+\hline
+{\em f} & Объект \doxylink{class_flight}{Flight} (добавляется в вектор values). \\
+\hline
+\end{DoxyParams}
+
+
+\label{struct_b_s_t_node_doc-variable-members}
+\Hypertarget{struct_b_s_t_node_doc-variable-members}
+\doxysubsection{Member Data Documentation}
+\Hypertarget{struct_b_s_t_node_ac16c8913b82e94f77c51dfbf77774bd3}\index{BSTNode@{BSTNode}!key@{key}}
+\index{key@{key}!BSTNode@{BSTNode}}
+\doxysubsubsection{\texorpdfstring{key}{key}}
+{\footnotesize\ttfamily \label{struct_b_s_t_node_ac16c8913b82e94f77c51dfbf77774bd3} 
+string BSTNode::\+key}
+
+
+
+Ключ (номер рейса). 
+
+\Hypertarget{struct_b_s_t_node_ad3749f519572d82177ea184efe84beb2}\index{BSTNode@{BSTNode}!left@{left}}
+\index{left@{left}!BSTNode@{BSTNode}}
+\doxysubsubsection{\texorpdfstring{left}{left}}
+{\footnotesize\ttfamily \label{struct_b_s_t_node_ad3749f519572d82177ea184efe84beb2} 
+\doxymbox{\hyperlink{struct_b_s_t_node}{BSTNode}}\texorpdfstring{$\ast$}{*} BSTNode::\+left}
+
+
+
+Указатель на левое поддерево 
+
+\Hypertarget{struct_b_s_t_node_a864a3c35fef3f0ea7bc9b2fd04c985ed}\index{BSTNode@{BSTNode}!right@{right}}
+\index{right@{right}!BSTNode@{BSTNode}}
+\doxysubsubsection{\texorpdfstring{right}{right}}
+{\footnotesize\ttfamily \label{struct_b_s_t_node_a864a3c35fef3f0ea7bc9b2fd04c985ed} 
+\doxymbox{\hyperlink{struct_b_s_t_node}{BSTNode}}\texorpdfstring{$\ast$}{*} BSTNode::\+right}
+
+
+
+Указатель на правое поддерево 
+
+\Hypertarget{struct_b_s_t_node_a4eb9ac49012e42077c9a0ed02c4c50e9}\index{BSTNode@{BSTNode}!values@{values}}
+\index{values@{values}!BSTNode@{BSTNode}}
+\doxysubsubsection{\texorpdfstring{values}{values}}
+{\footnotesize\ttfamily \label{struct_b_s_t_node_a4eb9ac49012e42077c9a0ed02c4c50e9} 
+vector$<$\doxymbox{\hyperlink{class_flight}{Flight}}$>$ BSTNode::\+values}
+
+
+
+Все рейсы с этим ключом 
+
+
+
+The documentation for this struct was generated from the following files:\+\begin{DoxyCompactItemize}
+\item 
+\doxymbox{\hyperlink{_b_s_tree_8hpp}{BSTree.\+hpp}}\item 
+\doxymbox{\hyperlink{_b_s_tree_8cpp}{BSTree.\+cpp}}\end{DoxyCompactItemize}

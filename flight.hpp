@@ -25,6 +25,17 @@ private:
 public:
     Flight() = default;
 
+    /**
+     * @brief Конструктор с параметрами.
+     * @param fn Номер рейса.
+     * @param al Авиакомпания.
+     * @param date Дата прилёта.
+     * @param time Время прилёта.
+     * @param pass Число пассажиров.
+     */
+    Flight(const string& fn, const string& al,
+           const string& date, const string& time, int pass);
+
     /// Возвращает ключ (номер рейса) по константной ссылке (без копирования).
     const string& getKey() const { return flightNumber; }
 

@@ -1,0 +1,236 @@
+\doxysection{benchmark\+\_\+hash\+\_\+size.\+cpp File Reference}
+\hypertarget{benchmark__hash__size_8cpp}{}\label{benchmark__hash__size_8cpp}\index{benchmark\_hash\_size.cpp@{benchmark\_hash\_size.cpp}}
+
+
+Бенчмарк зависимости коллизий и времени поиска от размера хэш-\/таблицы.  
+
+
+{\ttfamily \+\#include $<$iostream$>$}\newline
+{\ttfamily \+\#include $<$vector$>$}\newline
+{\ttfamily \+\#include $<$string$>$}\newline
+{\ttfamily \+\#include $<$chrono$>$}\newline
+{\ttfamily \+\#include $<$fstream$>$}\newline
+{\ttfamily \+\#include $<$random$>$}\newline
+{\ttfamily \+\#include $<$set$>$}\newline
+{\ttfamily \+\#include $<$cmath$>$}\newline
+{\ttfamily \+\#include "{}Flight.\+hpp"{}}\newline
+{\ttfamily \+\#include "{}Hash\+Table.\+hpp"{}}\newline
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \doxymbox{\hyperlink{benchmark__hash__size_8cpp_ad6383de18e27c7dee7030d824349d7f9}{is\+Prime}} (size\+\_\+t n)
+\begin{DoxyCompactList}\small\item\em Проверка, является ли число простым. \end{DoxyCompactList}\item 
+vector$<$ size\+\_\+t $>$ \doxymbox{\hyperlink{benchmark__hash__size_8cpp_a8450c5a71df7337d960308cbf178fde6}{generate\+Table\+Sizes}} ()
+\begin{DoxyCompactList}\small\item\em Генерирует список простых чисел для размеров хэш-\/таблицы. \end{DoxyCompactList}\item 
+vector$<$ \doxymbox{\hyperlink{class_flight}{Flight}} $>$ \doxymbox{\hyperlink{benchmark__hash__size_8cpp_a45fc668e03d9223e948f24464b5b192b}{generate\+Flights}} (size\+\_\+t total\+Size, size\+\_\+t unique\+Keys\+Count)
+\begin{DoxyCompactList}\small\item\em Генерирует массив объектов \doxylink{class_flight}{Flight} с фиксированным числом уникальных ключей. \end{DoxyCompactList}\item 
+vector$<$ string $>$ \doxymbox{\hyperlink{benchmark__hash__size_8cpp_a900dbb9a07656b919fdd5798a6810eee}{get\+Test\+Keys}} (size\+\_\+t unique\+Keys\+Count)
+\begin{DoxyCompactList}\small\item\em Выбирает фиксированные ключи для поиска (первые NUM\+\_\+\+SEARCHES номеров). \end{DoxyCompactList}\item 
+double \doxymbox{\hyperlink{benchmark__hash__size_8cpp_ac605f7072243f257fb2f9def82e93643}{measure\+Search\+Time}} (const \doxymbox{\hyperlink{class_hash_table}{Hash\+Table}} \&ht, const vector$<$ string $>$ \&keys)
+\begin{DoxyCompactList}\small\item\em Замеряет время поиска в хэш-\/таблице. \end{DoxyCompactList}\item 
+int \doxymbox{\hyperlink{benchmark__hash__size_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}{main}} ()
+\begin{DoxyCompactList}\small\item\em Главная функция бенчмарка. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+const size\+\_\+t \doxymbox{\hyperlink{benchmark__hash__size_8cpp_af811406e18ec4e926237f56e56a2cd62}{TOTAL\+\_\+\+SIZE}} = 500000
+\begin{DoxyCompactList}\small\item\em Фиксированный размер массива \end{DoxyCompactList}\item 
+const size\+\_\+t \doxymbox{\hyperlink{benchmark__hash__size_8cpp_a01bcaf758162ee0a7e814074e6f0052d}{UNIQUE\+\_\+\+KEYS\+\_\+\+COUNT}} = 2000
+\begin{DoxyCompactList}\small\item\em Количество уникальных ключей \end{DoxyCompactList}\item 
+const int \doxymbox{\hyperlink{benchmark__hash__size_8cpp_a9c7c3c829362215e710837166d1ad491}{NUM\+\_\+\+SEARCHES}} = 100
+\begin{DoxyCompactList}\small\item\em Количество поисков для замера \end{DoxyCompactList}\item 
+const unsigned int \doxymbox{\hyperlink{benchmark__hash__size_8cpp_a16b7b793014fb1068fe38f07a76678b5}{RANDOM\+\_\+\+SEED}} = 42
+\begin{DoxyCompactList}\small\item\em Фиксированный seed для воспроизводимости \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Бенчмарк зависимости коллизий и времени поиска от размера хэш-\/таблицы. 
+
+Фиксируется массив из 500 000 элементов (2000 уникальных ключей). Размер хэш-\/таблицы варьируется от 101 до 500009 (простые числа). Для каждого размера измеряется количество коллизий и время поиска.
+
+\begin{DoxyAuthor}{Author}
+Починова Алина 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+2026
+\end{DoxyDate}
+\hypertarget{generate__data_8cpp_usage}{}\doxysubsection{\texorpdfstring{Запуск}{Запуск}}\label{generate__data_8cpp_usage}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{./benchmark\_hash\_size}
+
+\end{DoxyCode}
+\hypertarget{hash__heatmap_8cpp_output}{}\doxysubsection{\texorpdfstring{Выходные данные}{Выходные данные}}\label{hash__heatmap_8cpp_output}
+Файл hash\+\_\+size\+\_\+results.\+csv с колонками:\+
+\begin{DoxyItemize}
+\item table\+\_\+size:\+ размер хэш-\/таблицы
+\item collisions:\+ количество коллизий
+\item search\+\_\+time\+\_\+us:\+ время поиска (микросекунды)
+\item load\+\_\+factor:\+ коэффициент заполнения (уникальные\+\_\+ключи /\+ table\+\_\+size) 
+\end{DoxyItemize}
+
+\label{benchmark__hash__size_8cpp_doc-func-members}
+\Hypertarget{benchmark__hash__size_8cpp_doc-func-members}
+\doxysubsection{Function Documentation}
+\Hypertarget{benchmark__hash__size_8cpp_a45fc668e03d9223e948f24464b5b192b}\index{benchmark\_hash\_size.cpp@{benchmark\_hash\_size.cpp}!generateFlights@{generateFlights}}
+\index{generateFlights@{generateFlights}!benchmark\_hash\_size.cpp@{benchmark\_hash\_size.cpp}}
+\doxysubsubsection{\texorpdfstring{generateFlights()}{generateFlights()}}
+{\footnotesize\ttfamily \label{benchmark__hash__size_8cpp_a45fc668e03d9223e948f24464b5b192b} 
+vector$<$ \doxymbox{\hyperlink{class_flight}{Flight}} $>$ generate\+Flights (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{total\+Size}{, }\item[{size\+\_\+t}]{unique\+Keys\+Count}{}\end{DoxyParamCaption})}
+
+
+
+Генерирует массив объектов \doxylink{class_flight}{Flight} с фиксированным числом уникальных ключей. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em total\+Size} & Общее количество элементов. \\
+\hline
+{\em unique\+Keys\+Count} & Количество различных номеров рейсов. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Вектор объектов \doxylink{class_flight}{Flight}. 
+\end{DoxyReturn}
+\Hypertarget{benchmark__hash__size_8cpp_a8450c5a71df7337d960308cbf178fde6}\index{benchmark\_hash\_size.cpp@{benchmark\_hash\_size.cpp}!generateTableSizes@{generateTableSizes}}
+\index{generateTableSizes@{generateTableSizes}!benchmark\_hash\_size.cpp@{benchmark\_hash\_size.cpp}}
+\doxysubsubsection{\texorpdfstring{generateTableSizes()}{generateTableSizes()}}
+{\footnotesize\ttfamily \label{benchmark__hash__size_8cpp_a8450c5a71df7337d960308cbf178fde6} 
+vector$<$ size\+\_\+t $>$ generate\+Table\+Sizes (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Генерирует список простых чисел для размеров хэш-\/таблицы. 
+
+\begin{DoxyReturn}{Returns}
+Вектор простых чисел в диапазоне от 100 до 600000. 
+\end{DoxyReturn}
+\Hypertarget{benchmark__hash__size_8cpp_a900dbb9a07656b919fdd5798a6810eee}\index{benchmark\_hash\_size.cpp@{benchmark\_hash\_size.cpp}!getTestKeys@{getTestKeys}}
+\index{getTestKeys@{getTestKeys}!benchmark\_hash\_size.cpp@{benchmark\_hash\_size.cpp}}
+\doxysubsubsection{\texorpdfstring{getTestKeys()}{getTestKeys()}}
+{\footnotesize\ttfamily \label{benchmark__hash__size_8cpp_a900dbb9a07656b919fdd5798a6810eee} 
+vector$<$ string $>$ get\+Test\+Keys (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{unique\+Keys\+Count}{}\end{DoxyParamCaption})}
+
+
+
+Выбирает фиксированные ключи для поиска (первые NUM\+\_\+\+SEARCHES номеров). 
+
+
+\begin{DoxyParams}{Parameters}
+{\em unique\+Keys\+Count} & Общее количество уникальных ключей. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Вектор ключей. 
+\end{DoxyReturn}
+\Hypertarget{benchmark__hash__size_8cpp_ad6383de18e27c7dee7030d824349d7f9}\index{benchmark\_hash\_size.cpp@{benchmark\_hash\_size.cpp}!isPrime@{isPrime}}
+\index{isPrime@{isPrime}!benchmark\_hash\_size.cpp@{benchmark\_hash\_size.cpp}}
+\doxysubsubsection{\texorpdfstring{isPrime()}{isPrime()}}
+{\footnotesize\ttfamily \label{benchmark__hash__size_8cpp_ad6383de18e27c7dee7030d824349d7f9} 
+bool is\+Prime (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{n}{}\end{DoxyParamCaption})}
+
+
+
+Проверка, является ли число простым. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em n} & Проверяемое число. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true, если число простое. 
+\end{DoxyReturn}
+\Hypertarget{benchmark__hash__size_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}\index{benchmark\_hash\_size.cpp@{benchmark\_hash\_size.cpp}!main@{main}}
+\index{main@{main}!benchmark\_hash\_size.cpp@{benchmark\_hash\_size.cpp}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily \label{benchmark__hash__size_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4} 
+int main (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Главная функция бенчмарка. 
+
+\begin{DoxyReturn}{Returns}
+0 при успешном выполнении.
+\end{DoxyReturn}
+Последовательно тестирует хэш-\/таблицы разных размеров:\+
+\begin{DoxyItemize}
+\item Генерирует фиксированный массив данных (один раз).
+\item Для каждого размера таблицы строит новую хэш-\/таблицу, вставляет все элементы, замеряет коллизии и время поиска.
+\item Сохраняет результаты в CSV.
+\end{DoxyItemize}
+
+\begin{DoxyNote}{Note}
+Ожидаемый результат:\+
+\begin{DoxyItemize}
+\item При малом размере таблицы (101) – много коллизий, время поиска большое.
+\item При оптимальном размере (\texorpdfstring{$\sim$}{\string~}2 \texorpdfstring{$\ast$}{*} UNIQUE\+\_\+\+KEYS\+\_\+\+COUNT = 4000) – коллизий мало.
+\item При дальнейшем увеличении размера – коллизии стремятся к 0, время поиска стабилизируется, но растёт расход памяти. 
+\end{DoxyItemize}
+\end{DoxyNote}
+\Hypertarget{benchmark__hash__size_8cpp_ac605f7072243f257fb2f9def82e93643}\index{benchmark\_hash\_size.cpp@{benchmark\_hash\_size.cpp}!measureSearchTime@{measureSearchTime}}
+\index{measureSearchTime@{measureSearchTime}!benchmark\_hash\_size.cpp@{benchmark\_hash\_size.cpp}}
+\doxysubsubsection{\texorpdfstring{measureSearchTime()}{measureSearchTime()}}
+{\footnotesize\ttfamily \label{benchmark__hash__size_8cpp_ac605f7072243f257fb2f9def82e93643} 
+double measure\+Search\+Time (\begin{DoxyParamCaption}\item[{const \doxymbox{\hyperlink{class_hash_table}{Hash\+Table}} \&}]{ht}{, }\item[{const vector$<$ string $>$ \&}]{keys}{}\end{DoxyParamCaption})}
+
+
+
+Замеряет время поиска в хэш-\/таблице. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ht} & Хэш-\/таблица. \\
+\hline
+{\em keys} & Вектор ключей для поиска. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Среднее время одного поиска в микросекундах. 
+\end{DoxyReturn}
+
+
+\label{benchmark__hash__size_8cpp_doc-var-members}
+\Hypertarget{benchmark__hash__size_8cpp_doc-var-members}
+\doxysubsection{Variable Documentation}
+\Hypertarget{benchmark__hash__size_8cpp_a9c7c3c829362215e710837166d1ad491}\index{benchmark\_hash\_size.cpp@{benchmark\_hash\_size.cpp}!NUM\_SEARCHES@{NUM\_SEARCHES}}
+\index{NUM\_SEARCHES@{NUM\_SEARCHES}!benchmark\_hash\_size.cpp@{benchmark\_hash\_size.cpp}}
+\doxysubsubsection{\texorpdfstring{NUM\_SEARCHES}{NUM\_SEARCHES}}
+{\footnotesize\ttfamily \label{benchmark__hash__size_8cpp_a9c7c3c829362215e710837166d1ad491} 
+const int NUM\+\_\+\+SEARCHES = 100}
+
+
+
+Количество поисков для замера 
+
+\Hypertarget{benchmark__hash__size_8cpp_a16b7b793014fb1068fe38f07a76678b5}\index{benchmark\_hash\_size.cpp@{benchmark\_hash\_size.cpp}!RANDOM\_SEED@{RANDOM\_SEED}}
+\index{RANDOM\_SEED@{RANDOM\_SEED}!benchmark\_hash\_size.cpp@{benchmark\_hash\_size.cpp}}
+\doxysubsubsection{\texorpdfstring{RANDOM\_SEED}{RANDOM\_SEED}}
+{\footnotesize\ttfamily \label{benchmark__hash__size_8cpp_a16b7b793014fb1068fe38f07a76678b5} 
+const unsigned int RANDOM\+\_\+\+SEED = 42}
+
+
+
+Фиксированный seed для воспроизводимости 
+
+\Hypertarget{benchmark__hash__size_8cpp_af811406e18ec4e926237f56e56a2cd62}\index{benchmark\_hash\_size.cpp@{benchmark\_hash\_size.cpp}!TOTAL\_SIZE@{TOTAL\_SIZE}}
+\index{TOTAL\_SIZE@{TOTAL\_SIZE}!benchmark\_hash\_size.cpp@{benchmark\_hash\_size.cpp}}
+\doxysubsubsection{\texorpdfstring{TOTAL\_SIZE}{TOTAL\_SIZE}}
+{\footnotesize\ttfamily \label{benchmark__hash__size_8cpp_af811406e18ec4e926237f56e56a2cd62} 
+const size\+\_\+t TOTAL\+\_\+\+SIZE = 500000}
+
+
+
+Фиксированный размер массива 
+
+\Hypertarget{benchmark__hash__size_8cpp_a01bcaf758162ee0a7e814074e6f0052d}\index{benchmark\_hash\_size.cpp@{benchmark\_hash\_size.cpp}!UNIQUE\_KEYS\_COUNT@{UNIQUE\_KEYS\_COUNT}}
+\index{UNIQUE\_KEYS\_COUNT@{UNIQUE\_KEYS\_COUNT}!benchmark\_hash\_size.cpp@{benchmark\_hash\_size.cpp}}
+\doxysubsubsection{\texorpdfstring{UNIQUE\_KEYS\_COUNT}{UNIQUE\_KEYS\_COUNT}}
+{\footnotesize\ttfamily \label{benchmark__hash__size_8cpp_a01bcaf758162ee0a7e814074e6f0052d} 
+const size\+\_\+t UNIQUE\+\_\+\+KEYS\+\_\+\+COUNT = 2000}
+
+
+
+Количество уникальных ключей 
+

@@ -1,0 +1,197 @@
+\doxysection{Hash\+Table Class Reference}
+\hypertarget{class_hash_table}{}\label{class_hash_table}\index{HashTable@{HashTable}}
+
+
+Хэш-\/таблица для хранения и поиска объектов \doxylink{class_flight}{Flight} по ключу.  
+
+
+
+
+{\ttfamily \+\#include $<$Hash\+Table.\+hpp$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\doxymbox{\hyperlink{class_hash_table_a15a6372ecf074e216df6242e73940248}{Hash\+Table}} (size\+\_\+t table\+\_\+size=200003)
+\begin{DoxyCompactList}\small\item\em Конструктор. \end{DoxyCompactList}\item 
+\doxymbox{\hyperlink{class_hash_table_a9ce5569bb945880cacb29aaba6f3e3f9}{\texorpdfstring{$\sim$}{\string~}\+Hash\+Table}} ()
+\begin{DoxyCompactList}\small\item\em Деструктор. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{class_hash_table_a530254b13cd5ad5a07af29dfe0fb199e}{insert}} (const \doxymbox{\hyperlink{class_flight}{Flight}} \&f)
+\begin{DoxyCompactList}\small\item\em Вставка объекта в таблицу. \end{DoxyCompactList}\item 
+vector$<$ \doxymbox{\hyperlink{class_flight}{Flight}} $>$ \doxymbox{\hyperlink{class_hash_table_a16c59d83e7e4723dca4754dc9b42d2c7}{find}} (const string \&key) const
+\begin{DoxyCompactList}\small\item\em Поиск всех объектов по ключу. \end{DoxyCompactList}\item 
+size\+\_\+t \doxymbox{\hyperlink{class_hash_table_a71b8dca2be787ae6f7b0c2f566d5d708}{get\+Collisions}} () const
+\item 
+void \doxymbox{\hyperlink{class_hash_table_a94a35e0cf2ce6fa291d48138f58635ed}{clear}} ()
+\begin{DoxyCompactList}\small\item\em Очистка таблицы (удаление всех элементов и сброс счётчика коллизий). \end{DoxyCompactList}\item 
+vector$<$ size\+\_\+t $>$ \doxymbox{\hyperlink{class_hash_table_ad1508ac6c50c2196f8ed129ca3c5826f}{get\+Bucket\+Sizes}} () const
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+size\+\_\+t \doxymbox{\hyperlink{class_hash_table_a8945a290c23d8709fb3d0f90327ec1ba}{hash}} (const string \&key) const
+\begin{DoxyCompactList}\small\item\em Хэш-\/функция для строки. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+size\+\_\+t \doxymbox{\hyperlink{class_hash_table_ac124c2ad45cf04f9f93da32da154689f}{table\+Size}}
+\begin{DoxyCompactList}\small\item\em Количество корзин \end{DoxyCompactList}\item 
+vector$<$ unordered\+\_\+map$<$ string, vector$<$ \doxymbox{\hyperlink{class_flight}{Flight}} $>$ $>$ $>$ \doxymbox{\hyperlink{class_hash_table_a52cab4226834e2fdea71f4849d5a689f}{buckets}}
+\begin{DoxyCompactList}\small\item\em Корзины \end{DoxyCompactList}\item 
+size\+\_\+t \doxymbox{\hyperlink{class_hash_table_a29afc61eb7aa87878409e733de088a2a}{collisions}}
+\begin{DoxyCompactList}\small\item\em Счётчик коллизий \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Хэш-\/таблица для хранения и поиска объектов \doxylink{class_flight}{Flight} по ключу. 
+
+\label{class_hash_table_doc-constructors}
+\Hypertarget{class_hash_table_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_hash_table_a15a6372ecf074e216df6242e73940248}\index{HashTable@{HashTable}!HashTable@{HashTable}}
+\index{HashTable@{HashTable}!HashTable@{HashTable}}
+\doxysubsubsection{\texorpdfstring{HashTable()}{HashTable()}}
+{\footnotesize\ttfamily \label{class_hash_table_a15a6372ecf074e216df6242e73940248} 
+Hash\+Table::\+\+Hash\+Table (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{table\+\_\+size}{ = {\ttfamily 200003}}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+
+
+Конструктор. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em table\+\_\+size} & Размер таблицы (количество корзин). \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_hash_table_a9ce5569bb945880cacb29aaba6f3e3f9}\index{HashTable@{HashTable}!````~HashTable@{\texorpdfstring{$\sim$}{\string~}HashTable}}
+\index{````~HashTable@{\texorpdfstring{$\sim$}{\string~}HashTable}!HashTable@{HashTable}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}HashTable()}{\string~HashTable()}}
+{\footnotesize\ttfamily \label{class_hash_table_a9ce5569bb945880cacb29aaba6f3e3f9} 
+Hash\+Table::\+\texorpdfstring{$\sim$}{\string~}\+Hash\+Table (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Деструктор. 
+
+
+
+\label{class_hash_table_doc-func-members}
+\Hypertarget{class_hash_table_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_hash_table_a94a35e0cf2ce6fa291d48138f58635ed}\index{HashTable@{HashTable}!clear@{clear}}
+\index{clear@{clear}!HashTable@{HashTable}}
+\doxysubsubsection{\texorpdfstring{clear()}{clear()}}
+{\footnotesize\ttfamily \label{class_hash_table_a94a35e0cf2ce6fa291d48138f58635ed} 
+void Hash\+Table::\+clear (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Очистка таблицы (удаление всех элементов и сброс счётчика коллизий). 
+
+\Hypertarget{class_hash_table_a16c59d83e7e4723dca4754dc9b42d2c7}\index{HashTable@{HashTable}!find@{find}}
+\index{find@{find}!HashTable@{HashTable}}
+\doxysubsubsection{\texorpdfstring{find()}{find()}}
+{\footnotesize\ttfamily \label{class_hash_table_a16c59d83e7e4723dca4754dc9b42d2c7} 
+vector$<$ \doxymbox{\hyperlink{class_flight}{Flight}} $>$ Hash\+Table::\+find (\begin{DoxyParamCaption}\item[{const string \&}]{key}{}\end{DoxyParamCaption}) const}
+
+
+
+Поиск всех объектов по ключу. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em key} & Номер рейса. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Вектор копий найденных объектов (пустой, если не найдены). 
+\end{DoxyReturn}
+\Hypertarget{class_hash_table_ad1508ac6c50c2196f8ed129ca3c5826f}\index{HashTable@{HashTable}!getBucketSizes@{getBucketSizes}}
+\index{getBucketSizes@{getBucketSizes}!HashTable@{HashTable}}
+\doxysubsubsection{\texorpdfstring{getBucketSizes()}{getBucketSizes()}}
+{\footnotesize\ttfamily \label{class_hash_table_ad1508ac6c50c2196f8ed129ca3c5826f} 
+vector$<$ size\+\_\+t $>$ Hash\+Table::\+get\+Bucket\+Sizes (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{class_hash_table_a71b8dca2be787ae6f7b0c2f566d5d708}\index{HashTable@{HashTable}!getCollisions@{getCollisions}}
+\index{getCollisions@{getCollisions}!HashTable@{HashTable}}
+\doxysubsubsection{\texorpdfstring{getCollisions()}{getCollisions()}}
+{\footnotesize\ttfamily \label{class_hash_table_a71b8dca2be787ae6f7b0c2f566d5d708} 
+size\+\_\+t Hash\+Table::\+get\+Collisions (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\begin{DoxyReturn}{Returns}
+Общее количество коллизий (конфликтов разных ключей). 
+\end{DoxyReturn}
+\Hypertarget{class_hash_table_a8945a290c23d8709fb3d0f90327ec1ba}\index{HashTable@{HashTable}!hash@{hash}}
+\index{hash@{hash}!HashTable@{HashTable}}
+\doxysubsubsection{\texorpdfstring{hash()}{hash()}}
+{\footnotesize\ttfamily \label{class_hash_table_a8945a290c23d8709fb3d0f90327ec1ba} 
+size\+\_\+t Hash\+Table::\+hash (\begin{DoxyParamCaption}\item[{const string \&}]{key}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Хэш-\/функция для строки. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em key} & Входная строка. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Индекс корзины в диапазоне \+[0, table\+Size-\/1]\+. 
+\end{DoxyReturn}
+\Hypertarget{class_hash_table_a530254b13cd5ad5a07af29dfe0fb199e}\index{HashTable@{HashTable}!insert@{insert}}
+\index{insert@{insert}!HashTable@{HashTable}}
+\doxysubsubsection{\texorpdfstring{insert()}{insert()}}
+{\footnotesize\ttfamily \label{class_hash_table_a530254b13cd5ad5a07af29dfe0fb199e} 
+void Hash\+Table::\+insert (\begin{DoxyParamCaption}\item[{const \doxymbox{\hyperlink{class_flight}{Flight}} \&}]{f}{}\end{DoxyParamCaption})}
+
+
+
+Вставка объекта в таблицу. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em f} & Объект \doxylink{class_flight}{Flight}.\\
+\hline
+\end{DoxyParams}
+Если ключ (номер рейса) уже существует в соответствующей корзине, объект добавляется в существующий вектор. Если ключ отсутствует, создаётся новая запись. Коллизия увеличивается, если при вставке нового уникального ключа корзина уже была непуста. 
+
+\label{class_hash_table_doc-variable-members}
+\Hypertarget{class_hash_table_doc-variable-members}
+\doxysubsection{Member Data Documentation}
+\Hypertarget{class_hash_table_a52cab4226834e2fdea71f4849d5a689f}\index{HashTable@{HashTable}!buckets@{buckets}}
+\index{buckets@{buckets}!HashTable@{HashTable}}
+\doxysubsubsection{\texorpdfstring{buckets}{buckets}}
+{\footnotesize\ttfamily \label{class_hash_table_a52cab4226834e2fdea71f4849d5a689f} 
+vector$<$unordered\+\_\+map$<$string, vector$<$\doxymbox{\hyperlink{class_flight}{Flight}}$>$ $>$ $>$ Hash\+Table::\+buckets\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Корзины 
+
+\Hypertarget{class_hash_table_a29afc61eb7aa87878409e733de088a2a}\index{HashTable@{HashTable}!collisions@{collisions}}
+\index{collisions@{collisions}!HashTable@{HashTable}}
+\doxysubsubsection{\texorpdfstring{collisions}{collisions}}
+{\footnotesize\ttfamily \label{class_hash_table_a29afc61eb7aa87878409e733de088a2a} 
+size\+\_\+t Hash\+Table::\+collisions\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Счётчик коллизий 
+
+\Hypertarget{class_hash_table_ac124c2ad45cf04f9f93da32da154689f}\index{HashTable@{HashTable}!tableSize@{tableSize}}
+\index{tableSize@{tableSize}!HashTable@{HashTable}}
+\doxysubsubsection{\texorpdfstring{tableSize}{tableSize}}
+{\footnotesize\ttfamily \label{class_hash_table_ac124c2ad45cf04f9f93da32da154689f} 
+size\+\_\+t Hash\+Table::\+table\+Size\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Количество корзин 
+
+
+
+The documentation for this class was generated from the following files:\+\begin{DoxyCompactItemize}
+\item 
+\doxymbox{\hyperlink{_hash_table_8hpp}{Hash\+Table.\+hpp}}\item 
+\doxymbox{\hyperlink{_hash_table_8cpp}{Hash\+Table.\+cpp}}\end{DoxyCompactItemize}

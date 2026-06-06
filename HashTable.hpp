@@ -55,6 +55,15 @@ public:
     /** @brief Очистка таблицы (удаление всех элементов и сброс счётчика коллизий). */
     void clear();
 
+    vector<size_t> getBucketSizes() const {
+    vector<size_t> sizes;
+    sizes.reserve(buckets.size());
+    for (const auto& bucket : buckets) {
+        sizes.push_back(bucket.size());
+    }
+    return sizes;
+}
+
 private:
     /**
      * @brief Хэш-функция для строки.

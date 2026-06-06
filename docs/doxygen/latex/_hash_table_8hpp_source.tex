@@ -1,0 +1,45 @@
+\doxysection{Hash\+Table.\+hpp}
+\hypertarget{_hash_table_8hpp_source}{}\label{_hash_table_8hpp_source}\doxymbox{\hyperlink{_hash_table_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ <unordered\_map>}}
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#include\ "{}\doxymbox{\hyperlink{_flight_8hpp}{Flight.hpp}}"{}}}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00017\ \textcolor{keyword}{using\ namespace\ }std;}
+\DoxyCodeLine{00018\ }
+\DoxyCodeLine{00023\ \textcolor{keyword}{class\ }\doxymbox{\hyperlink{class_hash_table_a15a6372ecf074e216df6242e73940248}{HashTable}}\ \{}
+\DoxyCodeLine{00024\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00029\ \ \ \ \ \textcolor{keyword}{explicit}\ \doxymbox{\hyperlink{class_hash_table_a15a6372ecf074e216df6242e73940248}{HashTable}}(\textcolor{keywordtype}{size\_t}\ table\_size\ =\ 200003);}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00032\ \ \ \ \ \doxymbox{\hyperlink{class_hash_table_a9ce5569bb945880cacb29aaba6f3e3f9}{\string~HashTable}}();}
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00043\ \ \ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{class_hash_table_a530254b13cd5ad5a07af29dfe0fb199e}{insert}}(\textcolor{keyword}{const}\ \doxymbox{\hyperlink{class_flight}{Flight}}\&\ f);}
+\DoxyCodeLine{00044\ }
+\DoxyCodeLine{00050\ \ \ \ \ vector<Flight>\ \doxymbox{\hyperlink{class_hash_table_a16c59d83e7e4723dca4754dc9b42d2c7}{find}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\&\ key)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00051\ }
+\DoxyCodeLine{00053\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ \doxymbox{\hyperlink{class_hash_table_a71b8dca2be787ae6f7b0c2f566d5d708}{getCollisions}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ \doxymbox{\hyperlink{class_hash_table_a29afc61eb7aa87878409e733de088a2a}{collisions}};\ \}}
+\DoxyCodeLine{00054\ }
+\DoxyCodeLine{00056\ \ \ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{class_hash_table_a94a35e0cf2ce6fa291d48138f58635ed}{clear}}();}
+\DoxyCodeLine{00057\ }
+\DoxyCodeLine{00058\ \ \ \ \ vector<size\_t>\ \doxymbox{\hyperlink{class_hash_table_ad1508ac6c50c2196f8ed129ca3c5826f}{getBucketSizes}}()\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00059\ \ \ \ \ vector<size\_t>\ sizes;}
+\DoxyCodeLine{00060\ \ \ \ \ sizes.reserve(\doxymbox{\hyperlink{class_hash_table_a52cab4226834e2fdea71f4849d5a689f}{buckets}}.size());}
+\DoxyCodeLine{00061\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{const}\ \textcolor{keyword}{auto}\&\ bucket\ :\ \doxymbox{\hyperlink{class_hash_table_a52cab4226834e2fdea71f4849d5a689f}{buckets}})\ \{}
+\DoxyCodeLine{00062\ \ \ \ \ \ \ \ \ sizes.push\_back(bucket.size());}
+\DoxyCodeLine{00063\ \ \ \ \ \}}
+\DoxyCodeLine{00064\ \ \ \ \ \textcolor{keywordflow}{return}\ sizes;}
+\DoxyCodeLine{00065\ \}}
+\DoxyCodeLine{00066\ }
+\DoxyCodeLine{00067\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00073\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ \doxymbox{\hyperlink{class_hash_table_a8945a290c23d8709fb3d0f90327ec1ba}{hash}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\&\ key)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00074\ }
+\DoxyCodeLine{00075\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ \doxymbox{\hyperlink{class_hash_table_ac124c2ad45cf04f9f93da32da154689f}{tableSize}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00076\ \ \ \ \ vector<unordered\_map<string,\ vector<Flight>>>\ \doxymbox{\hyperlink{class_hash_table_a52cab4226834e2fdea71f4849d5a689f}{buckets}};\ }
+\DoxyCodeLine{00077\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ \doxymbox{\hyperlink{class_hash_table_a29afc61eb7aa87878409e733de088a2a}{collisions}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00078\ \};}
+
+\end{DoxyCode}

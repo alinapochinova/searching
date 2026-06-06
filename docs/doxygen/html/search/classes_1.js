@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['ufunc_0',['ufunc',['../structufunc.html',1,'']]]
+  ['distributionstats_0',['DistributionStats',['../struct_distribution_stats.html',1,'']]]
 ];

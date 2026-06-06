@@ -1,0 +1,172 @@
+\doxysection{BSTree Class Reference}
+\hypertarget{class_b_s_tree}{}\label{class_b_s_tree}\index{BSTree@{BSTree}}
+
+
+Класс бинарного дерева поиска.  
+
+
+
+
+{\ttfamily \+\#include $<$BSTree.\+hpp$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\doxymbox{\hyperlink{class_b_s_tree_a453f06c8a102516d7306d53c62b6b9bc}{BSTree}} ()
+\begin{DoxyCompactList}\small\item\em Конструктор. Инициализирует пустое дерево. \end{DoxyCompactList}\item 
+\doxymbox{\hyperlink{class_b_s_tree_a61dd6f59635ca4b40ab97c6a0f939bca}{\texorpdfstring{$\sim$}{\string~}\+BSTree}} ()
+\begin{DoxyCompactList}\small\item\em Деструктор. Освобождает всю память дерева. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{class_b_s_tree_a05c3fb28f4c8a5cbb8e8e0e690fbb428}{insert}} (const \doxymbox{\hyperlink{class_flight}{Flight}} \&f)
+\begin{DoxyCompactList}\small\item\em Вставка объекта \doxylink{class_flight}{Flight} в дерево. \end{DoxyCompactList}\item 
+vector$<$ \doxymbox{\hyperlink{class_flight}{Flight}} $>$ \doxymbox{\hyperlink{class_b_s_tree_ae949974344548e303d09c13aad69c17e}{find}} (const string \&key) const
+\begin{DoxyCompactList}\small\item\em Поиск всех объектов с заданным ключом. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{class_b_s_tree_ad0919806c4c9897579ae0af91c09f012}{clear}} ()
+\begin{DoxyCompactList}\small\item\em Очистка дерева (удаление всех узлов). \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \doxymbox{\hyperlink{class_b_s_tree_a98335d45802fd83d7809a757346b35c7}{insert}} (\doxymbox{\hyperlink{struct_b_s_t_node}{BSTNode}} \texorpdfstring{$\ast$}{*}\&node, const \doxymbox{\hyperlink{class_flight}{Flight}} \&f)
+\begin{DoxyCompactList}\small\item\em Рекурсивная вставка. \end{DoxyCompactList}\item 
+\doxymbox{\hyperlink{struct_b_s_t_node}{BSTNode}} \texorpdfstring{$\ast$}{*} \doxymbox{\hyperlink{class_b_s_tree_a158b76ff605fbbca8ab4021a1f2fa66e}{find\+Node}} (\doxymbox{\hyperlink{struct_b_s_t_node}{BSTNode}} \texorpdfstring{$\ast$}{*}node, const string \&key) const
+\begin{DoxyCompactList}\small\item\em Рекурсивный поиск узла по ключу. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{class_b_s_tree_af76268567a0aa1898907b4c6c7ea59e2}{clear}} (\doxymbox{\hyperlink{struct_b_s_t_node}{BSTNode}} \texorpdfstring{$\ast$}{*}node)
+\begin{DoxyCompactList}\small\item\em Рекурсивная очистка поддерева. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\doxymbox{\hyperlink{struct_b_s_t_node}{BSTNode}} \texorpdfstring{$\ast$}{*} \doxymbox{\hyperlink{class_b_s_tree_ab3f6eed5195814ff98d1c5d536abcceb}{root}}
+\begin{DoxyCompactList}\small\item\em Корень дерева \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Класс бинарного дерева поиска. 
+
+Обеспечивает:\+
+\begin{DoxyItemize}
+\item Вставку элементов с дубликатами.
+\item Поиск всех элементов по ключу.
+\item Очистку дерева. 
+\end{DoxyItemize}
+
+\label{class_b_s_tree_doc-constructors}
+\Hypertarget{class_b_s_tree_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_b_s_tree_a453f06c8a102516d7306d53c62b6b9bc}\index{BSTree@{BSTree}!BSTree@{BSTree}}
+\index{BSTree@{BSTree}!BSTree@{BSTree}}
+\doxysubsubsection{\texorpdfstring{BSTree()}{BSTree()}}
+{\footnotesize\ttfamily \label{class_b_s_tree_a453f06c8a102516d7306d53c62b6b9bc} 
+BSTree::\+\+BSTree (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Конструктор. Инициализирует пустое дерево. 
+
+\Hypertarget{class_b_s_tree_a61dd6f59635ca4b40ab97c6a0f939bca}\index{BSTree@{BSTree}!````~BSTree@{\texorpdfstring{$\sim$}{\string~}BSTree}}
+\index{````~BSTree@{\texorpdfstring{$\sim$}{\string~}BSTree}!BSTree@{BSTree}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}BSTree()}{\string~BSTree()}}
+{\footnotesize\ttfamily \label{class_b_s_tree_a61dd6f59635ca4b40ab97c6a0f939bca} 
+BSTree::\+\texorpdfstring{$\sim$}{\string~}\+BSTree (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Деструктор. Освобождает всю память дерева. 
+
+
+
+\label{class_b_s_tree_doc-func-members}
+\Hypertarget{class_b_s_tree_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_b_s_tree_ad0919806c4c9897579ae0af91c09f012}\index{BSTree@{BSTree}!clear@{clear}}
+\index{clear@{clear}!BSTree@{BSTree}}
+\doxysubsubsection{\texorpdfstring{clear()}{clear()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{class_b_s_tree_ad0919806c4c9897579ae0af91c09f012} 
+void BSTree::\+clear (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Очистка дерева (удаление всех узлов). 
+
+\Hypertarget{class_b_s_tree_af76268567a0aa1898907b4c6c7ea59e2}\index{BSTree@{BSTree}!clear@{clear}}
+\index{clear@{clear}!BSTree@{BSTree}}
+\doxysubsubsection{\texorpdfstring{clear()}{clear()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{class_b_s_tree_af76268567a0aa1898907b4c6c7ea59e2} 
+void BSTree::\+clear (\begin{DoxyParamCaption}\item[{\doxymbox{\hyperlink{struct_b_s_t_node}{BSTNode}} \texorpdfstring{$\ast$}{*}}]{node}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Рекурсивная очистка поддерева. 
+
+\Hypertarget{class_b_s_tree_ae949974344548e303d09c13aad69c17e}\index{BSTree@{BSTree}!find@{find}}
+\index{find@{find}!BSTree@{BSTree}}
+\doxysubsubsection{\texorpdfstring{find()}{find()}}
+{\footnotesize\ttfamily \label{class_b_s_tree_ae949974344548e303d09c13aad69c17e} 
+vector$<$ \doxymbox{\hyperlink{class_flight}{Flight}} $>$ BSTree::\+find (\begin{DoxyParamCaption}\item[{const string \&}]{key}{}\end{DoxyParamCaption}) const}
+
+
+
+Поиск всех объектов с заданным ключом. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em key} & Номер рейса для поиска. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Вектор объектов \doxylink{class_flight}{Flight} (может быть пустым, если ключ не найден). 
+\end{DoxyReturn}
+\Hypertarget{class_b_s_tree_a158b76ff605fbbca8ab4021a1f2fa66e}\index{BSTree@{BSTree}!findNode@{findNode}}
+\index{findNode@{findNode}!BSTree@{BSTree}}
+\doxysubsubsection{\texorpdfstring{findNode()}{findNode()}}
+{\footnotesize\ttfamily \label{class_b_s_tree_a158b76ff605fbbca8ab4021a1f2fa66e} 
+\doxymbox{\hyperlink{struct_b_s_t_node}{BSTNode}} \texorpdfstring{$\ast$}{*} BSTree::\+find\+Node (\begin{DoxyParamCaption}\item[{\doxymbox{\hyperlink{struct_b_s_t_node}{BSTNode}} \texorpdfstring{$\ast$}{*}}]{node}{, }\item[{const string \&}]{key}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Рекурсивный поиск узла по ключу. 
+
+\Hypertarget{class_b_s_tree_a98335d45802fd83d7809a757346b35c7}\index{BSTree@{BSTree}!insert@{insert}}
+\index{insert@{insert}!BSTree@{BSTree}}
+\doxysubsubsection{\texorpdfstring{insert()}{insert()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{class_b_s_tree_a98335d45802fd83d7809a757346b35c7} 
+void BSTree::\+insert (\begin{DoxyParamCaption}\item[{\doxymbox{\hyperlink{struct_b_s_t_node}{BSTNode}} \texorpdfstring{$\ast$}{*}\&}]{node}{, }\item[{const \doxymbox{\hyperlink{class_flight}{Flight}} \&}]{f}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Рекурсивная вставка. 
+
+\Hypertarget{class_b_s_tree_a05c3fb28f4c8a5cbb8e8e0e690fbb428}\index{BSTree@{BSTree}!insert@{insert}}
+\index{insert@{insert}!BSTree@{BSTree}}
+\doxysubsubsection{\texorpdfstring{insert()}{insert()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{class_b_s_tree_a05c3fb28f4c8a5cbb8e8e0e690fbb428} 
+void BSTree::\+insert (\begin{DoxyParamCaption}\item[{const \doxymbox{\hyperlink{class_flight}{Flight}} \&}]{f}{}\end{DoxyParamCaption})}
+
+
+
+Вставка объекта \doxylink{class_flight}{Flight} в дерево. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em f} & Объект для вставки.\\
+\hline
+\end{DoxyParams}
+Если ключ (flight\+Number) уже существует, объект добавляется в вектор values соответствующего узла. Иначе создаётся новый узел. 
+
+\label{class_b_s_tree_doc-variable-members}
+\Hypertarget{class_b_s_tree_doc-variable-members}
+\doxysubsection{Member Data Documentation}
+\Hypertarget{class_b_s_tree_ab3f6eed5195814ff98d1c5d536abcceb}\index{BSTree@{BSTree}!root@{root}}
+\index{root@{root}!BSTree@{BSTree}}
+\doxysubsubsection{\texorpdfstring{root}{root}}
+{\footnotesize\ttfamily \label{class_b_s_tree_ab3f6eed5195814ff98d1c5d536abcceb} 
+\doxymbox{\hyperlink{struct_b_s_t_node}{BSTNode}}\texorpdfstring{$\ast$}{*} BSTree::\+root\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Корень дерева 
+
+
+
+The documentation for this class was generated from the following files:\+\begin{DoxyCompactItemize}
+\item 
+\doxymbox{\hyperlink{_b_s_tree_8hpp}{BSTree.\+hpp}}\item 
+\doxymbox{\hyperlink{_b_s_tree_8cpp}{BSTree.\+cpp}}\end{DoxyCompactItemize}

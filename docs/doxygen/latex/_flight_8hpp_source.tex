@@ -1,0 +1,33 @@
+\doxysection{Flight.\+hpp}
+\hypertarget{_flight_8hpp_source}{}\label{_flight_8hpp_source}\doxymbox{\hyperlink{_flight_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00005\ }
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00010\ \textcolor{keyword}{using\ namespace\ }std;}
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00017\ \textcolor{keyword}{class\ }\doxymbox{\hyperlink{class_flight_a8b0b63ac53e78bf5384d6b7e766f6c10}{Flight}}\ \{}
+\DoxyCodeLine{00018\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00019\ \ \ \ \ \textcolor{keywordtype}{string}\ \doxymbox{\hyperlink{class_flight_a3b431f52c3b654edeb8005d37e814f65}{flightNumber}};\ \ \ }
+\DoxyCodeLine{00020\ \ \ \ \ \textcolor{keywordtype}{string}\ \doxymbox{\hyperlink{class_flight_a3a6fa8a4d15051ad2fde4fd7f57e7563}{airline}};}
+\DoxyCodeLine{00021\ \ \ \ \ \textcolor{keywordtype}{string}\ \doxymbox{\hyperlink{class_flight_a51736d11309709571b7b36d3098decc0}{arrivalDate}};}
+\DoxyCodeLine{00022\ \ \ \ \ \textcolor{keywordtype}{string}\ \doxymbox{\hyperlink{class_flight_aea2382ce3c965bed37ed413f1ea345fc}{arrivalTime}};}
+\DoxyCodeLine{00023\ \ \ \ \ \textcolor{keywordtype}{int}\ \doxymbox{\hyperlink{class_flight_a6b5d9e37e61e1692f132be0a972802d6}{passengers}};}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00025\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00026\ \ \ \ \ \doxymbox{\hyperlink{class_flight_a8b0b63ac53e78bf5384d6b7e766f6c10}{Flight}}()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00036\ \ \ \ \ \doxymbox{\hyperlink{class_flight_a8b0b63ac53e78bf5384d6b7e766f6c10}{Flight}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\&\ fn,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\&\ al,}
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\&\ date,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\&\ time,\ \textcolor{keywordtype}{int}\ pass);}
+\DoxyCodeLine{00038\ }
+\DoxyCodeLine{00040\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\&\ \doxymbox{\hyperlink{class_flight_a177267365ab865d0e31b66121060bb79}{getKey}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ \doxymbox{\hyperlink{class_flight_a3b431f52c3b654edeb8005d37e814f65}{flightNumber}};\ \}}
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00043\ \ \ \ \ \textcolor{keyword}{friend}\ istream\&\ \doxymbox{\hyperlink{class_flight_acebbed9c61ed3de6791991a4b55df47c}{operator>>}}(istream\&\ is,\ \doxymbox{\hyperlink{class_flight}{Flight}}\&\ f);}
+\DoxyCodeLine{00044\ }
+\DoxyCodeLine{00046\ \ \ \ \ \textcolor{keyword}{friend}\ ostream\&\ \doxymbox{\hyperlink{class_flight_abdfbd9ad1544145439a328621099b740}{operator<<}}(ostream\&\ os,\ \textcolor{keyword}{const}\ \doxymbox{\hyperlink{class_flight}{Flight}}\&\ f);}
+\DoxyCodeLine{00047\ \};}
+
+\end{DoxyCode}

@@ -1,0 +1,22 @@
+\doxysection{Hash\+Table.\+hpp File Reference}
+\hypertarget{_hash_table_8hpp}{}\label{_hash_table_8hpp}\index{HashTable.hpp@{HashTable.hpp}}
+
+
+Заголовочный файл хэш-\/таблицы с методом цепочек.  
+
+
+{\ttfamily \+\#include $<$vector$>$}\newline
+{\ttfamily \+\#include $<$unordered\+\_\+map$>$}\newline
+{\ttfamily \+\#include $<$string$>$}\newline
+{\ttfamily \+\#include "{}Flight.\+hpp"{}}\newline
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \doxymbox{\hyperlink{class_hash_table}{Hash\+Table}}
+\begin{DoxyCompactList}\small\item\em Хэш-\/таблица для хранения и поиска объектов \doxylink{class_flight}{Flight} по ключу. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Заголовочный файл хэш-\/таблицы с методом цепочек. 
+
+Реализует хэш-\/таблицу, где каждая корзина является unordered\+\_\+map$<$key, vector$<$\+Flight$>$$>$. Это позволяет хранить дубликаты и корректно подсчитывать коллизии (только для разных ключей, попавших в одну корзину). 

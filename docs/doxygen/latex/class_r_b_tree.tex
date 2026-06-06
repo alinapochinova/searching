@@ -1,0 +1,203 @@
+\doxysection{RBTree Class Reference}
+\hypertarget{class_r_b_tree}{}\label{class_r_b_tree}\index{RBTree@{RBTree}}
+
+
+Класс красно-\/чёрного дерева.  
+
+
+
+
+{\ttfamily \+\#include $<$RBTree.\+hpp$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\doxymbox{\hyperlink{class_r_b_tree_a19921f34f32f777bb3c4b85d4ff1d9de}{RBTree}} ()
+\begin{DoxyCompactList}\small\item\em Конструктор. Инициализирует пустое дерево. \end{DoxyCompactList}\item 
+\doxymbox{\hyperlink{class_r_b_tree_abab51e54e07c1adf0ca0c9a5d466427b}{\texorpdfstring{$\sim$}{\string~}\+RBTree}} ()
+\begin{DoxyCompactList}\small\item\em Деструктор. Освобождает память дерева. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{class_r_b_tree_afa6505690584f96303f3590ad8c3cac4}{insert}} (const \doxymbox{\hyperlink{class_flight}{Flight}} \&f)
+\begin{DoxyCompactList}\small\item\em Вставка объекта \doxylink{class_flight}{Flight} в дерево. \end{DoxyCompactList}\item 
+vector$<$ \doxymbox{\hyperlink{class_flight}{Flight}} $>$ \doxymbox{\hyperlink{class_r_b_tree_a638c4c80608d8b579592d62b8ff047b7}{find}} (const string \&key) const
+\begin{DoxyCompactList}\small\item\em Поиск всех объектов с заданным ключом. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{class_r_b_tree_aa0127eced84667918a344ee7739b9811}{clear}} ()
+\begin{DoxyCompactList}\small\item\em Очистка дерева (удаление всех узлов). \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \doxymbox{\hyperlink{class_r_b_tree_a5bd2dc4ba1752d101db012b7fa433a5a}{rotate\+Left}} (\doxymbox{\hyperlink{struct_r_b_node}{RBNode}} \texorpdfstring{$\ast$}{*}x)
+\begin{DoxyCompactList}\small\item\em Левый поворот вокруг узла x. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{class_r_b_tree_a69668f9640e44dd9719e2c6656fa0a7c}{rotate\+Right}} (\doxymbox{\hyperlink{struct_r_b_node}{RBNode}} \texorpdfstring{$\ast$}{*}x)
+\begin{DoxyCompactList}\small\item\em Правый поворот вокруг узла x. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{class_r_b_tree_af2ba0fbc60ae68d24c27acfd9e4d2f90}{fix\+Insert}} (\doxymbox{\hyperlink{struct_r_b_node}{RBNode}} \texorpdfstring{$\ast$}{*}z)
+\begin{DoxyCompactList}\small\item\em Восстановление свойств красно-\/чёрного дерева после вставки. \end{DoxyCompactList}\item 
+\doxymbox{\hyperlink{struct_r_b_node}{RBNode}} \texorpdfstring{$\ast$}{*} \doxymbox{\hyperlink{class_r_b_tree_a272ca2da8c1f1704d60c7359a720d603}{find\+Node}} (\doxymbox{\hyperlink{struct_r_b_node}{RBNode}} \texorpdfstring{$\ast$}{*}node, const string \&key) const
+\item 
+void \doxymbox{\hyperlink{class_r_b_tree_a899fcb1cff35f5d110c5aedc22f18c73}{clear}} (\doxymbox{\hyperlink{struct_r_b_node}{RBNode}} \texorpdfstring{$\ast$}{*}node)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\doxymbox{\hyperlink{struct_r_b_node}{RBNode}} \texorpdfstring{$\ast$}{*} \doxymbox{\hyperlink{class_r_b_tree_a259103b092340c5b64aabff1d9bc644c}{root}}
+\begin{DoxyCompactList}\small\item\em Корень дерева \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Класс красно-\/чёрного дерева. 
+
+Обеспечивает логарифмическое время вставки и поиска благодаря балансировке. Поддерживает дубликаты ключей. 
+
+\label{class_r_b_tree_doc-constructors}
+\Hypertarget{class_r_b_tree_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_r_b_tree_a19921f34f32f777bb3c4b85d4ff1d9de}\index{RBTree@{RBTree}!RBTree@{RBTree}}
+\index{RBTree@{RBTree}!RBTree@{RBTree}}
+\doxysubsubsection{\texorpdfstring{RBTree()}{RBTree()}}
+{\footnotesize\ttfamily \label{class_r_b_tree_a19921f34f32f777bb3c4b85d4ff1d9de} 
+RBTree::\+\+RBTree (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Конструктор. Инициализирует пустое дерево. 
+
+\Hypertarget{class_r_b_tree_abab51e54e07c1adf0ca0c9a5d466427b}\index{RBTree@{RBTree}!````~RBTree@{\texorpdfstring{$\sim$}{\string~}RBTree}}
+\index{````~RBTree@{\texorpdfstring{$\sim$}{\string~}RBTree}!RBTree@{RBTree}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}RBTree()}{\string~RBTree()}}
+{\footnotesize\ttfamily \label{class_r_b_tree_abab51e54e07c1adf0ca0c9a5d466427b} 
+RBTree::\+\texorpdfstring{$\sim$}{\string~}\+RBTree (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Деструктор. Освобождает память дерева. 
+
+
+
+\label{class_r_b_tree_doc-func-members}
+\Hypertarget{class_r_b_tree_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_r_b_tree_aa0127eced84667918a344ee7739b9811}\index{RBTree@{RBTree}!clear@{clear}}
+\index{clear@{clear}!RBTree@{RBTree}}
+\doxysubsubsection{\texorpdfstring{clear()}{clear()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{class_r_b_tree_aa0127eced84667918a344ee7739b9811} 
+void RBTree::\+clear (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Очистка дерева (удаление всех узлов). 
+
+\Hypertarget{class_r_b_tree_a899fcb1cff35f5d110c5aedc22f18c73}\index{RBTree@{RBTree}!clear@{clear}}
+\index{clear@{clear}!RBTree@{RBTree}}
+\doxysubsubsection{\texorpdfstring{clear()}{clear()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{class_r_b_tree_a899fcb1cff35f5d110c5aedc22f18c73} 
+void RBTree::\+clear (\begin{DoxyParamCaption}\item[{\doxymbox{\hyperlink{struct_r_b_node}{RBNode}} \texorpdfstring{$\ast$}{*}}]{node}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{class_r_b_tree_a638c4c80608d8b579592d62b8ff047b7}\index{RBTree@{RBTree}!find@{find}}
+\index{find@{find}!RBTree@{RBTree}}
+\doxysubsubsection{\texorpdfstring{find()}{find()}}
+{\footnotesize\ttfamily \label{class_r_b_tree_a638c4c80608d8b579592d62b8ff047b7} 
+vector$<$ \doxymbox{\hyperlink{class_flight}{Flight}} $>$ RBTree::\+find (\begin{DoxyParamCaption}\item[{const string \&}]{key}{}\end{DoxyParamCaption}) const}
+
+
+
+Поиск всех объектов с заданным ключом. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em key} & Номер рейса. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Вектор объектов \doxylink{class_flight}{Flight} (пустой, если ключ не найден). 
+\end{DoxyReturn}
+\Hypertarget{class_r_b_tree_a272ca2da8c1f1704d60c7359a720d603}\index{RBTree@{RBTree}!findNode@{findNode}}
+\index{findNode@{findNode}!RBTree@{RBTree}}
+\doxysubsubsection{\texorpdfstring{findNode()}{findNode()}}
+{\footnotesize\ttfamily \label{class_r_b_tree_a272ca2da8c1f1704d60c7359a720d603} 
+\doxymbox{\hyperlink{struct_r_b_node}{RBNode}} \texorpdfstring{$\ast$}{*} RBTree::\+find\+Node (\begin{DoxyParamCaption}\item[{\doxymbox{\hyperlink{struct_r_b_node}{RBNode}} \texorpdfstring{$\ast$}{*}}]{node}{, }\item[{const string \&}]{key}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{class_r_b_tree_af2ba0fbc60ae68d24c27acfd9e4d2f90}\index{RBTree@{RBTree}!fixInsert@{fixInsert}}
+\index{fixInsert@{fixInsert}!RBTree@{RBTree}}
+\doxysubsubsection{\texorpdfstring{fixInsert()}{fixInsert()}}
+{\footnotesize\ttfamily \label{class_r_b_tree_af2ba0fbc60ae68d24c27acfd9e4d2f90} 
+void RBTree::\+fix\+Insert (\begin{DoxyParamCaption}\item[{\doxymbox{\hyperlink{struct_r_b_node}{RBNode}} \texorpdfstring{$\ast$}{*}}]{z}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Восстановление свойств красно-\/чёрного дерева после вставки. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em z} & Вставленный красный узел.\\
+\hline
+\end{DoxyParams}
+Алгоритм:\+
+\begin{DoxyItemize}
+\item Пока родитель z красный, нарушение свойств.
+\item В зависимости от того, является ли родитель левым или правым потомком деда, и от цвета дяди применяются перекрашивания и/\+или повороты.
+\item В конце корень окрашивается в чёрный цвет. 
+\end{DoxyItemize}\Hypertarget{class_r_b_tree_afa6505690584f96303f3590ad8c3cac4}\index{RBTree@{RBTree}!insert@{insert}}
+\index{insert@{insert}!RBTree@{RBTree}}
+\doxysubsubsection{\texorpdfstring{insert()}{insert()}}
+{\footnotesize\ttfamily \label{class_r_b_tree_afa6505690584f96303f3590ad8c3cac4} 
+void RBTree::\+insert (\begin{DoxyParamCaption}\item[{const \doxymbox{\hyperlink{class_flight}{Flight}} \&}]{f}{}\end{DoxyParamCaption})}
+
+
+
+Вставка объекта \doxylink{class_flight}{Flight} в дерево. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em f} & Объект для вставки.\\
+\hline
+\end{DoxyParams}
+Если ключ уже существует, объект добавляется в вектор существующего узла. Иначе создаётся новый красный узел, после чего выполняются повороты и перекрашивания для восстановления свойств красно-\/чёрного дерева. \Hypertarget{class_r_b_tree_a5bd2dc4ba1752d101db012b7fa433a5a}\index{RBTree@{RBTree}!rotateLeft@{rotateLeft}}
+\index{rotateLeft@{rotateLeft}!RBTree@{RBTree}}
+\doxysubsubsection{\texorpdfstring{rotateLeft()}{rotateLeft()}}
+{\footnotesize\ttfamily \label{class_r_b_tree_a5bd2dc4ba1752d101db012b7fa433a5a} 
+void RBTree::\+rotate\+Left (\begin{DoxyParamCaption}\item[{\doxymbox{\hyperlink{struct_r_b_node}{RBNode}} \texorpdfstring{$\ast$}{*}}]{x}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Левый поворот вокруг узла x. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & Узел, вокруг которого выполняется поворот. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_r_b_tree_a69668f9640e44dd9719e2c6656fa0a7c}\index{RBTree@{RBTree}!rotateRight@{rotateRight}}
+\index{rotateRight@{rotateRight}!RBTree@{RBTree}}
+\doxysubsubsection{\texorpdfstring{rotateRight()}{rotateRight()}}
+{\footnotesize\ttfamily \label{class_r_b_tree_a69668f9640e44dd9719e2c6656fa0a7c} 
+void RBTree::\+rotate\+Right (\begin{DoxyParamCaption}\item[{\doxymbox{\hyperlink{struct_r_b_node}{RBNode}} \texorpdfstring{$\ast$}{*}}]{x}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Правый поворот вокруг узла x. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & Узел, вокруг которого выполняется поворот. \\
+\hline
+\end{DoxyParams}
+
+
+\label{class_r_b_tree_doc-variable-members}
+\Hypertarget{class_r_b_tree_doc-variable-members}
+\doxysubsection{Member Data Documentation}
+\Hypertarget{class_r_b_tree_a259103b092340c5b64aabff1d9bc644c}\index{RBTree@{RBTree}!root@{root}}
+\index{root@{root}!RBTree@{RBTree}}
+\doxysubsubsection{\texorpdfstring{root}{root}}
+{\footnotesize\ttfamily \label{class_r_b_tree_a259103b092340c5b64aabff1d9bc644c} 
+\doxymbox{\hyperlink{struct_r_b_node}{RBNode}}\texorpdfstring{$\ast$}{*} RBTree::\+root\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Корень дерева 
+
+
+
+The documentation for this class was generated from the following files:\+\begin{DoxyCompactItemize}
+\item 
+\doxymbox{\hyperlink{_r_b_tree_8hpp}{RBTree.\+hpp}}\item 
+\doxymbox{\hyperlink{_r_b_tree_8cpp}{RBTree.\+cpp}}\end{DoxyCompactItemize}

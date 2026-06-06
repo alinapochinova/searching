@@ -13,11 +13,10 @@
   \fi
   % Set document class depending on configuration
   \documentclass[twoside]{book}
-  %%% === ПОДДЕРЖКА РУССКОГО ЯЗЫКА ===
-\usepackage[T2A]{fontenc}
-\usepackage[utf8]{inputenc}
-\usepackage[english,russian]{babel}
-%%% =================================
+  \usepackage[T2A]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage[english,russian]{babel}
+  \usepackage{ifpdf}
   % Packages required by doxygen
   \makeatletter
   \providecommand\IfFormatAtLeastTF{\@ifl@t@r\fmtversion}
@@ -230,32 +229,182 @@
   % re-enable anchors again
   \hypersetup{pageanchor=true}
 %--- Begin generated contents ---
-\chapter{Directory Hierarchy}
-\input{dirs}
+\chapter{Результаты экспериментов}
+
+\section{Сравнение всех методов поиска}
+\begin{center}
+\includegraphics[width=0.9\textwidth]{search_comparison.png}
+\end{center}
+
+\textbf{Анализ результатов:}
+
+\begin{itemize}
+    \item \textbf{Линейный поиск (красный):} Время растёт линейно O(n). 
+          При N = 1 000 000 достигает 32513 мкс (32.5 мс) на один поиск.
+          Непригоден для больших массивов.
+    
+    \item \textbf{BST (синий):} Время почти не зависит от N (4 мкс при N=1 млн),
+          так как дерево содержит только 2000 уникальных ключей.
+          Дубликаты хранятся в векторах, не создавая новые узлы.
+    
+    \item \textbf{RBTree (зелёный):} Результаты аналогичны BST (3.4 мкс),
+          но немного медленнее из-за хранения цвета и родителя.
+          Преимущество RBT проявится на данных с большим числом уникальных ключей.
+    
+    \item \textbf{HashTable (фиолетовый):} Постоянное время O(1) (3.2 мкс),
+          коллизий мало (475 при N=1 млн).
+          Лучший выбор для поиска по точному совпадению.
+    
+    \item \textbf{std::multimap (оранжевый):} Хранит каждый дубликат отдельно,
+          поэтому при N=1 млн содержит 1 млн узлов.
+          Время поиска 11.1 мкс (высота дерева около 20 сравнений).
+\end{itemize}
+
+\textbf{Вывод:} Для данных с повторяющимися ключами группировка дубликатов в узле
+(BST, RBT, HashTable) даёт значительный выигрыш по сравнению со стандартным multimap.
+Линейный поиск следует использовать только для очень малых массивов (менее 1000 элементов).
+
+\newpage
+
+\section{Зависимость времени поиска от числа уникальных ключей}
+\begin{center}
+\includegraphics[width=0.9\textwidth]{unique_keys_plot.png}
+\end{center}
+
+\textbf{Анализ:}
+\begin{itemize}
+    \item При фиксированном размере массива (1 млн) менялось количество уникальных ключей от 100 до 500 000.
+    \item BST и RBT: время растёт логарифмически O(log U).
+    \item HashTable: время остаётся константным (размер таблицы 200003).
+    \item При U = 500 000 (50 процентов уникальных ключей) BST требует около 19 сравнений, HashTable 2-3.
+\end{itemize}
+
+\textbf{Вывод:} Чем больше уникальных ключей, тем больше преимущество хэш-таблицы.
+При малом числе уникальных ключей (U менее 10 000) разница между структурами незначительна.
+
+\newpage
+
+\section{Влияние размера хэш-таблицы на коллизии и время поиска}
+\begin{center}
+\includegraphics[width=0.9\textwidth]{hash_size_plot.png}
+\end{center}
+
+\textbf{Анализ:}
+\begin{itemize}
+    \item Фиксированный массив: 500 000 элементов, 2000 уникальных ключей.
+    \item При малом размере таблицы (101) коэффициент загрузки около 20,
+          много коллизий, время поиска высокое.
+    \item Оптимальный размер: примерно 4000 (2 умножить на число уникальных ключей),
+          коллизии минимальны, время стабильно.
+    \item При дальнейшем увеличении размера (200 000 и более) коллизии стремятся к 475,
+          время не улучшается, но память тратится впустую.
+\end{itemize}
+
+\textbf{Вывод:} Размер хэш-таблицы должен быть в 2-4 раза больше числа уникальных ключей.
+Слишком маленькая таблица ведёт к многим коллизиям, слишком большая к избыточному расходу памяти.
+
+\newpage
+
+\section{Сравнение хэш-функций}
+\begin{center}
+\includegraphics[width=0.9\textwidth]{hash_functions_plot.png}
+\end{center}
+
+\textbf{Анализ:}
+\begin{itemize}
+    \item \textbf{JS (Sobel):} Наименьшее число коллизий (около 300), лучшее время (около 2.5 мкс).
+    \item \textbf{POLY (полиномиальная):} Наша стандартная функция, 475 коллизий, 3.2 мкс хороший компромисс.
+    \item \textbf{DJB (Bernstein):} 450 коллизий, 3.0 мкс близка к POLY.
+    \item \textbf{RS (Седжвик):} Худшая среди тестируемых, более 600 коллизий.
+\end{itemize}
+
+\textbf{Вывод:} Для номеров рейсов (строки вида SU1234) лучше всего подходит JS-функция.
+Полиномиальная функция с основанием 131 достойная альтернатива.
+
+\newpage
+
+\section{Тепловая карта загрузки хэш-таблицы}
+\begin{center}
+\includegraphics[width=0.9\textwidth]{load_distribution.png}
+\end{center}
+\begin{center}
+\includegraphics[width=0.9\textwidth]{hash_heatmap.png}
+\end{center}
+\begin{center}
+\includegraphics[width=0.9\textwidth]{cumulative_distribution.png}
+\end{center}
+
+\textbf{Анализ:}
+\begin{itemize}
+    \item Параметры: 500 000 элементов, 2000 уникальных ключей, размер таблицы 200 003.
+    \item Коэффициент загрузки: 2000/200003 примерно равно 0.01 (1 процент).
+    \item Пустых корзин: около 198 475 (99 процентов таблицы пусто).
+    \item Максимальная загрузка одной корзины: 4 элемента.
+    \item Средняя загрузка непустых корзин: примерно 1.31.
+    \item Тепловая карта показывает равномерное распределение без выраженных кластеров.
+\end{itemize}
+
+\textbf{Вывод:} Хэш-функция распределяет ключи равномерно. 
+Большой размер таблицы (200003) выбран для демонстрации роста коллизий при увеличении числа уникальных ключей.
+Для реального использования размер таблицы можно уменьшить до 4000-8000 для экономии памяти.
+
+\newpage
+
+\section{Общие выводы по лабораторной работе}
+
+\begin{enumerate}
+    \item \textbf{Линейный поиск} только для очень малых массивов (менее 1000 элементов).
+    
+    \item \textbf{BST и RBT} эффективны при группировке дубликатов.
+          При малом числе уникальных ключей работают почти как хэш-таблица.
+          RBT обеспечивает гарантированную логарифмическую высоту.
+    
+    \item \textbf{Хэш-таблица} лучший выбор для поиска по точному совпадению
+          при большом количестве уникальных ключей (среднее O(1)).
+          Размер таблицы должен быть в 2-4 раза больше числа уникальных ключей.
+    
+    \item \textbf{std::multimap} удобен, но уступает самодельным структурам с группировкой дубликатов.
+    
+    \item \textbf{Хэш-функция} критически важна для производительности.
+          Для строк с номерами рейсов лучшей оказалась JS-функция.
+    
+    \item \textbf{Коллизии} растут с увеличением числа уникальных ключей при фиксированном размере таблицы.
+          Оптимальный размер таблицы 2-4 умножить на число уникальных ключей.
+\end{enumerate}
 \chapter{Class Index}
 \input{annotated}
 \chapter{File Index}
 \input{files}
-\chapter{Directory Documentation}
-\input{dir_1e23bc7c07760fd79351e90e26313167}
-\input{dir_04d3c116653c93c4b7ad072025038da9}
-\input{dir_ce33ad423ea94b3af9384f8f7bba90c7}
-\input{dir_959552cb0a7bfd9d75ba7b4ce70e4597}
-\input{dir_7e88dc5d35f8d9f7a427c3eb251657d9}
-\input{dir_7501f4392166f669267654bab317b78a}
-\input{dir_004ac20990da9b3fcb114fba31902a67}
-\input{dir_202bb15f5603d5ee865d68efb8d4ddb5}
 \chapter{Class Documentation}
+\input{struct_b_s_t_node}
+\input{class_b_s_tree}
+\input{struct_distribution_stats}
+\input{class_flight}
 \input{struct_flight_record}
-\input{structufunc}
+\input{struct_hash_function_wrapper}
+\input{class_hash_table}
+\input{class_hash_table_with_hash}
+\input{struct_r_b_node}
+\input{class_r_b_tree}
 \chapter{File Documentation}
+\input{benchmark__hash__functions_8cpp}
+\input{benchmark__hash__size_8cpp}
+\input{benchmark__unique__keys_8cpp}
 \input{_b_s_tree_8cpp}
+\input{_b_s_tree_8hpp}
+\input{_b_s_tree_8hpp_source}
 \input{_flight_8cpp}
+\input{_flight_8hpp}
+\input{_flight_8hpp_source}
 \input{generate__data_8cpp}
+\input{hash__heatmap_8cpp}
 \input{_hash_table_8cpp}
+\input{_hash_table_8hpp}
+\input{_hash_table_8hpp_source}
 \input{main_8cpp}
-\input{generate__umath__validation__data_8cpp}
 \input{_r_b_tree_8cpp}
+\input{_r_b_tree_8hpp}
+\input{_r_b_tree_8hpp_source}
 %--- End generated contents ---
 % Index
   \backmatter

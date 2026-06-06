@@ -1,0 +1,58 @@
+\doxysection{RBTree.\+hpp File Reference}
+\hypertarget{_r_b_tree_8hpp}{}\label{_r_b_tree_8hpp}\index{RBTree.hpp@{RBTree.hpp}}
+
+
+Заголовочный файл красно-\/чёрного дерева (Red-\/\+Black Tree).  
+
+
+{\ttfamily \+\#include $<$vector$>$}\newline
+{\ttfamily \+\#include $<$string$>$}\newline
+{\ttfamily \+\#include "{}Flight.\+hpp"{}}\newline
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \doxymbox{\hyperlink{struct_r_b_node}{RBNode}}
+\begin{DoxyCompactList}\small\item\em Узел красно-\/чёрного дерева. \end{DoxyCompactList}\item 
+class \doxymbox{\hyperlink{class_r_b_tree}{RBTree}}
+\begin{DoxyCompactList}\small\item\em Класс красно-\/чёрного дерева. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \doxymbox{\hyperlink{_r_b_tree_8hpp_ab87bacfdad76e61b9412d7124be44c1c}{Color}} \{ \doxymbox{\hyperlink{_r_b_tree_8hpp_ab87bacfdad76e61b9412d7124be44c1caf80f9a890089d211842d59625e561f88}{RED}}
+, \doxymbox{\hyperlink{_r_b_tree_8hpp_ab87bacfdad76e61b9412d7124be44c1caf77fb67151d0c18d397069ad8c271ba3}{BLACK}}
+ \}
+\begin{DoxyCompactList}\small\item\em Цвет узла красно-\/чёрного дерева. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Заголовочный файл красно-\/чёрного дерева (Red-\/\+Black Tree). 
+
+Реализует самобалансирующееся двоичное дерево поиска с поддержкой дубликатов. Каждый узел хранит ключ (номер рейса) и вектор объектов \doxylink{class_flight}{Flight} с этим ключом. 
+
+\label{_r_b_tree_8hpp_doc-enum-members}
+\Hypertarget{_r_b_tree_8hpp_doc-enum-members}
+\doxysubsection{Enumeration Type Documentation}
+\Hypertarget{_r_b_tree_8hpp_ab87bacfdad76e61b9412d7124be44c1c}\index{RBTree.hpp@{RBTree.hpp}!Color@{Color}}
+\index{Color@{Color}!RBTree.hpp@{RBTree.hpp}}
+\doxysubsubsection{\texorpdfstring{Color}{Color}}
+{\footnotesize\ttfamily \label{_r_b_tree_8hpp_ab87bacfdad76e61b9412d7124be44c1c} 
+enum \doxymbox{\hyperlink{_r_b_tree_8hpp_ab87bacfdad76e61b9412d7124be44c1c}{Color}}}
+
+
+
+Цвет узла красно-\/чёрного дерева. 
+
+\begin{DoxyEnumFields}[2]{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{RED@{RED}!RBTree.hpp@{RBTree.hpp}}
+\index{RBTree.hpp@{RBTree.hpp}!RED@{RED}}
+}\Hypertarget{_r_b_tree_8hpp_ab87bacfdad76e61b9412d7124be44c1caf80f9a890089d211842d59625e561f88}\label{_r_b_tree_8hpp_ab87bacfdad76e61b9412d7124be44c1caf80f9a890089d211842d59625e561f88} 
+RED&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{BLACK@{BLACK}!RBTree.hpp@{RBTree.hpp}}
+\index{RBTree.hpp@{RBTree.hpp}!BLACK@{BLACK}}
+}\Hypertarget{_r_b_tree_8hpp_ab87bacfdad76e61b9412d7124be44c1caf77fb67151d0c18d397069ad8c271ba3}\label{_r_b_tree_8hpp_ab87bacfdad76e61b9412d7124be44c1caf77fb67151d0c18d397069ad8c271ba3} 
+BLACK&\\
+\hline
+
+\end{DoxyEnumFields}

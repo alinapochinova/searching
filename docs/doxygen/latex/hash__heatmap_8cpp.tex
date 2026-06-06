@@ -1,0 +1,126 @@
+\doxysection{hash\+\_\+heatmap.\+cpp File Reference}
+\hypertarget{hash__heatmap_8cpp}{}\label{hash__heatmap_8cpp}\index{hash\_heatmap.cpp@{hash\_heatmap.cpp}}
+
+
+Анализ распределения элементов по корзинам хэш-\/таблицы.  
+
+
+{\ttfamily \+\#include $<$iostream$>$}\newline
+{\ttfamily \+\#include $<$vector$>$}\newline
+{\ttfamily \+\#include $<$string$>$}\newline
+{\ttfamily \+\#include $<$fstream$>$}\newline
+{\ttfamily \+\#include $<$iomanip$>$}\newline
+{\ttfamily \+\#include $<$algorithm$>$}\newline
+{\ttfamily \+\#include $<$random$>$}\newline
+{\ttfamily \+\#include $<$map$>$}\newline
+{\ttfamily \+\#include "{}Flight.\+hpp"{}}\newline
+{\ttfamily \+\#include "{}Hash\+Table.\+hpp"{}}\newline
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \doxymbox{\hyperlink{struct_distribution_stats}{Distribution\+Stats}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+vector$<$ \doxymbox{\hyperlink{class_flight}{Flight}} $>$ \doxymbox{\hyperlink{hash__heatmap_8cpp_a45fc668e03d9223e948f24464b5b192b}{generate\+Flights}} (size\+\_\+t total\+Size, size\+\_\+t unique\+Keys\+Count)
+\item 
+\doxymbox{\hyperlink{struct_distribution_stats}{Distribution\+Stats}} \doxymbox{\hyperlink{hash__heatmap_8cpp_af48209245c8181cbc01ad7408fb4842b}{analyze\+Distribution}} (const \doxymbox{\hyperlink{class_hash_table}{Hash\+Table}} \&ht)
+\item 
+void \doxymbox{\hyperlink{hash__heatmap_8cpp_a66e196e03f6ddb9096e92aa76b9565a5}{save\+Text\+Report}} (const \doxymbox{\hyperlink{struct_distribution_stats}{Distribution\+Stats}} \&stats, const string \&filename)
+\item 
+void \doxymbox{\hyperlink{hash__heatmap_8cpp_a79adff6ec23a637226ce00e4410fcdfa}{save\+Bucket\+Load\+CSV}} (const \doxymbox{\hyperlink{class_hash_table}{Hash\+Table}} \&ht, const string \&filename)
+\item 
+int \doxymbox{\hyperlink{hash__heatmap_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}{main}} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+const size\+\_\+t \doxymbox{\hyperlink{hash__heatmap_8cpp_af811406e18ec4e926237f56e56a2cd62}{TOTAL\+\_\+\+SIZE}} = 500000
+\item 
+const size\+\_\+t \doxymbox{\hyperlink{hash__heatmap_8cpp_a01bcaf758162ee0a7e814074e6f0052d}{UNIQUE\+\_\+\+KEYS\+\_\+\+COUNT}} = 2000
+\item 
+const size\+\_\+t \doxymbox{\hyperlink{hash__heatmap_8cpp_ae1817b37c2b8968ecd33e018572dda38}{HASH\+\_\+\+TABLE\+\_\+\+SIZE}} = 200003
+\item 
+const unsigned int \doxymbox{\hyperlink{hash__heatmap_8cpp_a16b7b793014fb1068fe38f07a76678b5}{RANDOM\+\_\+\+SEED}} = 42
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Анализ распределения элементов по корзинам хэш-\/таблицы. 
+
+Строит хэш-\/таблицу на 500000 элементах (2000 уникальных ключей), анализирует распределение элементов по корзинам, выводит статистику. Для визуализации используется Python-\/скрипт plot\+\_\+heatmap.\+py.\hypertarget{hash__heatmap_8cpp_output}{}\doxysubsection{\texorpdfstring{Выходные данные}{Выходные данные}}\label{hash__heatmap_8cpp_output}
+
+\begin{DoxyItemize}
+\item hash\+\_\+distribution.\+txt:\+ текстовый отчёт со статистикой
+\item bucket\+\_\+load.\+csv:\+ данные о загрузке корзин
+\end{DoxyItemize}\hypertarget{hash__heatmap_8cpp_plot}{}\doxysubsection{\texorpdfstring{Для построения тепловой карты:\+}{Для построения тепловой карты:\+}}\label{hash__heatmap_8cpp_plot}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{python3\ plot\_heatmap.py}
+
+\end{DoxyCode}
+ 
+
+\label{hash__heatmap_8cpp_doc-func-members}
+\Hypertarget{hash__heatmap_8cpp_doc-func-members}
+\doxysubsection{Function Documentation}
+\Hypertarget{hash__heatmap_8cpp_af48209245c8181cbc01ad7408fb4842b}\index{hash\_heatmap.cpp@{hash\_heatmap.cpp}!analyzeDistribution@{analyzeDistribution}}
+\index{analyzeDistribution@{analyzeDistribution}!hash\_heatmap.cpp@{hash\_heatmap.cpp}}
+\doxysubsubsection{\texorpdfstring{analyzeDistribution()}{analyzeDistribution()}}
+{\footnotesize\ttfamily \label{hash__heatmap_8cpp_af48209245c8181cbc01ad7408fb4842b} 
+\doxymbox{\hyperlink{struct_distribution_stats}{Distribution\+Stats}} analyze\+Distribution (\begin{DoxyParamCaption}\item[{const \doxymbox{\hyperlink{class_hash_table}{Hash\+Table}} \&}]{ht}{}\end{DoxyParamCaption})}
+
+\Hypertarget{hash__heatmap_8cpp_a45fc668e03d9223e948f24464b5b192b}\index{hash\_heatmap.cpp@{hash\_heatmap.cpp}!generateFlights@{generateFlights}}
+\index{generateFlights@{generateFlights}!hash\_heatmap.cpp@{hash\_heatmap.cpp}}
+\doxysubsubsection{\texorpdfstring{generateFlights()}{generateFlights()}}
+{\footnotesize\ttfamily \label{hash__heatmap_8cpp_a45fc668e03d9223e948f24464b5b192b} 
+vector$<$ \doxymbox{\hyperlink{class_flight}{Flight}} $>$ generate\+Flights (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{total\+Size}{, }\item[{size\+\_\+t}]{unique\+Keys\+Count}{}\end{DoxyParamCaption})}
+
+\Hypertarget{hash__heatmap_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}\index{hash\_heatmap.cpp@{hash\_heatmap.cpp}!main@{main}}
+\index{main@{main}!hash\_heatmap.cpp@{hash\_heatmap.cpp}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily \label{hash__heatmap_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4} 
+int main (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{hash__heatmap_8cpp_a79adff6ec23a637226ce00e4410fcdfa}\index{hash\_heatmap.cpp@{hash\_heatmap.cpp}!saveBucketLoadCSV@{saveBucketLoadCSV}}
+\index{saveBucketLoadCSV@{saveBucketLoadCSV}!hash\_heatmap.cpp@{hash\_heatmap.cpp}}
+\doxysubsubsection{\texorpdfstring{saveBucketLoadCSV()}{saveBucketLoadCSV()}}
+{\footnotesize\ttfamily \label{hash__heatmap_8cpp_a79adff6ec23a637226ce00e4410fcdfa} 
+void save\+Bucket\+Load\+CSV (\begin{DoxyParamCaption}\item[{const \doxymbox{\hyperlink{class_hash_table}{Hash\+Table}} \&}]{ht}{, }\item[{const string \&}]{filename}{}\end{DoxyParamCaption})}
+
+\Hypertarget{hash__heatmap_8cpp_a66e196e03f6ddb9096e92aa76b9565a5}\index{hash\_heatmap.cpp@{hash\_heatmap.cpp}!saveTextReport@{saveTextReport}}
+\index{saveTextReport@{saveTextReport}!hash\_heatmap.cpp@{hash\_heatmap.cpp}}
+\doxysubsubsection{\texorpdfstring{saveTextReport()}{saveTextReport()}}
+{\footnotesize\ttfamily \label{hash__heatmap_8cpp_a66e196e03f6ddb9096e92aa76b9565a5} 
+void save\+Text\+Report (\begin{DoxyParamCaption}\item[{const \doxymbox{\hyperlink{struct_distribution_stats}{Distribution\+Stats}} \&}]{stats}{, }\item[{const string \&}]{filename}{}\end{DoxyParamCaption})}
+
+
+
+\label{hash__heatmap_8cpp_doc-var-members}
+\Hypertarget{hash__heatmap_8cpp_doc-var-members}
+\doxysubsection{Variable Documentation}
+\Hypertarget{hash__heatmap_8cpp_ae1817b37c2b8968ecd33e018572dda38}\index{hash\_heatmap.cpp@{hash\_heatmap.cpp}!HASH\_TABLE\_SIZE@{HASH\_TABLE\_SIZE}}
+\index{HASH\_TABLE\_SIZE@{HASH\_TABLE\_SIZE}!hash\_heatmap.cpp@{hash\_heatmap.cpp}}
+\doxysubsubsection{\texorpdfstring{HASH\_TABLE\_SIZE}{HASH\_TABLE\_SIZE}}
+{\footnotesize\ttfamily \label{hash__heatmap_8cpp_ae1817b37c2b8968ecd33e018572dda38} 
+const size\+\_\+t HASH\+\_\+\+TABLE\+\_\+\+SIZE = 200003}
+
+\Hypertarget{hash__heatmap_8cpp_a16b7b793014fb1068fe38f07a76678b5}\index{hash\_heatmap.cpp@{hash\_heatmap.cpp}!RANDOM\_SEED@{RANDOM\_SEED}}
+\index{RANDOM\_SEED@{RANDOM\_SEED}!hash\_heatmap.cpp@{hash\_heatmap.cpp}}
+\doxysubsubsection{\texorpdfstring{RANDOM\_SEED}{RANDOM\_SEED}}
+{\footnotesize\ttfamily \label{hash__heatmap_8cpp_a16b7b793014fb1068fe38f07a76678b5} 
+const unsigned int RANDOM\+\_\+\+SEED = 42}
+
+\Hypertarget{hash__heatmap_8cpp_af811406e18ec4e926237f56e56a2cd62}\index{hash\_heatmap.cpp@{hash\_heatmap.cpp}!TOTAL\_SIZE@{TOTAL\_SIZE}}
+\index{TOTAL\_SIZE@{TOTAL\_SIZE}!hash\_heatmap.cpp@{hash\_heatmap.cpp}}
+\doxysubsubsection{\texorpdfstring{TOTAL\_SIZE}{TOTAL\_SIZE}}
+{\footnotesize\ttfamily \label{hash__heatmap_8cpp_af811406e18ec4e926237f56e56a2cd62} 
+const size\+\_\+t TOTAL\+\_\+\+SIZE = 500000}
+
+\Hypertarget{hash__heatmap_8cpp_a01bcaf758162ee0a7e814074e6f0052d}\index{hash\_heatmap.cpp@{hash\_heatmap.cpp}!UNIQUE\_KEYS\_COUNT@{UNIQUE\_KEYS\_COUNT}}
+\index{UNIQUE\_KEYS\_COUNT@{UNIQUE\_KEYS\_COUNT}!hash\_heatmap.cpp@{hash\_heatmap.cpp}}
+\doxysubsubsection{\texorpdfstring{UNIQUE\_KEYS\_COUNT}{UNIQUE\_KEYS\_COUNT}}
+{\footnotesize\ttfamily \label{hash__heatmap_8cpp_a01bcaf758162ee0a7e814074e6f0052d} 
+const size\+\_\+t UNIQUE\+\_\+\+KEYS\+\_\+\+COUNT = 2000}
+

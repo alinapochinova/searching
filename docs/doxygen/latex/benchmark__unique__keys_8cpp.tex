@@ -1,0 +1,207 @@
+\doxysection{benchmark\+\_\+unique\+\_\+keys.\+cpp File Reference}
+\hypertarget{benchmark__unique__keys_8cpp}{}\label{benchmark__unique__keys_8cpp}\index{benchmark\_unique\_keys.cpp@{benchmark\_unique\_keys.cpp}}
+
+
+Бенчмарк зависимости времени поиска от количества уникальных ключей.  
+
+
+{\ttfamily \+\#include $<$iostream$>$}\newline
+{\ttfamily \+\#include $<$vector$>$}\newline
+{\ttfamily \+\#include $<$string$>$}\newline
+{\ttfamily \+\#include $<$chrono$>$}\newline
+{\ttfamily \+\#include $<$fstream$>$}\newline
+{\ttfamily \+\#include $<$random$>$}\newline
+{\ttfamily \+\#include $<$set$>$}\newline
+{\ttfamily \+\#include $<$algorithm$>$}\newline
+{\ttfamily \+\#include "{}Flight.\+hpp"{}}\newline
+{\ttfamily \+\#include "{}BSTree.\+hpp"{}}\newline
+{\ttfamily \+\#include "{}RBTree.\+hpp"{}}\newline
+{\ttfamily \+\#include "{}Hash\+Table.\+hpp"{}}\newline
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+vector$<$ \doxymbox{\hyperlink{class_flight}{Flight}} $>$ \doxymbox{\hyperlink{benchmark__unique__keys_8cpp_a45fc668e03d9223e948f24464b5b192b}{generate\+Flights}} (size\+\_\+t total\+Size, size\+\_\+t unique\+Keys\+Count)
+\begin{DoxyCompactList}\small\item\em Генерирует массив объектов \doxylink{class_flight}{Flight} с заданным количеством уникальных номеров рейсов. \end{DoxyCompactList}\item 
+vector$<$ string $>$ \doxymbox{\hyperlink{benchmark__unique__keys_8cpp_a97954f61bf8b883de9bd33a3c6c418d2}{select\+Test\+Keys}} (const vector$<$ \doxymbox{\hyperlink{class_flight}{Flight}} $>$ \&flights)
+\begin{DoxyCompactList}\small\item\em Выбирает NUM\+\_\+\+SEARCHES случайных ключей из массива для последующего поиска. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T$>$ }\\double \doxymbox{\hyperlink{benchmark__unique__keys_8cpp_ae1d24e370e748ff8f601fa4b2405a1ed}{measure\+Search\+Time}} (const T \&structure, const vector$<$ string $>$ \&keys)
+\begin{DoxyCompactList}\small\item\em Замеряет среднее время поиска в структуре данных. \end{DoxyCompactList}\item 
+int \doxymbox{\hyperlink{benchmark__unique__keys_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}{main}} ()
+\begin{DoxyCompactList}\small\item\em Главная функция бенчмарка. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+const size\+\_\+t \doxymbox{\hyperlink{benchmark__unique__keys_8cpp_af811406e18ec4e926237f56e56a2cd62}{TOTAL\+\_\+\+SIZE}} = 1000000
+\begin{DoxyCompactList}\small\item\em Фиксированный размер массива \end{DoxyCompactList}\item 
+const size\+\_\+t \doxymbox{\hyperlink{benchmark__unique__keys_8cpp_ae1817b37c2b8968ecd33e018572dda38}{HASH\+\_\+\+TABLE\+\_\+\+SIZE}} = 200003
+\begin{DoxyCompactList}\small\item\em Фиксированный размер хэш-\/таблицы \end{DoxyCompactList}\item 
+const int \doxymbox{\hyperlink{benchmark__unique__keys_8cpp_a9c7c3c829362215e710837166d1ad491}{NUM\+\_\+\+SEARCHES}} = 10
+\begin{DoxyCompactList}\small\item\em Количество поисков для замера \end{DoxyCompactList}\item 
+const unsigned int \doxymbox{\hyperlink{benchmark__unique__keys_8cpp_a16b7b793014fb1068fe38f07a76678b5}{RANDOM\+\_\+\+SEED}} = 42
+\begin{DoxyCompactList}\small\item\em Фиксированный seed для воспроизводимости \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Бенчмарк зависимости времени поиска от количества уникальных ключей. 
+
+Фиксируется размер массива (1 000 000 элементов), но меняется количество различных номеров рейсов (от 100 до 500 000). Для каждого значения измеряется время поиска в BST, RBT и \doxylink{class_hash_table}{Hash\+Table}. Ожидаемое поведение:\+ время поиска в BST/\+\+RBT должно расти как O(log U), в хэш-\/таблице – как O(1) с медленным ростом из-\/за коллизий. Если наблюдаются немонотонные колебания или падение времени, это может быть вызвано:\+
+\begin{DoxyEnumerate}
+\item Эффектами кэширования процессора (данные малых U помещаются в кэш).
+\item Шумом от фоновых процессов ОС.
+\item Недостаточным количеством поисков (NUM\+\_\+\+SEARCHES) для усреднения.
+\item Случайным выбором ключей (разные ключи могут иметь разную глубину). \begin{DoxyWarning}{Warning}
+
+\end{DoxyWarning}
+@recommendation Для получения гладкого графика:\+
+\end{DoxyEnumerate}
+\begin{DoxyItemize}
+\item Увеличить NUM\+\_\+\+SEARCHES до 100.
+\item Запустить бенчмарк несколько раз и усреднить результаты.
+\item Использовать одни и те же ключи для всех U (например, первые 10 уникальных).
+\item Отключить турбобуст процессора и закрыть фоновые приложения. \begin{DoxyAuthor}{Author}
+Починова Алина 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+2026
+\end{DoxyDate}
+
+\end{DoxyItemize}\hypertarget{generate__data_8cpp_usage}{}\doxysubsection{\texorpdfstring{Запуск}{Запуск}}\label{generate__data_8cpp_usage}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{./benchmark\_unique\_keys}
+
+\end{DoxyCode}
+\hypertarget{hash__heatmap_8cpp_output}{}\doxysubsection{\texorpdfstring{Выходные данные}{Выходные данные}}\label{hash__heatmap_8cpp_output}
+Файл unique\+\_\+keys\+\_\+results.\+csv с колонками:\+
+\begin{DoxyItemize}
+\item unique\+\_\+keys:\+ количество уникальных ключей
+\item bst\+\_\+time\+\_\+us:\+ время поиска в BST (микросекунды)
+\item rbt\+\_\+time\+\_\+us:\+ время поиска в RBT (микросекунды)
+\item hash\+\_\+time\+\_\+us:\+ время поиска в хэш-\/таблице (микросекунды) 
+\end{DoxyItemize}
+
+\label{benchmark__unique__keys_8cpp_doc-func-members}
+\Hypertarget{benchmark__unique__keys_8cpp_doc-func-members}
+\doxysubsection{Function Documentation}
+\Hypertarget{benchmark__unique__keys_8cpp_a45fc668e03d9223e948f24464b5b192b}\index{benchmark\_unique\_keys.cpp@{benchmark\_unique\_keys.cpp}!generateFlights@{generateFlights}}
+\index{generateFlights@{generateFlights}!benchmark\_unique\_keys.cpp@{benchmark\_unique\_keys.cpp}}
+\doxysubsubsection{\texorpdfstring{generateFlights()}{generateFlights()}}
+{\footnotesize\ttfamily \label{benchmark__unique__keys_8cpp_a45fc668e03d9223e948f24464b5b192b} 
+vector$<$ \doxymbox{\hyperlink{class_flight}{Flight}} $>$ generate\+Flights (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{total\+Size}{, }\item[{size\+\_\+t}]{unique\+Keys\+Count}{}\end{DoxyParamCaption})}
+
+
+
+Генерирует массив объектов \doxylink{class_flight}{Flight} с заданным количеством уникальных номеров рейсов. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em total\+Size} & Общее количество элементов. \\
+\hline
+{\em unique\+Keys\+Count} & Количество различных номеров рейсов. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Вектор объектов \doxylink{class_flight}{Flight}.
+\end{DoxyReturn}
+Номера рейсов генерируются в диапазоне \+[1, unique\+Keys\+Count]\+. Используется фиксированный seed для воспроизводимости. \Hypertarget{benchmark__unique__keys_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}\index{benchmark\_unique\_keys.cpp@{benchmark\_unique\_keys.cpp}!main@{main}}
+\index{main@{main}!benchmark\_unique\_keys.cpp@{benchmark\_unique\_keys.cpp}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily \label{benchmark__unique__keys_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4} 
+int main (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Главная функция бенчмарка. 
+
+\begin{DoxyReturn}{Returns}
+0 при успешном выполнении. 
+\end{DoxyReturn}
+\Hypertarget{benchmark__unique__keys_8cpp_ae1d24e370e748ff8f601fa4b2405a1ed}\index{benchmark\_unique\_keys.cpp@{benchmark\_unique\_keys.cpp}!measureSearchTime@{measureSearchTime}}
+\index{measureSearchTime@{measureSearchTime}!benchmark\_unique\_keys.cpp@{benchmark\_unique\_keys.cpp}}
+\doxysubsubsection{\texorpdfstring{measureSearchTime()}{measureSearchTime()}}
+{\footnotesize\ttfamily \label{benchmark__unique__keys_8cpp_ae1d24e370e748ff8f601fa4b2405a1ed} 
+template$<$typename T$>$ \\
+double measure\+Search\+Time (\begin{DoxyParamCaption}\item[{const T \&}]{structure}{, }\item[{const vector$<$ string $>$ \&}]{keys}{}\end{DoxyParamCaption})}
+
+
+
+Замеряет среднее время поиска в структуре данных. 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em Structure} & Тип структуры (должен иметь метод find(const string\&) const). \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em structure} & Структура для поиска. \\
+\hline
+{\em keys} & Вектор ключей для поиска. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Среднее время одного поиска в микросекундах. 
+\end{DoxyReturn}
+\Hypertarget{benchmark__unique__keys_8cpp_a97954f61bf8b883de9bd33a3c6c418d2}\index{benchmark\_unique\_keys.cpp@{benchmark\_unique\_keys.cpp}!selectTestKeys@{selectTestKeys}}
+\index{selectTestKeys@{selectTestKeys}!benchmark\_unique\_keys.cpp@{benchmark\_unique\_keys.cpp}}
+\doxysubsubsection{\texorpdfstring{selectTestKeys()}{selectTestKeys()}}
+{\footnotesize\ttfamily \label{benchmark__unique__keys_8cpp_a97954f61bf8b883de9bd33a3c6c418d2} 
+vector$<$ string $>$ select\+Test\+Keys (\begin{DoxyParamCaption}\item[{const vector$<$ \doxymbox{\hyperlink{class_flight}{Flight}} $>$ \&}]{flights}{}\end{DoxyParamCaption})}
+
+
+
+Выбирает NUM\+\_\+\+SEARCHES случайных ключей из массива для последующего поиска. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em flights} & Массив объектов. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Вектор уникальных ключей. 
+\end{DoxyReturn}
+
+
+\label{benchmark__unique__keys_8cpp_doc-var-members}
+\Hypertarget{benchmark__unique__keys_8cpp_doc-var-members}
+\doxysubsection{Variable Documentation}
+\Hypertarget{benchmark__unique__keys_8cpp_ae1817b37c2b8968ecd33e018572dda38}\index{benchmark\_unique\_keys.cpp@{benchmark\_unique\_keys.cpp}!HASH\_TABLE\_SIZE@{HASH\_TABLE\_SIZE}}
+\index{HASH\_TABLE\_SIZE@{HASH\_TABLE\_SIZE}!benchmark\_unique\_keys.cpp@{benchmark\_unique\_keys.cpp}}
+\doxysubsubsection{\texorpdfstring{HASH\_TABLE\_SIZE}{HASH\_TABLE\_SIZE}}
+{\footnotesize\ttfamily \label{benchmark__unique__keys_8cpp_ae1817b37c2b8968ecd33e018572dda38} 
+const size\+\_\+t HASH\+\_\+\+TABLE\+\_\+\+SIZE = 200003}
+
+
+
+Фиксированный размер хэш-\/таблицы 
+
+\Hypertarget{benchmark__unique__keys_8cpp_a9c7c3c829362215e710837166d1ad491}\index{benchmark\_unique\_keys.cpp@{benchmark\_unique\_keys.cpp}!NUM\_SEARCHES@{NUM\_SEARCHES}}
+\index{NUM\_SEARCHES@{NUM\_SEARCHES}!benchmark\_unique\_keys.cpp@{benchmark\_unique\_keys.cpp}}
+\doxysubsubsection{\texorpdfstring{NUM\_SEARCHES}{NUM\_SEARCHES}}
+{\footnotesize\ttfamily \label{benchmark__unique__keys_8cpp_a9c7c3c829362215e710837166d1ad491} 
+const int NUM\+\_\+\+SEARCHES = 10}
+
+
+
+Количество поисков для замера 
+
+\Hypertarget{benchmark__unique__keys_8cpp_a16b7b793014fb1068fe38f07a76678b5}\index{benchmark\_unique\_keys.cpp@{benchmark\_unique\_keys.cpp}!RANDOM\_SEED@{RANDOM\_SEED}}
+\index{RANDOM\_SEED@{RANDOM\_SEED}!benchmark\_unique\_keys.cpp@{benchmark\_unique\_keys.cpp}}
+\doxysubsubsection{\texorpdfstring{RANDOM\_SEED}{RANDOM\_SEED}}
+{\footnotesize\ttfamily \label{benchmark__unique__keys_8cpp_a16b7b793014fb1068fe38f07a76678b5} 
+const unsigned int RANDOM\+\_\+\+SEED = 42}
+
+
+
+Фиксированный seed для воспроизводимости 
+
+\Hypertarget{benchmark__unique__keys_8cpp_af811406e18ec4e926237f56e56a2cd62}\index{benchmark\_unique\_keys.cpp@{benchmark\_unique\_keys.cpp}!TOTAL\_SIZE@{TOTAL\_SIZE}}
+\index{TOTAL\_SIZE@{TOTAL\_SIZE}!benchmark\_unique\_keys.cpp@{benchmark\_unique\_keys.cpp}}
+\doxysubsubsection{\texorpdfstring{TOTAL\_SIZE}{TOTAL\_SIZE}}
+{\footnotesize\ttfamily \label{benchmark__unique__keys_8cpp_af811406e18ec4e926237f56e56a2cd62} 
+const size\+\_\+t TOTAL\+\_\+\+SIZE = 1000000}
+
+
+
+Фиксированный размер массива 
+

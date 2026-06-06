@@ -1,0 +1,127 @@
+\doxysection{RBNode Struct Reference}
+\hypertarget{struct_r_b_node}{}\label{struct_r_b_node}\index{RBNode@{RBNode}}
+
+
+Узел красно-\/чёрного дерева.  
+
+
+
+
+{\ttfamily \+\#include $<$RBTree.\+hpp$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\doxymbox{\hyperlink{struct_r_b_node_a03e0c52a5cc45c0ba64ddcd7f1957d27}{RBNode}} (const string \&k, const \doxymbox{\hyperlink{class_flight}{Flight}} \&f)
+\begin{DoxyCompactList}\small\item\em Конструктор узла. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+string \doxymbox{\hyperlink{struct_r_b_node_aeb390f4dfc9920b3c20fcdbe32160371}{key}}
+\begin{DoxyCompactList}\small\item\em Ключ (номер рейса). \end{DoxyCompactList}\item 
+vector$<$ \doxymbox{\hyperlink{class_flight}{Flight}} $>$ \doxymbox{\hyperlink{struct_r_b_node_acbb28219a7550121b37b02be6990e03d}{values}}
+\begin{DoxyCompactList}\small\item\em Все рейсы с этим ключом \end{DoxyCompactList}\item 
+\doxymbox{\hyperlink{_r_b_tree_8hpp_ab87bacfdad76e61b9412d7124be44c1c}{Color}} \doxymbox{\hyperlink{struct_r_b_node_a0877ab978b0055833f3a5266491f1f2e}{color}}
+\begin{DoxyCompactList}\small\item\em Цвет узла \end{DoxyCompactList}\item 
+\doxymbox{\hyperlink{struct_r_b_node}{RBNode}} \texorpdfstring{$\ast$}{*} \doxymbox{\hyperlink{struct_r_b_node_a3345545f8a1678010bca11b5f7153a4a}{left}}
+\begin{DoxyCompactList}\small\item\em Указатель на левое поддерево \end{DoxyCompactList}\item 
+\doxymbox{\hyperlink{struct_r_b_node}{RBNode}} \texorpdfstring{$\ast$}{*} \doxymbox{\hyperlink{struct_r_b_node_af82826872827c548a5713eb84f264767}{right}}
+\begin{DoxyCompactList}\small\item\em Указатель на правое поддерево \end{DoxyCompactList}\item 
+\doxymbox{\hyperlink{struct_r_b_node}{RBNode}} \texorpdfstring{$\ast$}{*} \doxymbox{\hyperlink{struct_r_b_node_a131e0d1a4f73d55e6b5ad282c6846612}{parent}}
+\begin{DoxyCompactList}\small\item\em Указатель на родительский узел \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Узел красно-\/чёрного дерева. 
+
+\label{struct_r_b_node_doc-constructors}
+\Hypertarget{struct_r_b_node_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{struct_r_b_node_a03e0c52a5cc45c0ba64ddcd7f1957d27}\index{RBNode@{RBNode}!RBNode@{RBNode}}
+\index{RBNode@{RBNode}!RBNode@{RBNode}}
+\doxysubsubsection{\texorpdfstring{RBNode()}{RBNode()}}
+{\footnotesize\ttfamily \label{struct_r_b_node_a03e0c52a5cc45c0ba64ddcd7f1957d27} 
+RBNode::\+\+RBNode (\begin{DoxyParamCaption}\item[{const string \&}]{k}{, }\item[{const \doxymbox{\hyperlink{class_flight}{Flight}} \&}]{f}{}\end{DoxyParamCaption})}
+
+
+
+Конструктор узла. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em k} & Ключ. \\
+\hline
+{\em f} & Объект \doxylink{class_flight}{Flight} (добавляется в вектор values).\\
+\hline
+\end{DoxyParams}
+Новый узел всегда создаётся красным. 
+
+\label{struct_r_b_node_doc-variable-members}
+\Hypertarget{struct_r_b_node_doc-variable-members}
+\doxysubsection{Member Data Documentation}
+\Hypertarget{struct_r_b_node_a0877ab978b0055833f3a5266491f1f2e}\index{RBNode@{RBNode}!color@{color}}
+\index{color@{color}!RBNode@{RBNode}}
+\doxysubsubsection{\texorpdfstring{color}{color}}
+{\footnotesize\ttfamily \label{struct_r_b_node_a0877ab978b0055833f3a5266491f1f2e} 
+\doxymbox{\hyperlink{_r_b_tree_8hpp_ab87bacfdad76e61b9412d7124be44c1c}{Color}} RBNode::\+color}
+
+
+
+Цвет узла 
+
+\Hypertarget{struct_r_b_node_aeb390f4dfc9920b3c20fcdbe32160371}\index{RBNode@{RBNode}!key@{key}}
+\index{key@{key}!RBNode@{RBNode}}
+\doxysubsubsection{\texorpdfstring{key}{key}}
+{\footnotesize\ttfamily \label{struct_r_b_node_aeb390f4dfc9920b3c20fcdbe32160371} 
+string RBNode::\+key}
+
+
+
+Ключ (номер рейса). 
+
+\Hypertarget{struct_r_b_node_a3345545f8a1678010bca11b5f7153a4a}\index{RBNode@{RBNode}!left@{left}}
+\index{left@{left}!RBNode@{RBNode}}
+\doxysubsubsection{\texorpdfstring{left}{left}}
+{\footnotesize\ttfamily \label{struct_r_b_node_a3345545f8a1678010bca11b5f7153a4a} 
+\doxymbox{\hyperlink{struct_r_b_node}{RBNode}}\texorpdfstring{$\ast$}{*} RBNode::\+left}
+
+
+
+Указатель на левое поддерево 
+
+\Hypertarget{struct_r_b_node_a131e0d1a4f73d55e6b5ad282c6846612}\index{RBNode@{RBNode}!parent@{parent}}
+\index{parent@{parent}!RBNode@{RBNode}}
+\doxysubsubsection{\texorpdfstring{parent}{parent}}
+{\footnotesize\ttfamily \label{struct_r_b_node_a131e0d1a4f73d55e6b5ad282c6846612} 
+\doxymbox{\hyperlink{struct_r_b_node}{RBNode}}\texorpdfstring{$\ast$}{*} RBNode::\+parent}
+
+
+
+Указатель на родительский узел 
+
+\Hypertarget{struct_r_b_node_af82826872827c548a5713eb84f264767}\index{RBNode@{RBNode}!right@{right}}
+\index{right@{right}!RBNode@{RBNode}}
+\doxysubsubsection{\texorpdfstring{right}{right}}
+{\footnotesize\ttfamily \label{struct_r_b_node_af82826872827c548a5713eb84f264767} 
+\doxymbox{\hyperlink{struct_r_b_node}{RBNode}}\texorpdfstring{$\ast$}{*} RBNode::\+right}
+
+
+
+Указатель на правое поддерево 
+
+\Hypertarget{struct_r_b_node_acbb28219a7550121b37b02be6990e03d}\index{RBNode@{RBNode}!values@{values}}
+\index{values@{values}!RBNode@{RBNode}}
+\doxysubsubsection{\texorpdfstring{values}{values}}
+{\footnotesize\ttfamily \label{struct_r_b_node_acbb28219a7550121b37b02be6990e03d} 
+vector$<$\doxymbox{\hyperlink{class_flight}{Flight}}$>$ RBNode::\+values}
+
+
+
+Все рейсы с этим ключом 
+
+
+
+The documentation for this struct was generated from the following files:\+\begin{DoxyCompactItemize}
+\item 
+\doxymbox{\hyperlink{_r_b_tree_8hpp}{RBTree.\+hpp}}\item 
+\doxymbox{\hyperlink{_r_b_tree_8cpp}{RBTree.\+cpp}}\end{DoxyCompactItemize}

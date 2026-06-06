@@ -130,25 +130,25 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('main_8cpp.html
 <code>#include &lt;map&gt;</code><br />
 <code>#include &lt;algorithm&gt;</code><br />
 <code>#include &lt;set&gt;</code><br />
-<code>#include &quot;Flight.hpp&quot;</code><br />
-<code>#include &quot;BSTree.hpp&quot;</code><br />
-<code>#include &quot;RBTree.hpp&quot;</code><br />
-<code>#include &quot;HashTable.hpp&quot;</code><br />
+<code>#include &quot;<a class="el" href="_flight_8hpp_source.html">Flight.hpp</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="_b_s_tree_8hpp_source.html">BSTree.hpp</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="_r_b_tree_8hpp_source.html">RBTree.hpp</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="_hash_table_8hpp_source.html">HashTable.hpp</a>&quot;</code><br />
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-func-members" class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a84d88c5c6eb74d898078690799687b6e" id="r_a84d88c5c6eb74d898078690799687b6e"><td class="memItemLeft">vector&lt; Flight &gt;&#160;</td><td class="memItemRight"><a class="el" href="#a84d88c5c6eb74d898078690799687b6e">loadFromCSV</a> (const string &amp;filename)</td></tr>
+<tr class="memitem:a84d88c5c6eb74d898078690799687b6e" id="r_a84d88c5c6eb74d898078690799687b6e"><td class="memItemLeft">vector&lt; <a class="el" href="class_flight.html">Flight</a> &gt;&#160;</td><td class="memItemRight"><a class="el" href="#a84d88c5c6eb74d898078690799687b6e">loadFromCSV</a> (const string &amp;filename)</td></tr>
 <tr class="memdesc:a84d88c5c6eb74d898078690799687b6e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Загрузка данных из CSV-файла.  <br /></td></tr>
-<tr class="memitem:a44a854c08432010162ef56ac1a9932ec" id="r_a44a854c08432010162ef56ac1a9932ec"><td class="memItemLeft">vector&lt; Flight &gt;&#160;</td><td class="memItemRight"><a class="el" href="#a44a854c08432010162ef56ac1a9932ec">linearSearch</a> (const vector&lt; Flight &gt; &amp;data, const string &amp;key)</td></tr>
+<tr class="memitem:a44a854c08432010162ef56ac1a9932ec" id="r_a44a854c08432010162ef56ac1a9932ec"><td class="memItemLeft">vector&lt; <a class="el" href="class_flight.html">Flight</a> &gt;&#160;</td><td class="memItemRight"><a class="el" href="#a44a854c08432010162ef56ac1a9932ec">linearSearch</a> (const vector&lt; <a class="el" href="class_flight.html">Flight</a> &gt; &amp;data, const string &amp;key)</td></tr>
 <tr class="memdesc:a44a854c08432010162ef56ac1a9932ec"><td class="mdescLeft">&#160;</td><td class="mdescRight">Линейный поиск всех вхождений ключа в массиве.  <br /></td></tr>
-<tr class="memitem:afa5bb5ee527bc3dc575eebb1578be8f7" id="r_afa5bb5ee527bc3dc575eebb1578be8f7"><td class="memItemLeft">vector&lt; string &gt;&#160;</td><td class="memItemRight"><a class="el" href="#afa5bb5ee527bc3dc575eebb1578be8f7">getUniqueKeys</a> (const vector&lt; Flight &gt; &amp;data, size_t count)</td></tr>
+<tr class="memitem:afa5bb5ee527bc3dc575eebb1578be8f7" id="r_afa5bb5ee527bc3dc575eebb1578be8f7"><td class="memItemLeft">vector&lt; string &gt;&#160;</td><td class="memItemRight"><a class="el" href="#afa5bb5ee527bc3dc575eebb1578be8f7">getUniqueKeys</a> (const vector&lt; <a class="el" href="class_flight.html">Flight</a> &gt; &amp;data, size_t count)</td></tr>
 <tr class="memdesc:afa5bb5ee527bc3dc575eebb1578be8f7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Получение первых N уникальных ключей из массива.  <br /></td></tr>
 <tr class="memitem:ae66f6b31b5ad750f1fe042a706a4e3d4" id="r_ae66f6b31b5ad750f1fe042a706a4e3d4"><td class="memItemLeft">int&#160;</td><td class="memItemRight"><a class="el" href="#ae66f6b31b5ad750f1fe042a706a4e3d4">main</a> ()</td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Программа для сравнения времени поиска в различных структурах данных. </p>
 <p>Загружает данные об авиарейсах из CSV-файлов разного размера, строит структуры поиска (BST, красно-чёрное дерево, хэш-таблица, std::multimap) и замеряет время выполнения 10 поисковых запросов. Результаты сохраняются в CSV-файл для последующего построения графиков.</p>
-<dl class="section see"><dt>See also</dt><dd>Flight, BSTree, RBTree, HashTable </dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="class_flight.html" title="Представляет информацию об авиарейсе. Поля: номер рейса (ключ), авиакомпания, дата/время прилёта,...">Flight</a>, <a class="el" href="class_b_s_tree.html" title="Класс бинарного дерева поиска.">BSTree</a>, <a class="el" href="class_r_b_tree.html" title="Класс красно-чёрного дерева.">RBTree</a>, <a class="el" href="class_hash_table.html" title="Хэш-таблица для хранения и поиска объектов Flight по ключу.">HashTable</a> </dd></dl>
 </div><a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Function Documentation</h2>
 <a id="afa5bb5ee527bc3dc575eebb1578be8f7" name="afa5bb5ee527bc3dc575eebb1578be8f7"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#afa5bb5ee527bc3dc575eebb1578be8f7">&#9670;&#160;</a></span>getUniqueKeys()</h2>
@@ -159,7 +159,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname">vector&lt; string &gt; getUniqueKeys </td>
           <td>(</td>
-          <td class="paramtype">const vector&lt; Flight &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>data</em></span>, </td>
+          <td class="paramtype">const vector&lt; <a class="el" href="class_flight.html">Flight</a> &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>data</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -188,9 +188,9 @@ Functions</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">vector&lt; Flight &gt; linearSearch </td>
+          <td class="memname">vector&lt; <a class="el" href="class_flight.html">Flight</a> &gt; linearSearch </td>
           <td>(</td>
-          <td class="paramtype">const vector&lt; Flight &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>data</em></span>, </td>
+          <td class="paramtype">const vector&lt; <a class="el" href="class_flight.html">Flight</a> &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>data</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -219,7 +219,7 @@ Functions</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">vector&lt; Flight &gt; loadFromCSV </td>
+          <td class="memname">vector&lt; <a class="el" href="class_flight.html">Flight</a> &gt; loadFromCSV </td>
           <td>(</td>
           <td class="paramtype">const string &amp;</td>          <td class="paramname"><span class="paramname"><em>filename</em></span></td><td>)</td>
           <td></td>
@@ -234,7 +234,7 @@ Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>Вектор объектов Flight. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>Вектор объектов <a class="el" href="class_flight.html" title="Представляет информацию об авиарейсе. Поля: номер рейса (ключ), авиакомпания, дата/время прилёта,...">Flight</a>. </dd></dl>
 
 </div>
 </div>
